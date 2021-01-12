@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-kit",
+  "name": "appik",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Shahidul Islam Majumder <dev@shahid.pro>",
+  "author": "Niaz Morshed Nayeem <nayeemxtreme@live.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^2.26.1",

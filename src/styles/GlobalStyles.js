@@ -56,6 +56,12 @@ export const P = styled.p`
   font-weight: 400;
 `
 
+export const Wrapper = styled.div`
+  position: relative;
+  margin: 0 auto;
+  max-width: 1600px;
+`
+
 export const Button = styled.button`
   width: 245px;
   height: 64px;
