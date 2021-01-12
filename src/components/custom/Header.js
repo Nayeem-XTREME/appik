@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
 import theme from '../../styles/theme'
+import { Wrapper } from '../../styles/GlobalStyles'
 
 import logo from '../../assets/logo/APPIK.svg'
 import { navmenu } from '../../data/navmenu'
@@ -9,12 +10,14 @@ import { navmenu } from '../../data/navmenu'
 
 const Header = () => {
   return (
-    <Nav>
-      <NavLink to="/"> <img src={logo} alt="APPIK"/> </NavLink>
-      <NavMenu>
-        {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
-      </NavMenu>
-    </Nav>
+    <Wrapper>
+      <Nav>
+        <NavLink to="/"> <img src={logo} alt="APPIK"/> </NavLink>
+        <NavMenu>
+          {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
+        </NavMenu>
+      </Nav>
+    </Wrapper>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { H1, H4, H5, Button } from '../../styles/GlobalStyles'
+import { H1, H4, H5, Button, Wrapper } from '../../styles/GlobalStyles'
 import cover from '../../assets/img/cover.png'
 import mobile from '../../assets/logo/TwoMobile.svg'
 import { platform } from '../../data/platform'
@@ -14,29 +14,31 @@ export default function Cover() {
     return (
         <>
             <CoverContainer/>
-            <Content>
-                <Title>
-                    <H4 highlight="true">10% OFF</H4>
-                    <H1 white="true">
-                        Life Makes Easy <br />
-                        Use your Appik App.
-                    </H1>
-                </Title>
+            <Wrapper>
+                <Content>
+                    <Title>
+                        <H4 highlight="true">10% OFF</H4>
+                        <H1 white="true">
+                            Life Makes Easy <br />
+                            Use your Appik App.
+                        </H1>
+                    </Title>
 
-                <Button>
-                    <H5>DOWNLOAD</H5>
-                </Button>
+                    <Button>
+                        <H5>DOWNLOAD</H5>
+                    </Button>
 
-                <Support>
-                    {platform.map((logo, i) => (
-                        <Img key={i} src={logo.src} alt={logo.alt} />
-                    ))}
-                </Support>
+                    <Support>
+                        {platform.map((logo, i) => (
+                            <Img key={i} src={logo.src} alt={logo.alt} />
+                        ))}
+                    </Support>
 
-                <Mobile>
-                    <img src={mobile} alt="Two Mobile" />
-                </Mobile>
-            </Content>
+                    <Mobile>
+                        <img src={mobile} alt="Two Mobile" />
+                    </Mobile>
+                </Content>
+            </Wrapper>
         </>
     )
 }
@@ -73,6 +75,6 @@ const Img = styled.img`
 `
 const Mobile = styled.div`
     position: absolute;
-    top: 191px;
+    top: -25px;
     right: 50px;
 `

@@ -6,26 +6,18 @@ import Header from "./custom/Header"
 import GlobalStyle from "../styles/GlobalStyles"
 import theme from "../styles/theme"
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper>
-          <Header />
-          <main>{children}</main>
-        </Wrapper>
+        <Header />
+        <main>{children}</main>
         
       </ThemeProvider>
     </>
   )
 }
-
-const Wrapper = styled.div`
-  position: relative;
-  margin: 0 auto;
-  max-width: 1600px;
-`
 
 export default Layout
