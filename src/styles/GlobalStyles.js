@@ -59,7 +59,8 @@ export const P = styled.p`
 export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
-  max-width: 1600px;
+  padding: 0 40px;
+  max-width: 1640px;
 `
 
 export const Button = styled.button`
