@@ -6,9 +6,6 @@ import { Box, Flex, Layout, Text } from "../components"
 const IndexPage = () => (
   <Layout>
     <Cover />
-    
-    
-
   </Layout>
 )
 

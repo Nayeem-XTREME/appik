@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import { theme } from '../../styles/theme'
+import theme from '../../styles/theme'
 
 import logo from '../../assets/logo/APPIK.svg'
 import { navmenu } from '../../data/navmenu'
@@ -24,7 +24,6 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   z-index: 10;
-  position: relative;
 `
 
 const NavLink = styled(Link)`
@@ -32,6 +31,7 @@ const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: white;
+  transition: all 0.2s;
 
   :not(:first-child) {
     margin-left: 30px;
@@ -39,6 +39,10 @@ const NavLink = styled(Link)`
 
   img {
     width: 131px;
+  }
+
+  :hover {
+    color: ${theme.colors.highlight};
   }
 `
 

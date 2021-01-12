@@ -23,8 +23,9 @@ const Layout = ({children}) => {
 }
 
 const Wrapper = styled.div`
+  position: relative;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1600px;
 `
 
 export default Layout
