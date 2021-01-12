@@ -1,11 +1,10 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-// import Text from "./Text"
-import { theme } from '../styles/theme'
+import { theme } from '../../styles/theme'
 
-import logo from '../assets/img/APPIK.svg'
-import { navmenu } from '../data/navmenu'
+import logo from '../../assets/logo/APPIK.svg'
+import { navmenu } from '../../data/navmenu'
 
 
 const Header = () => {
@@ -20,11 +19,11 @@ const Header = () => {
 }
 
 const Nav = styled.nav`
-  background: gray;
+  background: transparent;
   height: 80px;
   display: flex;
   justify-content: space-between;
-  z-index: 100;
+  z-index: 10;
   position: relative;
 `
 

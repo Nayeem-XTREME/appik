@@ -62,7 +62,6 @@ export default {
     }
   },
   colors: {
-    //Custom
     highlight: "#FFC600",
     fill: "#4E7BCA",
     gray: "#979797",
