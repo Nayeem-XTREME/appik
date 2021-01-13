@@ -21,7 +21,7 @@ export default function Cover() {
                         </H1>
                     </Title>
 
-                    <Button>
+                    <Button highlight>
                         <H5>DOWNLOAD</H5>
                     </Button>
 
@@ -56,6 +56,8 @@ const CoverContainer = styled.div`
 const Content = styled.div`
     margin-left: 150px;
     margin-top: 135px;
+
+    margin-bottom: 320px;
 `
 
 const Title = styled.div`

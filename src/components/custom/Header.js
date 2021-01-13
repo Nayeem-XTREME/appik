@@ -46,6 +46,7 @@ const NavLink = styled(Link)`
 
   :hover {
     color: ${theme.colors.highlight};
+    text-decoration: none;
   }
 `
 
