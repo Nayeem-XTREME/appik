@@ -8,9 +8,6 @@ import { platform } from '../../data/platform'
 
 
 export default function Cover() {
-
-    console.log(platform);
-
     return (
         <>
             <CoverContainer/>
@@ -59,6 +56,8 @@ const CoverContainer = styled.div`
 const Content = styled.div`
     margin-left: 150px;
     margin-top: 135px;
+
+    margin-bottom: 320px;
 `
 
 const Title = styled.div`

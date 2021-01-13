@@ -33,7 +33,7 @@ export const H3 = styled.h3`
 `
 
 export const H4 = styled.h4`
-  color: ${({ highlight }) => ( highlight ? '#FFC600' : '#FFF' )};
+  color: ${({ highlight }) => ( highlight ? '#FFC600' : '#000' )};
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -51,7 +51,8 @@ export const H6 = styled.h6`
   font-weight: 700;
 `
 export const P = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', 'Montserrat', sans-serif;
+  color: ${theme.colors.defaultText};
   font-size: 14px;
   font-weight: 400;
 `
@@ -60,6 +61,19 @@ export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
   max-width: 1600px;
+`
+
+export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+  position: relative;
+
+  P {
+    width: 785px;
+    text-align: center;
+  }
 `
 
 export const Button = styled.button`
@@ -71,6 +85,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 32px;
   transition: all 0.2s;
+  padding: 20px;
 
   :hover {
     background-color: #FFF;
