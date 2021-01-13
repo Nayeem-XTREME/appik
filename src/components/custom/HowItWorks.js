@@ -8,8 +8,6 @@ import control from '../../assets/logo/Control.svg'
 import bg from '../../assets/img/bg.svg'
 
 export default function HowItWorks() {
-
-    console.log(bg);
     return (
         <Bg>
             <Wrapper>
@@ -40,5 +38,5 @@ export default function HowItWorks() {
 const Bg = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
-    background-position: 0 300px;
+    background-position: 0 280px;
 `

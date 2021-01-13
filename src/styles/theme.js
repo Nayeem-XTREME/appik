@@ -10,6 +10,8 @@ export default {
     highlight: "#FFC600",
     fill: "#4E7BCA",
     gray: "#979797",
+    lightGray: "#F0F0F0",
+    veryLightGray: "#D8D8D8",
     defaultText: "#666666",
     headerText: "#323230"
   },
