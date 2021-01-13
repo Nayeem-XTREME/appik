@@ -6,7 +6,6 @@ breakpoints.lg = breakpoints[2]
 breakpoints.xl = breakpoints[3]
 
 export default {
-  name: "light",
   colors: {
     highlight: "#FFC600",
     fill: "#4E7BCA",
