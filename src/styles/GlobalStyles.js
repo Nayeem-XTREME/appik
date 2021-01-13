@@ -62,6 +62,8 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 40px;
   max-width: 1640px;
+
+  margin-bottom: 100px;
 `
 
 export const Title = styled.div`
