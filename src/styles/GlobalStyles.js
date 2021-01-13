@@ -60,7 +60,10 @@ export const P = styled.p`
 export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
-  max-width: 1600px;
+  padding: 0 40px;
+  max-width: 1640px;
+
+  margin-bottom: 100px;
 `
 
 export const Title = styled.div`

@@ -41,7 +41,7 @@ export default function Cover() {
 }
 
 const CoverContainer = styled.div`
-    background-image: linear-gradient(rgba(35, 79, 167, 0.9), rgba(110, 79, 204, 0.9)), url(${cover});
+    background-image: linear-gradient(rgba(110, 79, 204, 0.9), rgba(35, 79, 167, 0.9)), url(${cover});
     position: absolute;
     width: 100%;
     height: 750px;
@@ -75,5 +75,5 @@ const Img = styled.img`
 const Mobile = styled.div`
     position: absolute;
     top: -25px;
-    right: 50px;
+    right: 95px;
 `
