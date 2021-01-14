@@ -21,7 +21,7 @@ export default function Cover() {
                         </H1>
                     </Title>
 
-                    <Button>
+                    <Button highlight>
                         <H5>DOWNLOAD</H5>
                     </Button>
 

@@ -62,6 +62,8 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 40px;
   max-width: 1640px;
+
+  margin-bottom: 100px;
 `
 
 export const Title = styled.div`
@@ -80,7 +82,7 @@ export const Title = styled.div`
 export const Button = styled.button`
   width: 245px;
   height: 64px;
-  background-color: ${theme.colors.highlight};
+  background-color: ${({ highlight }) => ( highlight ? theme.colors.highlight : theme.colors.lightGray )};
   outline: none;
   cursor: pointer;
   border: none;
@@ -89,7 +91,7 @@ export const Button = styled.button`
   padding: 20px;
 
   :hover {
-    background-color: #FFF;
+    background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.veryLightGray )};
   }
 `
 
