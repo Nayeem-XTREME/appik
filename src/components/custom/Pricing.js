@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H2, H4, H5, P, Wrapper, Title, Button } from '../../styles/GlobalStyles'
+import { H2, H3, H4, H5, P, Wrapper, Title, Button } from '../../styles/GlobalStyles'
 import theme from '../../styles/theme'
+
+import { prices } from '../../data/prices'
 
 export default function Pricing() {
     return (
@@ -12,26 +14,37 @@ export default function Pricing() {
             </Title>
 
             <div className="row">
-                <Card className="col-4">
-                    <MainTitle>
-                        <H4>Basic</H4>
-                    </MainTitle>
-                    <SubTitle>
-                        <H5>$199.00</H5>
-                    </SubTitle>
 
-                    <Button>
-                        <H5>BUY NOW</H5>
-                    </Button>
-                </Card>
+                { prices.map( (x, i) => {
+                    return (
+                        <div className="col-4" key={i}>
+                            <Card className="card">
+                                <MainTitle>
+                                    <H3>{x.title}</H3>
+                                </MainTitle>
 
-                <div className="col-4">
-                    
-                </div>
+                                <SubTitle>
+                                    <H4>{x.price}</H4>
+                                </SubTitle>
 
-                <div className="col-4">
-                    
-                </div>
+                                <Ul>
+                                    { x.features.map( (feature, index) => (
+                                        <li key={index}>
+                                            <H5 style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "40px" }}>
+                                                {feature}
+                                            </H5>
+                                        </li>
+                                    ) ) }
+                                </Ul>
+
+                                <Button style={{ marginBottom: "83px", marginLeft: "auto", marginRight: "auto" }}>
+                                    <H5>BUY NOW</H5>
+                                </Button>
+                            </Card>
+                        </div>
+                    )
+                } ) }
+
             </div>
         </Wrapper>
     )
@@ -40,10 +53,6 @@ export default function Pricing() {
 const Card = styled.div`
     border: 1px solid ${theme.colors.lightGray};
     border-radius: 10px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 `
 
 const MainTitle = styled.div`
@@ -76,4 +85,12 @@ const SubTitle = styled.div`
         border-radius: 10px;
         margin: 44px auto 0 auto;
     }
+`
+
+const Ul = styled.ul`
+    list-style: none;
+    text-align: center;
+
+    margin-top: 32px;
+    margin-bottom: 75px;
 `
