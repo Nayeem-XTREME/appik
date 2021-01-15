@@ -19,7 +19,7 @@ export default function HowItWorks() {
 
                 <Flex flexWrap="wrap">
                     <Box width={1/2}>
-                        <img style={{ maxWidth: "43%", height: "auto", marginLeft: "130px" }} src={control} alt="Control" />
+                        <img style={{ maxWidth: "42%", height: "auto", marginLeft: "130px" }} src={control} alt="Control" />
                     </Box>
 
                     <Box width={1/2}>
@@ -39,6 +39,6 @@ export default function HowItWorks() {
 const Bg = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
-    background-position: 0 210px;
+    background-position: 0 150px;
     background-size: auto 460px;
 `

@@ -72,6 +72,10 @@ export const Title = styled.div`
   margin-bottom: 75px;
   position: relative;
 
+  h2 {
+    margin-bottom: 20.25px;
+  }
+
   p {
     width: 588px;
     text-align: center;
@@ -90,7 +94,7 @@ export const Button = styled.button`
   padding: 15px;
 
   :hover {
-    background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.veryLightGray )};
+    background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};
   }
 `
 

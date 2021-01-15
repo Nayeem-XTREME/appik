@@ -67,7 +67,6 @@ const MainTitle = styled.div`
         display: block;
         width: 80%;
         height: 3px;
-        padding: 0 54px;
         background-color: ${theme.colors.lightGray};
         border-radius: 10px;
         margin: 33px auto 0 auto;

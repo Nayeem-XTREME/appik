@@ -1,7 +1,7 @@
 import React from 'react'
 import TextBlock from './TextBlock'
 
-import { Box, Flex, Layout, Text } from "../../components"
+import { Box, Flex } from "../../components"
 
 export default function ListItem({ img, alt, title, details, mb }) {
     return (

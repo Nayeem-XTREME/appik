@@ -20,7 +20,7 @@ export default function Process() {
                 </Box>
 
                 <Box width={1/3} style={{ display: "flex", justifyContent: "center" }}>
-                    <img style={{ height: "467px" }} src={ mobile } alt="Features" />
+                    <img style={{ maxWidth: "75%", width: "auto" }} src={ mobile } alt="Features" />
                 </Box>
 
                 <Box width={1/3}>

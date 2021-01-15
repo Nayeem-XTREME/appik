@@ -7,9 +7,6 @@ import { Wrapper } from '../../styles/GlobalStyles'
 import logo from '../../assets/logo/APPIK.svg'
 import { navmenu } from '../../data/navmenu'
 
-import { Box, Flex, Layout, Text } from '../../components'
-
-
 const Header = () => {
   return (
     <Wrapper>
