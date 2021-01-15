@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H2, H3, H4, H5, P, Wrapper, Title, Button } from '../../styles/GlobalStyles'
+import { Box, Flex, Text } from "../../components"
+import { Wrapper, Title, Button } from '../../styles/GlobalStyles'
 import theme from '../../styles/theme'
 
 import { prices } from '../../data/prices'
@@ -9,43 +10,41 @@ export default function Pricing() {
     return (
         <Wrapper>
             <Title>
-                <H2>Appik Prices</H2>
-                <P>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</P>
+                <Text variant="h2">Appik Prices</Text>
+                <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
             </Title>
 
-            <div className="row">
-
-                { prices.map( (x, i) => {
+            <Flex flexWrap="wrap">
+                { prices.map( (item, index) => {
                     return (
-                        <div className="col-4" key={i}>
-                            <Card className="card">
+                        <Box width={1/3} key={index} px={10}>
+                            <Card>
                                 <MainTitle>
-                                    <H3>{x.title}</H3>
+                                    <Text variant="h3">{item.title}</Text>
                                 </MainTitle>
 
                                 <SubTitle>
-                                    <H4>{x.price}</H4>
+                                    <Text variant="h4">{item.price}</Text>
                                 </SubTitle>
 
                                 <Ul>
-                                    { x.features.map( (feature, index) => (
-                                        <li key={index}>
-                                            <H5 style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "40px" }}>
+                                    { item.features.map( (feature, ind) => (
+                                        <li key={ind}>
+                                            <Text variant="h5" style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "30px" }}>
                                                 {feature}
-                                            </H5>
+                                            </Text>
                                         </li>
                                     ) ) }
                                 </Ul>
 
-                                <Button style={{ marginBottom: "83px", marginLeft: "auto", marginRight: "auto" }}>
-                                    <H5>BUY NOW</H5>
+                                <Button style={{ display: 'inline-block', marginBottom: "62.25px", marginRight: "auto", marginLeft: "auto" }}>
+                                    <Text variant="h5">BUY NOW</Text>
                                 </Button>
                             </Card>
-                        </div>
+                        </Box>
                     )
                 } ) }
-
-            </div>
+            </Flex>
         </Wrapper>
     )
 }
@@ -53,44 +52,46 @@ export default function Pricing() {
 const Card = styled.div`
     border: 1px solid ${theme.colors.lightGray};
     border-radius: 10px;
+    padding: auto 10px;
+
+    display: flex;
+    flex-direction: column;
 `
 
 const MainTitle = styled.div`
     text-align: center;
-    margin-top: 44px;
-    padding: 0 72px;
+    margin-top: 33px;
 
     :after {
         content: "";
         display: block;
-        width: 100%;
-        height: 4px;
+        width: 80%;
+        height: 3px;
+        padding: 0 54px;
         background-color: ${theme.colors.lightGray};
         border-radius: 10px;
-        margin: 44px auto 0 auto;
+        margin: 33px auto 0 auto;
     }
 `
 
 const SubTitle = styled.div`
     text-align: center;
-    margin-top: 44px;
-    padding: 0 135px;
+    margin-top: 33px;
 
     :after {
         content: "";
         display: block;
-        width: 100%;
-        height: 1px;
+        width: 50%;
+        height: 0.75px;
         background-color: ${theme.colors.veryLightGray};
         border-radius: 10px;
-        margin: 44px auto 0 auto;
+        margin: 33px auto 0 auto;
     }
 `
 
 const Ul = styled.ul`
     list-style: none;
     text-align: center;
-
-    margin-top: 32px;
-    margin-bottom: 75px;
+    padding: 0;
+    margin: 24px 0 56.25px 0;
 `
