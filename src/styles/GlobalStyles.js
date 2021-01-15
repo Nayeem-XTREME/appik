@@ -12,58 +12,58 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     font-family: 'Montserrat', sans-serif;
   }
-`
-export const H1 = styled.h1`
-  color: ${({ white }) => ( white ? '#FFF' : "#000" )};
-  font-family: 'Montserrat', sans-serif;
-  font-size: 50px;
-  font-weight: 700;
-`
 
-export const H2 = styled.h2`
-  font-family: 'Montserrat', sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-`
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 37.5px;
+    font-weight: 700;
+  }
 
-export const H3 = styled.h3`
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-`
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+  }
 
-export const H4 = styled.h4`
-  color: ${({ highlight }) => ( highlight ? '#FFC600' : '#000' )};
-  font-family: 'Montserrat', sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-`
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22.5px;
+    font-weight: 700;
+  }
 
-export const H5 = styled.h5`
-  color: ${({ white }) => ( white ? '#FFF' : "#000" )};
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-`
-export const H6 = styled.h6`
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-`
-export const P = styled.p`
-  font-family: 'Roboto', 'Montserrat', sans-serif;
-  color: ${theme.colors.defaultText};
-  font-size: 14px;
-  font-weight: 400;
+  h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: 'Roboto', 'Montserrat', sans-serif;
+    color: ${theme.colors.defaultText};
+    font-size: 10.5px;
+    font-weight: 400;
+  }
 `
 
 export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 0 40px;
-  max-width: 1640px;
+  padding: 0 30px;
+  max-width: 1230px;
 
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 `
 
 export const Title = styled.div`
@@ -73,22 +73,22 @@ export const Title = styled.div`
   margin-bottom: 100px;
   position: relative;
 
-  P {
+  p {
     width: 785px;
     text-align: center;
   }
 `
 
 export const Button = styled.button`
-  width: 245px;
-  height: 64px;
+  width: 184px;
+  height: 48px;
   background-color: ${({ highlight }) => ( highlight ? theme.colors.highlight : theme.colors.lightGray )};
   outline: none;
   cursor: pointer;
   border: none;
   border-radius: 32px;
   transition: all 0.2s;
-  padding: 20px;
+  padding: 15px;
 
   :hover {
     background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.veryLightGray )};

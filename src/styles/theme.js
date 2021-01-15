@@ -7,6 +7,8 @@ breakpoints.xl = breakpoints[3]
 
 export default {
   colors: {
+    white: "#FFF",
+    black: "#000",
     highlight: "#FFC600",
     fill: "#4E7BCA",
     gray: "#979797",
@@ -16,5 +18,6 @@ export default {
     headerText: "#323230"
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
+  fontSizes: [10.5, 12, 15, 18, 22.5, 27, 37.5],
   breakpoints,
 }

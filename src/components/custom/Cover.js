@@ -6,6 +6,7 @@ import cover from '../../assets/img/cover.png'
 import mobile from '../../assets/logo/TwoMobile.svg'
 import { platform } from '../../data/platform'
 
+import { Box, Flex, Layout, Text } from "../../components"
 
 export default function Cover() {
     return (
@@ -14,15 +15,15 @@ export default function Cover() {
             <Wrapper>
                 <Content>
                     <Title>
-                        <H4 highlight="true">10% OFF</H4>
-                        <H1 white="true">
+                        <Text variant="h4" color="highlight">10% OFF</Text>
+                        <Text variant="h1" color="white">
                             Life Makes Easy <br />
                             Use your Appik App.
-                        </H1>
+                        </Text>
                     </Title>
 
                     <Button highlight>
-                        <H5>DOWNLOAD</H5>
+                        <Text variant="h5">DOWNLOAD</Text>
                     </Button>
 
                     <Support>
@@ -31,9 +32,9 @@ export default function Cover() {
                         ))}
                     </Support>
 
-                    <Mobile>
-                        <img src={mobile} alt="Two Mobile" />
-                    </Mobile>
+                    <MobileImage>
+                        <img style={{ height: "490px" }} src={mobile} alt="Two Mobile" />
+                    </MobileImage>
                 </Content>
             </Wrapper>
         </>
@@ -44,7 +45,7 @@ const CoverContainer = styled.div`
     background-image: linear-gradient(rgba(110, 79, 204, 0.9), rgba(35, 79, 167, 0.9)), url(${cover});
     position: absolute;
     width: 100%;
-    height: 750px;
+    height: 562.5px;
     left: 0;
     right: 0;
     top: 0;
@@ -54,26 +55,27 @@ const CoverContainer = styled.div`
 `
 
 const Content = styled.div`
-    margin-left: 150px;
-    margin-top: 135px;
+    margin-left: 112.5px;
+    margin-top: 101.25px;
 
-    margin-bottom: 320px;
+    margin-bottom: 240px;
 `
 
 const Title = styled.div`
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 `
 const Support = styled.div`
-    margin-top: 83px;
+    margin-top: 62.25px;
 `
 
 const Img = styled.img`
+    height: 68px;
     :not(:last-child) {
-        margin-right: 72px;
+        margin-right: 54px;
     }
 `
-const Mobile = styled.div`
+const MobileImage = styled.div`
     position: absolute;
-    top: -25px;
-    right: 95px;
+    top: -18.75px;
+    right: 71.25px;
 `

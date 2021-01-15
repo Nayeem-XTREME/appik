@@ -71,71 +71,6 @@ const Caption = styled.p`
   ${position};
 `
 
-const RawHTML = styled.div`
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    display: flex;
-
-    &::after {
-      content: "";
-      background: linear-gradient(
-        90deg,
-        rgba(151, 117, 250, 0.2) 32.44%,
-        rgba(241, 243, 245, 0) 100.17%
-      );
-      height: 4px;
-      position: relative;
-      top: -10px;
-      left: -2px;
-      bottom: 0;
-      right: 0;
-      width: auto;
-      flex-grow: 1;
-      border-radius: 2px;
-      margin-left: 0.5rem;
-    }
-  }
-  h1 {
-    &::after {
-      margin-top: 2.788rem;
-    }
-  }
-  h2 {
-    &::after {
-      margin-top: 2.074rem;
-    }
-  }
-  h3 {
-    &::after {
-      margin-top: 1.728rem;
-    }
-  }
-  h4 {
-    &::after {
-      margin-top: 1.44rem;
-    }
-  }
-  h5 {
-    &::after {
-      margin-top: 1.2rem;
-    }
-  }
-  h6 {
-    &::after {
-      margin-top: 1rem;
-    }
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-  }
-`
-
 const Text = ({ variant, theme, children, html, ...props }) => {
   switch (variant) {
     case "h1":
@@ -179,14 +114,6 @@ const Text = ({ variant, theme, children, html, ...props }) => {
         <Caption theme={theme} {...props}>
           {children}
         </Caption>
-      )
-    case "raw":
-      return (
-        <RawHTML
-          theme={theme}
-          dangerouslySetInnerHTML={{ __html: html }}
-          {...props}
-        />
       )
     default:
       return (

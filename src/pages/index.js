@@ -9,9 +9,9 @@ import { Layout } from "../components"
 const IndexPage = () => (
   <Layout>
     <Cover />
-    <Process />
+    {/* <Process />
     <HowItWorks />
-    <Pricing />
+    <Pricing /> */}
   </Layout>
 )
 
