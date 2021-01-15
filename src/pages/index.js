@@ -1,8 +1,8 @@
 import React from "react"
-import Cover from '../components/custom/Cover'
-import Process from '../components/custom/Process'
-import HowItWorks from '../components/custom/HowItWorks'
-import Pricing from '../components/custom/Pricing'
+import Cover from '../components/Cover'
+import Process from '../components/Process'
+import HowItWorks from '../components/HowItWorks'
+import Pricing from '../components/Pricing'
 
 import { Layout } from "../components"
 
