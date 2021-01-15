@@ -1,46 +1,33 @@
 import React from 'react'
-import styled from 'styled-components'
 import TextBlock from '../ui/TextBlock'
-import { H2, P, Wrapper, Title } from '../../styles/GlobalStyles'
+import { Wrapper, Title } from '../../styles/GlobalStyles'
+import { Box, Flex, Text } from "../../components"
 
 import mobile from '../../assets/logo/Mobile.svg'
 
 export default function Process() {
     return (
         <Wrapper>
-            
             <Title>
-                <H2>Easy Process With Best Features</H2>
-                <P>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</P>
+                <Text variant="h2">Easy Process With Best Features</Text>
+                <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
             </Title>
 
-            <Row className="row">
-                <div className="col-4">
-                    <TextBlock mb h4="Loaded with features" p="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
-                    <TextBlock h4="Devices Friendly" p="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
-                </div>
+            <Flex alignItems="center" flexWrap = "wrap">
+                <Box width={1/3}>
+                    <TextBlock mb title="Loaded with features" details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
+                    <TextBlock title="Devices Friendly" details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
+                </Box>
 
-                <Mobile className="col-4">
-                    <img src={ mobile } alt="Features" />
-                </Mobile>
+                <Box width={1/3} style={{ display: "flex", justifyContent: "center" }}>
+                    <img style={{ height: "467px" }} src={ mobile } alt="Features" />
+                </Box>
 
-                <div className="col-4">
-                    <TextBlock mb h4="Update Forever" p="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
-                    <TextBlock h4="Superb UX/UI" p="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
-                </div>                
-            </Row>
-
+                <Box width={1/3}>
+                    <TextBlock mb title="Update Forever" details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
+                    <TextBlock title="Superb UX/UI" details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use." />
+                </Box>                
+            </Flex>
         </Wrapper>
     )
 }
-
-const Row = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-const Mobile = styled.div`
-    display: flex;
-    justify-content: center;
-`

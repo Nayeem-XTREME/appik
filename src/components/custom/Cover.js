@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { H1, H4, H5, Button, Wrapper } from '../../styles/GlobalStyles'
+import { Button, Wrapper } from '../../styles/GlobalStyles'
 import cover from '../../assets/img/cover.png'
 import mobile from '../../assets/logo/TwoMobile.svg'
 import { platform } from '../../data/platform'
 
-import { Box, Flex, Layout, Text } from "../../components"
+import { Text } from "../../components"
 
 export default function Cover() {
     return (
@@ -57,7 +57,6 @@ const CoverContainer = styled.div`
 const Content = styled.div`
     margin-left: 112.5px;
     margin-top: 101.25px;
-
     margin-bottom: 240px;
 `
 
