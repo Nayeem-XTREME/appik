@@ -8,16 +8,22 @@ import { prices } from '../data/prices'
 
 const Card = styled.div`
     border: 1px solid ${theme.colors.lightGray};
+    background-color: ${theme.colors.white};
     border-radius: 10px;
     padding: auto 10px;
+    transition: all 0.2s;
 
     display: flex;
     flex-direction: column;
+
+    :hover .underline:after {
+        background-color: ${theme.colors.fill};
+    }
 `
 
 const MainTitle = styled.div`
     text-align: center;
-    margin-top: 33px;
+    padding-top: 33px;
 
     :after {
         content: "";
@@ -27,6 +33,7 @@ const MainTitle = styled.div`
         background-color: ${theme.colors.lightGray};
         border-radius: 10px;
         margin: 33px auto 0 auto;
+        transition: all 0.2s;
     }
 `
 
@@ -52,8 +59,17 @@ const Ul = styled.ul`
     margin: 24px 0 56.25px 0;
 `
 
+const Bg = styled.div`
+    height: 340px;
+    color: ${theme.colors.lightGray};
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+`
+
 export default function Pricing() {
     return (
+        <>
         <Wrapper>
             <Title>
                 <Text variant="h2">Appik Prices</Text>
@@ -65,7 +81,7 @@ export default function Pricing() {
                     return (
                         <Box width={1/3} key={index} px={10}>
                             <Card>
-                                <MainTitle>
+                                <MainTitle className="underline">
                                     <Text variant="h3">{item.title}</Text>
                                 </MainTitle>
 
@@ -92,5 +108,7 @@ export default function Pricing() {
                 } ) }
             </Flex>
         </Wrapper>
+        <Bg/>
+        </>
     )
 }
