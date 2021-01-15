@@ -8,6 +8,14 @@ import { how } from '../data/how'
 import control from '../assets/logo/Control.svg'
 import bg from '../assets/img/bg.svg'
 
+
+const Bg = styled.div`
+    background-image: url(${bg});
+    background-repeat: no-repeat;
+    background-position: 0 150px;
+    background-size: auto 460px;
+`
+
 export default function HowItWorks() {
     return (
         <Bg>
@@ -35,10 +43,3 @@ export default function HowItWorks() {
         </Bg>
     )
 }
-
-const Bg = styled.div`
-    background-image: url(${bg});
-    background-repeat: no-repeat;
-    background-position: 0 150px;
-    background-size: auto 460px;
-`

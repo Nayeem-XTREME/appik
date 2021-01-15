@@ -7,19 +7,6 @@ import { Wrapper } from '../styles/MyStyles'
 import logo from '../assets/logo/APPIK.svg'
 import { navmenu } from '../data/navmenu'
 
-const Header = () => {
-  return (
-    <Wrapper>
-      <Nav>
-        <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
-        <NavMenu>
-          {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
-        </NavMenu>
-      </Nav>
-    </Wrapper>
-  )
-}
-
 const Nav = styled.nav`
   background: transparent;
   height: 60px;
@@ -50,5 +37,18 @@ const NavMenu = styled.div`
   display: flex;
   align-items: center;
 `
+
+const Header = () => {
+  return (
+    <Wrapper>
+      <Nav>
+        <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
+        <NavMenu>
+          {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
+        </NavMenu>
+      </Nav>
+    </Wrapper>
+  )
+}
 
 export default Header
