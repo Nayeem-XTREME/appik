@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { H2, P, Wrapper, Title } from '../../styles/GlobalStyles'
+import { Box, Flex, Text } from "../../components"
+import { Wrapper, Title } from '../../styles/GlobalStyles'
 import ListItem from '../ui/ListItem'
 import { how } from '../../data/how'
 
@@ -12,24 +13,24 @@ export default function HowItWorks() {
         <Bg>
             <Wrapper>
                 <Title>
-                    <H2>How it Works</H2>
-                    <P>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</P>
+                    <Text variant="h2">How it Works</Text>
+                    <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
                 </Title>
 
-                <div className="row">
-                    <div className="col-6">
-                        <img style={{ height: "630px", marginLeft: "175px" }} src={control} alt="Control" />
-                    </div>
+                <Flex flexWrap="wrap">
+                    <Box width={1/2}>
+                        <img style={{ maxWidth: "43%", height: "auto", marginLeft: "130px" }} src={control} alt="Control" />
+                    </Box>
 
-                    <div className="col-6">
-                        { how.map( (x, i) => {
-                            if (i === how.length - 1)
-                                return <ListItem key={i} img={x.src} alt={x.alt} h4={x.h4} p={x.p} />
+                    <Box width={1/2}>
+                        { how.map( (item, index) => {
+                            if (index === how.length - 1)
+                                return <ListItem key={index} img={item.src} alt={item.alt} title={item.title} details={item.details} />
                             else 
-                                return <ListItem mb key={i} img={x.src} alt={x.alt} h4={x.h4} p={x.p} />
+                                return <ListItem mb key={index} img={item.src} alt={item.alt} title={item.title} details={item.details} />
                         } ) }
-                    </div>
-                </div>
+                    </Box>
+                </Flex>
             </Wrapper>
         </Bg>
     )
@@ -38,5 +39,6 @@ export default function HowItWorks() {
 const Bg = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
-    background-position: 0 280px;
+    background-position: 0 210px;
+    background-size: auto 460px;
 `

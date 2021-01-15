@@ -61,8 +61,7 @@ export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
   padding: 0 30px;
-  max-width: 1230px;
-
+  max-width: ${theme.breakpoints.xl};
   margin-bottom: 75px;
 `
 
@@ -70,11 +69,11 @@ export const Title = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
   position: relative;
 
   p {
-    width: 785px;
+    width: 588px;
     text-align: center;
   }
 `
