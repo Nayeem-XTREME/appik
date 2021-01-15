@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text } from "../../components"
-import { Wrapper, Title } from '../../styles/GlobalStyles'
-import ListItem from '../ui/ListItem'
-import { how } from '../../data/how'
+import { Box, Flex, Text } from "../components"
+import { Wrapper, Title } from '../styles/MyStyles'
+import ListItem from './ui/ListItem'
+import { how } from '../data/how'
 
-import control from '../../assets/logo/Control.svg'
-import bg from '../../assets/img/bg.svg'
+import control from '../assets/logo/Control.svg'
+import bg from '../assets/img/bg.svg'
 
 export default function HowItWorks() {
     return (

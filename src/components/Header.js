@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import theme from '../../styles/theme'
-import { Wrapper } from '../../styles/GlobalStyles'
+import theme from '../styles/theme'
+import { Wrapper } from '../styles/MyStyles'
 
-import logo from '../../assets/logo/APPIK.svg'
-import { navmenu } from '../../data/navmenu'
+import logo from '../assets/logo/APPIK.svg'
+import { navmenu } from '../data/navmenu'
 
 const Header = () => {
   return (

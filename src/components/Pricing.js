@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text } from "../../components"
-import { Wrapper, Title, Button } from '../../styles/GlobalStyles'
-import theme from '../../styles/theme'
+import { Box, Flex, Text } from "../components"
+import { Wrapper, Title, Button } from '../styles/MyStyles'
+import theme from '../styles/theme'
 
-import { prices } from '../../data/prices'
+import { prices } from '../data/prices'
 
 export default function Pricing() {
     return (

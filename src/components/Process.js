@@ -1,9 +1,9 @@
 import React from 'react'
-import TextBlock from '../ui/TextBlock'
-import { Wrapper, Title } from '../../styles/GlobalStyles'
-import { Box, Flex, Text } from "../../components"
+import TextBlock from './ui/TextBlock'
+import { Wrapper, Title } from '../styles/MyStyles'
+import { Box, Flex, Text } from "../components"
 
-import mobile from '../../assets/logo/Mobile.svg'
+import mobile from '../assets/logo/Mobile.svg'
 
 export default function Process() {
     return (

@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button, Wrapper } from '../../styles/GlobalStyles'
-import cover from '../../assets/img/cover.png'
-import mobile from '../../assets/logo/TwoMobile.svg'
-import { platform } from '../../data/platform'
+import { Button, Wrapper } from '../styles/MyStyles'
+import cover from '../assets/img/cover.png'
+import mobile from '../assets/logo/TwoMobile.svg'
+import { platform } from '../data/platform'
 
-import { Text } from "../../components"
+import { Text } from "../components"
 
 export default function Cover() {
     return (
