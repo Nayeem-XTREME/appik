@@ -4,6 +4,7 @@ import Process from '../components/Process'
 import HowItWorks from '../components/HowItWorks'
 import Pricing from '../components/Pricing'
 import Clients from '../components/Clients'
+import Faq from '../components/Faq'
 
 import { Layout } from "../components"
 
@@ -14,6 +15,7 @@ const IndexPage = () => (
     <HowItWorks />
     <Pricing />
     <Clients />
+    <Faq />
   </Layout>
 )
 

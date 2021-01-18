@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { Box, Flex, Text } from "../components"
 import { Wrapper, Title } from '../styles/MyStyles'
