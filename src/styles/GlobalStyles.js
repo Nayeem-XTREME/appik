@@ -53,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.defaultText};
     font-size: 10.5px;
     font-weight: 400;
+    line-height: 150%;
   }
 `
 

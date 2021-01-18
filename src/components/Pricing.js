@@ -109,7 +109,7 @@ export default function Pricing() {
                 } ) }
             </Flex>
         </Wrapper>
-        <Bg />
+        {/* <Bg /> */}
         </>
     )
 }
