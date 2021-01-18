@@ -18,6 +18,6 @@ export default {
     headerText: "#323230"
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  fontSizes: [10.5, 12, 15, 18, 22.5, 27, 37.5],
+  fontSizes: [10.5, 12, 14, 15, 18, 20, 22.5, 27, 37.5],
   breakpoints,
 }

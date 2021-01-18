@@ -27,7 +27,7 @@ export const Title = styled.div`
 `
 
 export const Button = styled.button`
-  width: 184px;
+  min-width: 200px;
   height: 48px;
   background-color: ${({ highlight }) => ( highlight ? theme.colors.highlight : theme.colors.lightGray )};
   outline: none;
@@ -35,7 +35,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 32px;
   transition: all 0.2s;
-  padding: 15px;
+  padding: 0 36px;
 
   :hover {
     background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};
