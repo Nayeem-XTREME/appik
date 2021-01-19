@@ -40,7 +40,7 @@ const NavMenu = styled.div`
 
 const Header = () => {
   return (
-    <Wrapper>
+    <Wrapper style={{ paddingBottom: "0" }}>
       <Nav>
         <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
         <NavMenu>

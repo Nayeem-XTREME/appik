@@ -24,7 +24,7 @@ const CoverContainer = styled.div`
 const Content = styled.div`
     margin-left: 112.5px;
     margin-top: 101.25px;
-    margin-bottom: 240px;
+    margin-bottom: 140px;
 `
 
 const Title = styled.div`

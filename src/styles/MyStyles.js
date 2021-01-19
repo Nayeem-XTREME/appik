@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 30px;
   max-width: ${theme.breakpoints.xl};
-  margin-bottom: 75px;
+  padding-bottom: 75px;
 `
 
 export const Title = styled.div`
