@@ -40,22 +40,22 @@ export default function MyForm({ title, buttonText }) {
     <Form>
       <Text variant="h2" mb={43}>{title}</Text>
 
-      <label for="name">
+      <label htmlFor="name">
         <Text variant="p">Name</Text>
       </label>
       <Input type="text" id="name" name="name" required />
 
-      <label for="email">
+      <label htmlFor="email">
         <Text variant="p">Email</Text>
       </label>
       <Input type="email" id="email" name="email" required />
 
-      <label for="subject">
+      <label htmlFor="subject">
         <Text variant="p">Subject</Text>
       </label>
       <Input type="text" id="subject" name="subject" required />
 
-      <label for="message">
+      <label htmlFor="message">
         <Text variant="p">Message</Text>
       </label>
       <Textarea type="text" id="message" name="message" required />

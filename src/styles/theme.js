@@ -12,6 +12,7 @@ export default {
     highlight: "#FFC600",
     fill: "#4E7BCA",
     gray: "#979797",
+    gray2: "#E8E8E8",
     lightGray: "#F0F0F0",
     veryLightGray: "#D8D8D8",
     defaultText: "#666666",

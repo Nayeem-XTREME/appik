@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Layout, Cover, Process, HowItWorks, Pricing, Clients, Faq, Download, Contact } from "../components"
+import { Layout, Cover, Process, HowItWorks, Pricing, Clients, Faq, Download, Contact, Footer } from "../components"
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +12,7 @@ const IndexPage = () => (
     <Faq />
     <Download />
     <Contact />
+    <Footer />
   </Layout>
 )
 
