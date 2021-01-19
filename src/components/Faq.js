@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Wrapper, Title } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
+import Accordion from './ui/Accordion'
+
 import bitmap from '../assets/img/Bitmap.svg'
 
 export default function Faq() {
+
+  const [active, setActive] = useState("There are many variations of passages of 1");
+
   return (
     <Wrapper>
       <Title style={{ alignItems: "flex-start", padding: "0 11.25px" }}>
@@ -17,7 +22,10 @@ export default function Faq() {
         </Box>
         <Box width={1/12} px={11.25}></Box>
         <Box width={5/12} px={11.25}>
-          Collapsable
+          <Accordion title="There are many variations of passages 1" active={active} setActive={setActive}/>
+          <Accordion title="There are many variations of passages 2" active={active} setActive={setActive}/>
+          <Accordion title="There are many variations of passages 3" active={active} setActive={setActive}/>
+          <Accordion title="There are many variations of passages 4" active={active} setActive={setActive}/>
         </Box>
       </Flex>
     </Wrapper>

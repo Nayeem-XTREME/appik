@@ -17,7 +17,7 @@ export const Title = styled.div`
   position: relative;
 
   h2 {
-    margin-bottom: 20.25px;
+    margin-bottom: 20px;
   }
 
   p {
