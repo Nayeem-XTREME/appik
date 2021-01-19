@@ -42,10 +42,10 @@ const CustomButton = styled(Button)`
   height: 40px;
   min-width: 100px;
   position: absolute;
-  font-family: 'Montserrat', sans-serif;
   right: 0;
   top: 0;
   bottom: 0;
+  font-size: 14px;
 `
 
 const Social = styled.div`
@@ -119,9 +119,7 @@ export default function Footer() {
 
           <Form>
             <Input id="email" name="email" type="email" required />
-            <CustomButton>
-              <Text fontFamily='Montserrat' fontWeight='bold' variant="p">SUBSCRIBE</Text>
-            </CustomButton>
+            <CustomButton>SUBSCRIBE</CustomButton>
           </Form>
 
           <Social>

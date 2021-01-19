@@ -28,9 +28,7 @@ export default function Contact() {
 
           <Text variant="h2" mb={3}>Location</Text>
           <Text variant="p" fontSize={1} mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
-          <Button highlight style={{ marginBottom: "62.25px" }}>
-            <Text variant="h5">VIEW US ON GOOGLE MAP</Text>
-          </Button>
+          <Button highlight style={{ marginBottom: "62.25px" }}>VIEW US ON GOOGLE MAP</Button>
 
           <Text variant="h4" mb={2}>Address 1</Text>
           <Text variant="p" mb={62.25}>

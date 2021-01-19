@@ -100,9 +100,7 @@ export default function Pricing() {
                                     ) ) }
                                 </Ul>
 
-                                <Button style={{ display: 'inline-block', marginBottom: "62.25px", marginRight: "auto", marginLeft: "auto" }}>
-                                    <Text variant="h5">BUY NOW</Text>
-                                </Button>
+                                <Button style={{ display: 'inline-block', marginBottom: "62.25px", marginRight: "auto", marginLeft: "auto" }}>BUY NOW</Button>
                             </Card>
                         </Box>
                     )

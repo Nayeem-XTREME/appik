@@ -60,9 +60,7 @@ export default function MyForm({ title, buttonText }) {
       </label>
       <Textarea type="text" id="message" name="message" required />
 
-      <Button highlight type="submit">
-        <Text variant="h5">{buttonText}</Text>
-      </Button>
+      <Button highlight type="submit">{buttonText}</Button>
     </Form>
   )
 }

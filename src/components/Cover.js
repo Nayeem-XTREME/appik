@@ -53,16 +53,14 @@ export default function Cover() {
             <Wrapper>
                 <Content>
                     <Title>
-                        <Text variant="h4" color="highlight">10% OFF</Text>
+                        <Text variant="h5" color="highlight">10% OFF</Text>
                         <Text variant="h1" color="white">
                             Life Makes Easy <br />
                             Use your Appik App.
                         </Text>
                     </Title>
 
-                    <Button highlight>
-                        <Text variant="h5">DOWNLOAD</Text>
-                    </Button>
+                    <Button highlight>DOWNLOAD</Button>
 
                     <Support>
                         {platform.map((logo, i) => (

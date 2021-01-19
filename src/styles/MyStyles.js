@@ -36,6 +36,9 @@ export const Button = styled.button`
   border-radius: 32px;
   transition: all 0.2s;
   padding: 0 36px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 
   :hover {
     background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};

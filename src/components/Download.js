@@ -33,12 +33,8 @@ export default function Download() {
           </Text>
 
           <BtnGroup>
-            <Button style={{ marginRight: "11.5px" }}>
-              <Text variant="h5">DOWNLOAD APP</Text>
-            </Button>
-            <Button style={{ marginLeft: "11.5px" }}>
-              <Text variant="h5">CONTACT US</Text>
-            </Button>
+            <Button style={{ marginRight: "11.5px" }}>DOWNLOAD APP</Button>
+            <Button style={{ marginLeft: "11.5px" }}>CONTACT US</Button>
           </BtnGroup>
 
           <Support>
