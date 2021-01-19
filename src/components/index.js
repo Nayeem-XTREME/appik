@@ -5,6 +5,7 @@ export { default as Text } from "./Text"
 export { default as Cover } from './Cover'
 export { default as Process } from './Process'
 export { default as HowItWorks } from './HowItWorks'
+export { default as Faces } from './Faces'
 export { default as Pricing } from './Pricing'
 export { default as Clients } from './Clients'
 export { default as Faq } from './Faq'
