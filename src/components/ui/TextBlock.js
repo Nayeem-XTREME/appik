@@ -7,7 +7,7 @@ export default function TextBlock({ title, details, mb }) {
         <Text variant="p">{details}</Text>
     </div>
 
-    const block = mb ? <div style={{ marginBottom: "60px" }}>
+    const block = mb ? <div style={{ marginBottom: "50px" }}>
         { main }
     </div> : <div>
         { main }

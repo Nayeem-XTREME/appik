@@ -65,7 +65,7 @@ export default function Footer() {
       <Flex flexWrap="wrap" pt={75}>
         <Box width={1/3}>
           <Logo src={logo} alt="logo" />
-          <Text variant="p" style={{ marginBottom: "28px" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary</Text>
+          <Text variant="p" style={{ marginBottom: "28px" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
           <Text variant="p">Copyright 2021. www.appik.com. All Rights Reserved.</Text>
         </Box>
 

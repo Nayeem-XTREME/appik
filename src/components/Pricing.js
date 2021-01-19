@@ -93,7 +93,7 @@ export default function Pricing() {
                                 <Ul>
                                     { item.features.map( (feature, ind) => (
                                         <li key={ind}>
-                                            <Text variant="h5" style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "30px" }}>
+                                            <Text variant="p" style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "30px" }}>
                                                 {feature}
                                             </Text>
                                         </li>
