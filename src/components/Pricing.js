@@ -62,8 +62,8 @@ const Ul = styled.ul`
 const Bg = styled.div`
     background-color: ${theme.colors.lightGray};
     width: 100%;
-    position: absolute;
-    top: 203%;
+    margin-top: -380px;
+    margin-bottom: 75px;
     height: 340px;
     z-index: -100;
 `
@@ -109,7 +109,7 @@ export default function Pricing() {
                 } ) }
             </Flex>
         </Wrapper>
-        {/* <Bg /> */}
+        <Bg />
         </>
     )
 }
