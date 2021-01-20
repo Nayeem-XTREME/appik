@@ -7,6 +7,7 @@ import plus from '../../assets/logo/Plus.svg'
 import minus from '../../assets/logo/Minus.svg'
 
 const Main = styled.div`
+  border-top: ${props => props.item === 'start' ? "none" : "1px solid #D1D1D1"};
   .show {
     height: 80px;
     opacity: 1;
@@ -15,14 +16,12 @@ const Main = styled.div`
 
 const Heading = styled.div`
   color: ${theme.colors.defaultText};
-  padding-bottom: 20px;
+  margin-top: ${props => props.item === 'start' ? "0" : "20px"};
   margin-bottom: 20px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  border-bottom: 1px solid ${theme.colors.gray3};
 
   span {
     cursor: pointer;
@@ -41,10 +40,10 @@ const Img = styled.img`
   width: 75%;
 `
 
-export default function Accordion({ title, active, setActive }) {
+export default function Accordion({ title, description, active, setActive, item }) {
   return (
-    <Main>
-      <Heading>
+    <Main item={item}>
+      <Heading item={item}>
         <Text variant="h5" fontWeight="300">{title}</Text>
         <span onClick={() => setActive(title)}>
           <Img src={active === title ? minus : plus} alt="Button" />
@@ -52,7 +51,7 @@ export default function Accordion({ title, active, setActive }) {
       </Heading>
 
       <Content className={(active === title ? "show" : "")}>
-        <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</Text>
+        <Text variant="p">{description}</Text>
       </Content>
     </Main>
   )
