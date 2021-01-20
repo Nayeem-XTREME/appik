@@ -70,7 +70,7 @@ export default function Footer() {
         </Box>
 
         <Box width={1/3} pl={40}>
-          <Text variant="h5" mb={36}>Useful Links</Text>
+          <Text variant="h5" mb={28}>Useful Links</Text>
           <Flex flexWrap="wrap">
             <Box width={1/2}>
               <Ul>
@@ -114,7 +114,7 @@ export default function Footer() {
         </Box>
 
         <Box width={1/3}>
-          <Text variant="h5" mb={36}>Newsletter</Text>
+          <Text variant="h5" mb={28}>Newsletter</Text>
           <Text variant="p" mb={4}>Subscribe our newsletter to get our update. We don't send span email to you.</Text>
 
           <Form>
