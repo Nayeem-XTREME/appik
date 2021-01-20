@@ -14,44 +14,44 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 37.5px;
+    font-size: 40px;
     font-weight: 700;
   }
 
   h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 27px;
+    font-size: 36px;
     font-weight: 700;
   }
 
   h3 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 22.5px;
+    font-size: 28px;
     font-weight: 700;
   }
 
   h4 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
   }
 
   h5 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
   }
 
   h6 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
   }
 
   p {
     font-family: 'Roboto', 'Montserrat', sans-serif;
     color: ${theme.colors.defaultText};
-    font-size: 10.5px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 150%;
   }

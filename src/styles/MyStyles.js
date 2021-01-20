@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   padding: 0 30px;
   max-width: ${theme.breakpoints.xl};
-  margin-bottom: 75px;
+  padding-bottom: 75px;
 `
 
 export const Title = styled.div`
@@ -17,7 +17,7 @@ export const Title = styled.div`
   position: relative;
 
   h2 {
-    margin-bottom: 20.25px;
+    margin-bottom: 20px;
   }
 
   p {
@@ -36,6 +36,9 @@ export const Button = styled.button`
   border-radius: 32px;
   transition: all 0.2s;
   padding: 0 36px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
 
   :hover {
     background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};

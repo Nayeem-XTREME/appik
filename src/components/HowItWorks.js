@@ -12,7 +12,7 @@ import bg from '../assets/img/bg.svg'
 const Bg = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
-    background-position: 0 150px;
+    background-position: 0 220px;
     background-size: auto 460px;
 `
 

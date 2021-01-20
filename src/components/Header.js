@@ -20,7 +20,7 @@ const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: white;
-  font-size: ${theme.fontSizes[0]}px;
+  font-size: ${theme.fontSizes[2]}px;
   transition: all 0.2s;
 
   :not(:first-child) {
@@ -40,7 +40,7 @@ const NavMenu = styled.div`
 
 const Header = () => {
   return (
-    <Wrapper>
+    <Wrapper style={{ paddingBottom: "0" }}>
       <Nav>
         <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
         <NavMenu>
