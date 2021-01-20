@@ -1,29 +1,15 @@
 import { Link } from "gatsby"
 import React from "react"
 import styled from "styled-components"
-import theme from '../../styles/theme'
-import { Wrapper } from '../../styles/GlobalStyles'
+import theme from '../styles/theme'
+import { Wrapper } from '../styles/MyStyles'
 
-import logo from '../../assets/logo/APPIK.svg'
-import { navmenu } from '../../data/navmenu'
-
-
-const Header = () => {
-  return (
-    <Wrapper>
-      <Nav>
-        <NavLink to="/"> <img src={logo} alt="APPIK"/> </NavLink>
-        <NavMenu>
-          {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
-        </NavMenu>
-      </Nav>
-    </Wrapper>
-  )
-}
+import logo from '../assets/logo/APPIK.svg'
+import { navmenu } from '../data/navmenu'
 
 const Nav = styled.nav`
   background: transparent;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   z-index: 10;
@@ -34,14 +20,11 @@ const NavLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: white;
+  font-size: ${theme.fontSizes[2]}px;
   transition: all 0.2s;
 
   :not(:first-child) {
     margin-left: 30px;
-  }
-
-  img {
-    width: 131px;
   }
 
   :hover {
@@ -53,7 +36,19 @@ const NavLink = styled(Link)`
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
-  font-size: 14px;
 `
+
+const Header = () => {
+  return (
+    <Wrapper style={{ paddingBottom: "0" }}>
+      <Nav>
+        <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
+        <NavMenu>
+          {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
+        </NavMenu>
+      </Nav>
+    </Wrapper>
+  )
+}
 
 export default Header
