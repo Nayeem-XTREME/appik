@@ -36,18 +36,6 @@ const Div = styled.div`
         left: 1500px;
         transition: all 0.5s;
     }
-
-    .btn-monthly {
-        top: 0;
-        left: 0;
-        transition: all 0.2s;
-    }
-
-    .btn-yearly {
-        top: 0;
-        right: 0;
-        transition: all 0.2s;
-    }
 `
 
 const Card = styled.div`
@@ -125,22 +113,33 @@ const MyButton = styled(Button)`
 `
 
 const ButtonBox = styled.div`
-    width: 384px;
-    margin: 35px auto;
+    width: 360px;
+    margin: -24px auto 46px;
     position: relative;
     box-shadow: 0 0 20px 9px ${theme.colors.gray2};
     border-radius: 30px;
     transition: all 0.2s;
+
+    .btn-monthly {
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+    }
+
+    .btn-yearly {
+        top: 0;
+        right: 0;
+        transition: all 0.5s;
+    }
 `
 
 const BtnBackground = styled.div`
     position: absolute;
-    right: 0;
     height: 100%;
     width: 50%;
     border-radius: 30px;
     background-color: ${theme.colors.highlight};
-    transition: all 0.2s;
+    transition: all 0.5s;
 `
 
 const ToggleButton = styled.button`
@@ -175,7 +174,7 @@ export default class Pricing extends Component {
     render() {
         return (
             <>
-                <Wrapper style={{ height: "1000px", overflow: "hidden" }}>
+                <Wrapper style={{ height: "950px", overflow: "hidden" }}>
                     <Title>
                         <Text variant="h2">Appik Prices</Text>
                         <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
