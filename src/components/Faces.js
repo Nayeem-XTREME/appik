@@ -45,6 +45,7 @@ const Div = styled.div`
     top: 100%;
     right: 40%;
   }
+  
 `
 
 const Img = styled.img`
@@ -64,16 +65,10 @@ const getCurrentClass = (index, imgIndex) => {
   if (index === imgIndex) {
     return "slide active"
   } 
-  else if (index === imgIndex - 1) {
+  else if ((index === imgIndex - 1) || (index === 0 && imgIndex === faces.length-1)) {
     return "slide active-left"
   } 
-  else if (index === imgIndex + 1) {
-    return "slide active-right"
-  } 
-  else if (index === 0 && imgIndex === faces.length-1) {
-    return "slide active-left"
-  }
-  else if (index === faces.length-1 && imgIndex === 0) {
+  else if ((index === imgIndex + 1) || (index === faces.length-1 && imgIndex === 0)) {
     return "slide active-right"
   }
   else {
@@ -82,6 +77,8 @@ const getCurrentClass = (index, imgIndex) => {
 }
 
 export default function Faces() {
+
+  const [ imgIndex, setImageIndex ] = useState(0)
 
   const NextArrow = ({ onClick }) => {
     return (
@@ -98,8 +95,6 @@ export default function Faces() {
       </div>
     )
   }
-
-  const [ imgIndex, setImageIndex ] = useState(0)
 
   const settings = {
     infinite: true,
