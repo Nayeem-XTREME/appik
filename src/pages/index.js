@@ -1,15 +1,20 @@
 import React from "react"
-import Cover from '../components/custom/Cover'
-import Process from '../components/custom/Process'
-import HowItWorks from '../components/custom/HowItWorks.js'
+import '../styles/index.css'
 
-import { Layout } from "../components"
+import { Layout, Cover, Process, HowItWorks, Faces, Pricing, Clients, Faq, Download, Contact, Footer } from "../components"
 
 const IndexPage = () => (
   <Layout>
     <Cover />
     <Process />
     <HowItWorks />
+    <Faces />
+    <Pricing />
+    <Clients />
+    <Faq />
+    <Download />
+    <Contact />
+    <Footer />
   </Layout>
 )
 

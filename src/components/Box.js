@@ -6,6 +6,7 @@ import {
   color,
   typography,
   border,
+  background
 } from "styled-system"
 
 const Box = styled.div`
@@ -15,6 +16,7 @@ const Box = styled.div`
   ${color};
   ${typography};
   ${border};
+  ${background}
 `
 
 export default Box
