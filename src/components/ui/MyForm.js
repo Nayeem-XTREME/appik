@@ -11,7 +11,7 @@ const Form = styled.form`
 
 const Input = styled.input`
   width: 100%;
-  margin-bottom: 22.5px;
+  margin-bottom: 22px;
   padding: 12px 0;
   border: none;
   border-bottom: 1px solid #D2D4D2;
@@ -25,7 +25,7 @@ const Textarea = styled.textarea`
   max-width: 100%;
   min-width: 100%;
   display: block;
-  margin-bottom: 37.5px;
+  margin-bottom: 38px;
   padding: 12px 0;
   border: none;
   border-bottom: 1px solid #D2D4D2;

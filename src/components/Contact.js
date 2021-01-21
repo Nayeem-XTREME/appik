@@ -28,16 +28,16 @@ export default function Contact() {
     <Wrapper>
       <Flex flexWrap="wrap">
 
-        <FormBox width={1/2} px={11.25}>
+        <FormBox width={1/2} px={11}>
           <Form title="Drop Us A Line &amp; Start Your Business" buttonText="SUBMIT" />
         </FormBox>
 
-        <Box width={1/12} px={11.25}></Box>
+        <Box width={1/12} px={11}></Box>
 
-        <Box width={5/12} px={11.25}>
+        <Box width={5/12} px={11}>
 
           <Text variant="h2" mb={3}>Location</Text>
-          <Text variant="p" fontSize={1} mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
+          <Text variant="p" mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
           <MyButton highlight marginBottom="62px">VIEW US ON GOOGLE MAP</MyButton>
 
           <Text variant="h4" mb={2}>Address 1</Text>

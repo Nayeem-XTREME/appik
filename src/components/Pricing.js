@@ -56,7 +56,7 @@ const Ul = styled.ul`
     list-style: none;
     text-align: center;
     padding: 0;
-    margin: 24px 0 56.25px 0;
+    margin: 24px 0 56px 0;
 `
 
 const Bg = styled.div`

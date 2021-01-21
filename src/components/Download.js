@@ -38,19 +38,19 @@ export default function Download() {
   return (
     <Bg>
       <Wrapper style={{ padding: "125px 0", overflow: "hidden" }}>
-          <Text variant="h1" textAlign="center" color="white" mb={37.5}>
+          <Text variant="h1" textAlign="center" color="white" mb={38}>
             Download the App <br />
             and Start Your Works for Business Now.
           </Text>
 
           <BtnGroup>
-            <MyButton marginRight="11.5px">DOWNLOAD APP</MyButton>
-            <MyButton marginLeft="11.5px">CONTACT US</MyButton>
+            <MyButton marginRight="12px">DOWNLOAD APP</MyButton>
+            <MyButton marginLeft="12px">CONTACT US</MyButton>
           </BtnGroup>
 
           <Support>
             {platform.map((logo, i) => (
-              <Image margin="0 45px" maxWidth="52.5px" height="auto" key={i} src={logo.src} alt={logo.alt} />
+              <Image margin="0 45px" maxWidth="52px" height="auto" key={i} src={logo.src} alt={logo.alt} />
             ))}
           </Support>
       </Wrapper>
