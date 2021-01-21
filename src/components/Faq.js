@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { Wrapper, Title } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
 import Accordion from './ui/Accordion'
 import { accordions } from '../data/accordions'
 
 import bitmap from '../assets/img/Bitmap.svg'
+
+const Image = styled.img`
+  max-width: ${props => props.maxWidth};
+  height: ${props => props.height};
+`
 
 export default function Faq() {
 
@@ -19,7 +25,7 @@ export default function Faq() {
 
       <Flex flexWrap="wrap">
         <Box width={1/2} px={11.25}>
-          <img style={{ maxWidth: "100%", width: "auto" }} src={bitmap} alt="bitmap" />
+          <Image maxWidth="100%" height="auto" src={bitmap} alt="bitmap" />
         </Box>
         <Box width={1/12} px={11.25}></Box>
         <Box width={5/12} px={11.25}>

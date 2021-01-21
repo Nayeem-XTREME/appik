@@ -35,7 +35,7 @@ const Support = styled.div`
 `
 
 const Img = styled.img`
-    height: 68px;
+    height: ${props => props.height};
     :not(:last-child) {
         margin-right: 54px;
     }
@@ -64,12 +64,12 @@ export default function Cover() {
 
                     <Support>
                         {platform.map((logo, i) => (
-                            <Img key={i} src={logo.src} alt={logo.alt} />
+                            <Img height="68px" key={i} src={logo.src} alt={logo.alt} />
                         ))}
                     </Support>
 
                     <MobileImage>
-                        <img style={{ height: "490px" }} src={mobile} alt="Two Mobile" />
+                        <Img height="490px" src={mobile} alt="Two Mobile" />
                     </MobileImage>
                 </Content>
             </Wrapper>

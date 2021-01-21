@@ -1,9 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
 import TextBlock from './ui/TextBlock'
 import { Wrapper, Title } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
 
 import mobile from '../assets/logo/Mobile.svg'
+
+const Image = styled.img`
+    max-width: ${props => props.maxWidth};
+    height: ${props => props.height};
+`
 
 export default function Process() {
     return (
@@ -20,7 +26,7 @@ export default function Process() {
                 </Box>
 
                 <Box width={1/3} style={{ display: "flex", justifyContent: "center" }}>
-                    <img style={{ maxWidth: "75%", width: "auto" }} src={ mobile } alt="Features" />
+                    <Image maxWidth="75%" width="auto" src={ mobile } alt="Features" />
                 </Box>
 
                 <Box width={1/3}>

@@ -48,10 +48,10 @@ const Div = styled.div`
   
 `
 
-const Img = styled.img`
-  max-height: 460px;
-  width: auto;
-  margin: 0 auto;
+const Image = styled.img`
+  max-height: ${props => props.maxHeight};
+  width: ${props => props.width};
+  margin: ${props => props.margin};
 `
 
 const Counter = styled.div`
@@ -140,7 +140,7 @@ export default function Faces() {
         <Slider {...settings}>
           {faces.map((face, index) => (
             <div key={index}>
-              <Img src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
+              <Image maxHeight="460px" width="auto" margin="0 auto" src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
             </div>
           ))}
         </Slider>

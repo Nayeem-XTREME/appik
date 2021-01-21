@@ -38,11 +38,15 @@ const NavMenu = styled.div`
   align-items: center;
 `
 
+const Img = styled.img`
+  height: 24px;
+`
+
 const Header = () => {
   return (
     <Wrapper style={{ paddingBottom: "0" }}>
       <Nav>
-        <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
+        <NavLink to="/"> <Img src={logo} alt="APPIK"/> </NavLink>
         <NavMenu>
           {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
         </NavMenu>

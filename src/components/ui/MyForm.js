@@ -18,7 +18,7 @@ const Input = styled.input`
   outline: none;
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
-  font-size: ${theme.fontSizes[0]};
+  font-size: 14px;
 `
 
 const Textarea = styled.textarea`
@@ -32,7 +32,7 @@ const Textarea = styled.textarea`
   outline: none;
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
-  font-size: ${theme.fontSizes[0]};
+  font-size: 14px;
 `
 
 export default function MyForm({ title, buttonText }) {

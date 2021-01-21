@@ -68,46 +68,56 @@ const Bg = styled.div`
     z-index: -100;
 `
 
+const MyText = styled(Text)`
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: ${theme.colors.defaultText};
+    line-height: 30px;
+`
+
+const MyButton = styled(Button)`
+    display: inline-block;
+    margin: 0 auto 62px;
+`
+
 export default function Pricing() {
     return (
         <>
-        <Wrapper>
-            <Title>
-                <Text variant="h2">Appik Prices</Text>
-                <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
-            </Title>
+            <Wrapper>
+                <Title>
+                    <Text variant="h2">Appik Prices</Text>
+                    <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
+                </Title>
 
-            <Flex flexWrap="wrap">
-                { prices.map( (item, index) => {
-                    return (
-                        <Box width={1/3} key={index} px={10}>
-                            <Card>
-                                <MainTitle className="underline">
-                                    <Text variant="h3">{item.title}</Text>
-                                </MainTitle>
+                <Flex flexWrap="wrap">
+                    { prices.map( (item, index) => {
+                        return (
+                            <Box width={1/3} key={index} px={10}>
+                                <Card>
+                                    <MainTitle className="underline">
+                                        <Text variant="h3">{item.title}</Text>
+                                    </MainTitle>
 
-                                <SubTitle>
-                                    <Text variant="h4">{item.price}</Text>
-                                </SubTitle>
+                                    <SubTitle>
+                                        <Text variant="h4">{item.price}</Text>
+                                    </SubTitle>
 
-                                <Ul>
-                                    { item.features.map( (feature, ind) => (
-                                        <li key={ind}>
-                                            <Text variant="p" style={{ fontFamily: `"Roboto", sans-serif`, fontWeight: "400", color: "#666666", lineHeight: "30px" }}>
-                                                {feature}
-                                            </Text>
-                                        </li>
-                                    ) ) }
-                                </Ul>
+                                    <Ul>
+                                        { item.features.map( (feature, ind) => (
+                                            <li key={ind}>
+                                                <MyText variant="p">{feature}</MyText>
+                                            </li>
+                                        ) ) }
+                                    </Ul>
 
-                                <Button style={{ display: 'inline-block', marginBottom: "62.25px", marginRight: "auto", marginLeft: "auto" }}>BUY NOW</Button>
-                            </Card>
-                        </Box>
-                    )
-                } ) }
-            </Flex>
-        </Wrapper>
-        <Bg />
+                                    <MyButton>BUY NOW</MyButton>
+                                </Card>
+                            </Box>
+                        )
+                    } ) }
+                </Flex>
+            </Wrapper>
+            <Bg />
         </>
     )
 }
