@@ -16,6 +16,7 @@ const Input = styled.input`
   border: none;
   border-bottom: 1px solid #D2D4D2;
   outline: none;
+  background-color: transparent;
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
   font-size: 14px;
@@ -30,6 +31,7 @@ const Textarea = styled.textarea`
   border: none;
   border-bottom: 1px solid #D2D4D2;
   outline: none;
+  background-color: transparent;
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
   font-size: 14px;
