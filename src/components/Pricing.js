@@ -48,6 +48,10 @@ const Card = styled.div`
     display: flex;
     flex-direction: column;
 
+    .highlight:after {
+        background-color: ${theme.colors.fill};
+    }
+
     :hover .underline:after {
         background-color: ${theme.colors.fill};
     }
@@ -196,7 +200,7 @@ export default class Pricing extends Component {
                                 return (
                                     <Box width={1/3} key={index} px={10}>
                                         <Card>
-                                            <MainTitle className="underline">
+                                            <MainTitle className={item.highlight ? "underline highlight" : "underline"}>
                                                 <Text variant="h3">{item.title}</Text>
                                             </MainTitle>
     
@@ -212,7 +216,7 @@ export default class Pricing extends Component {
                                                 ) ) }
                                             </Ul>
     
-                                            <MyButton>BUY NOW</MyButton>
+                                            <MyButton highlight={item.highlight}>BUY NOW</MyButton>
                                         </Card>
                                     </Box>
                                 )
@@ -224,7 +228,7 @@ export default class Pricing extends Component {
                                 return (
                                     <Box width={1/3} key={index} px={10}>
                                         <Card>
-                                            <MainTitle className="underline">
+                                            <MainTitle className={item.highlight ? "underline highlight" : "underline"}>
                                                 <Text variant="h3">{item.title}</Text>
                                             </MainTitle>
     
@@ -240,7 +244,7 @@ export default class Pricing extends Component {
                                                 ) ) }
                                             </Ul>
     
-                                            <MyButton>BUY NOW</MyButton>
+                                            <MyButton highlight={item.highlight}>BUY NOW</MyButton>
                                         </Card>
                                     </Box>
                                 )
