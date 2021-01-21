@@ -7,6 +7,10 @@ import { Wrapper } from '../styles/MyStyles'
 import logo from '../assets/logo/APPIK.svg'
 import { navmenu } from '../data/navmenu'
 
+const MyWrapper = styled(Wrapper)`
+  padding-bottom: 0;
+`
+
 const Nav = styled.nav`
   background: transparent;
   height: 60px;
@@ -38,16 +42,20 @@ const NavMenu = styled.div`
   align-items: center;
 `
 
+const Img = styled.img`
+  height: 24px;
+`
+
 const Header = () => {
   return (
-    <Wrapper style={{ paddingBottom: "0" }}>
+    <MyWrapper>
       <Nav>
-        <NavLink to="/"> <img style={{ height: "24px" }} src={logo} alt="APPIK"/> </NavLink>
+        <NavLink to="/"> <Img src={logo} alt="APPIK"/> </NavLink>
         <NavMenu>
           {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
         </NavMenu>
       </Nav>
-    </Wrapper>
+    </MyWrapper>
   )
 }
 

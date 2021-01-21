@@ -23,23 +23,34 @@ const BtnGroup = styled.div`
   margin-bottom: 60px;
 `
 
+const MyButton = styled(Button)`
+  margin-left: ${props => props.marginLeft};
+  margin-right: ${props => props.marginRight};
+`
+
+const Image = styled.img`
+  max-width: ${props => props.maxWidth};
+  height: ${props => props.height};
+  margin: ${props => props.margin};
+`
+
 export default function Download() {
   return (
     <Bg>
       <Wrapper style={{ padding: "125px 0", overflow: "hidden" }}>
-          <Text variant="h1" textAlign="center" color="white" mb={37.5}>
+          <Text variant="h1" textAlign="center" color="white" mb={38}>
             Download the App <br />
             and Start Your Works for Business Now.
           </Text>
 
           <BtnGroup>
-            <Button style={{ marginRight: "11.5px" }}>DOWNLOAD APP</Button>
-            <Button style={{ marginLeft: "11.5px" }}>CONTACT US</Button>
+            <MyButton marginRight="12px">DOWNLOAD APP</MyButton>
+            <MyButton marginLeft="12px">CONTACT US</MyButton>
           </BtnGroup>
 
           <Support>
             {platform.map((logo, i) => (
-              <img style={{ margin: "0 45px", maxWidth: "52.5px", height: "auto" }} key={i} src={logo.src} alt={logo.alt} />
+              <Image margin="0 45px" maxWidth="52px" height="auto" key={i} src={logo.src} alt={logo.alt} />
             ))}
           </Support>
       </Wrapper>

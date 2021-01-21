@@ -16,6 +16,12 @@ const Bg = styled.div`
     background-size: auto 460px;
 `
 
+const Image = styled.img`
+    max-width: ${props => props.maxWidth};
+    height: ${props => props.height};
+    margin-left: ${props => props.marginLeft};
+`
+
 export default function HowItWorks() {
     return (
         <Bg>
@@ -27,7 +33,7 @@ export default function HowItWorks() {
 
                 <Flex flexWrap="wrap">
                     <Box width={1/2}>
-                        <img style={{ maxWidth: "42%", height: "auto", marginLeft: "130px" }} src={control} alt="Control" />
+                        <Image maxWidth="42%" height="auto" marginLeft="130px" src={control} alt="Control" />
                     </Box>
 
                     <Box width={1/2}>

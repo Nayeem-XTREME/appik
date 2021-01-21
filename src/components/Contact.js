@@ -12,26 +12,36 @@ const Bg = styled.div`
   padding-top: 75px;
 `
 
+const FormBox = styled(Box)`
+  background-color: white;
+  border-radius: 6px;
+  padding: 60px 80px;
+`
+
+const MyButton = styled(Button)`
+  margin-bottom: ${props => props.marginBottom};
+`
+
 export default function Contact() {
   return (
     <Bg>
     <Wrapper>
       <Flex flexWrap="wrap">
 
-        <Box style={{ backgroundColor: "white", borderRadius: "6px", padding: "60px 79px" }} width={1/2} px={11.25}>
+        <FormBox width={1/2} px={11}>
           <Form title="Drop Us A Line &amp; Start Your Business" buttonText="SUBMIT" />
-        </Box>
+        </FormBox>
 
-        <Box width={1/12} px={11.25}></Box>
+        <Box width={1/12} px={11}></Box>
 
-        <Box width={5/12} px={11.25}>
+        <Box width={5/12} px={11}>
 
           <Text variant="h2" mb={3}>Location</Text>
-          <Text variant="p" fontSize={1} mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
-          <Button highlight style={{ marginBottom: "62.25px" }}>VIEW US ON GOOGLE MAP</Button>
+          <Text variant="p" mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
+          <MyButton highlight marginBottom="62px">VIEW US ON GOOGLE MAP</MyButton>
 
           <Text variant="h4" mb={2}>Address 1</Text>
-          <Text variant="p" mb={62.25}>
+          <Text variant="p" mb={62}>
             Silver Tower <br />
             123/45. There are many variations of passages <br />
             12, Jumpton Road, South Avenue. Germany. <br />
@@ -49,7 +59,6 @@ export default function Contact() {
           </Text>
 
         </Box>
-
       </Flex>
     </Wrapper>
     </Bg>

@@ -53,7 +53,7 @@ const Social = styled.div`
   right: 30px;
 `
 
-const Img = styled.img`
+const Image = styled.img`
   width: 30px;
   height: auto;
   margin-left: 18px;
@@ -65,7 +65,7 @@ export default function Footer() {
       <Flex flexWrap="wrap" pt={75}>
         <Box width={1/3}>
           <Logo src={logo} alt="logo" />
-          <Text variant="p" style={{ marginBottom: "28px" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
+          <Text variant="p" mb={28}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
           <Text variant="p">Copyright 2021. www.appik.com. All Rights Reserved.</Text>
         </Box>
 
@@ -124,7 +124,7 @@ export default function Footer() {
 
           <Social>
             { social.map(( logo, index ) => (
-              <Img src={logo.src} alt={logo.alt} key={index} />
+              <Image src={logo.src} alt={logo.alt} key={index} />
             )) }
           </Social>
         </Box>

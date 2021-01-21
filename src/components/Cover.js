@@ -12,7 +12,7 @@ const CoverContainer = styled.div`
     background-image: linear-gradient(rgba(110, 79, 204, 0.9), rgba(35, 79, 167, 0.9)), url(${cover});
     position: absolute;
     width: 100%;
-    height: 562.5px;
+    height: 562px;
     left: 0;
     right: 0;
     top: 0;
@@ -22,8 +22,8 @@ const CoverContainer = styled.div`
 `
 
 const Content = styled.div`
-    margin-left: 112.5px;
-    margin-top: 101.25px;
+    margin-left: 112px;
+    margin-top: 100px;
     margin-bottom: 140px;
 `
 
@@ -31,19 +31,19 @@ const Title = styled.div`
     margin-bottom: 30px;
 `
 const Support = styled.div`
-    margin-top: 62.25px;
+    margin-top: 62px;
 `
 
 const Img = styled.img`
-    height: 68px;
+    height: ${props => props.height};
     :not(:last-child) {
         margin-right: 54px;
     }
 `
 const MobileImage = styled.div`
     position: absolute;
-    top: -18.75px;
-    right: 71.25px;
+    top: -18px;
+    right: 72px;
 `
 
 export default function Cover() {
@@ -64,12 +64,12 @@ export default function Cover() {
 
                     <Support>
                         {platform.map((logo, i) => (
-                            <Img key={i} src={logo.src} alt={logo.alt} />
+                            <Img height="68px" key={i} src={logo.src} alt={logo.alt} />
                         ))}
                     </Support>
 
                     <MobileImage>
-                        <img style={{ height: "490px" }} src={mobile} alt="Two Mobile" />
+                        <Img height="490px" src={mobile} alt="Two Mobile" />
                     </MobileImage>
                 </Content>
             </Wrapper>
