@@ -11,7 +11,8 @@ export const prices = [
             '24/7 Phone Support',
             '2 months technical support',
             '2+ profitable keyword'
-        ]
+        ],
+        highlight: false
     },
 
     { 
@@ -26,7 +27,8 @@ export const prices = [
             '24/7 Phone Support',
             '2 months technical support',
             '2+ profitable keyword'
-        ]
+        ],
+        highlight: true
     },
 
     { 
@@ -41,6 +43,7 @@ export const prices = [
             '24/7 Phone Support',
             '2 months technical support',
             '2+ profitable keyword'
-        ]
+        ],
+        highlight: false
     }
 ]
