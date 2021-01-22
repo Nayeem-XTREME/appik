@@ -45,27 +45,27 @@ export const Button = styled.button`
   }
 `
 
-const Image = styled.img`
-  width: ${props => props.width};
-  height: ${props => props.height};
-  max-width: ${props => props.maxWidth};
-  max-height: ${props => props.maxHeight};
+// const Image = styled.img`
+//   width: ${props => props.width};
+//   height: ${props => props.height};
+//   max-width: ${props => props.maxWidth};
+//   max-height: ${props => props.maxHeight};
 
-  position: ${props => props.position};
-  top: ${props => props.top};
-  bottom: ${props => props.bottom};
-  left: ${props => props.left};
-  right: ${props => props.right};
+//   position: ${props => props.position};
+//   top: ${props => props.top};
+//   bottom: ${props => props.bottom};
+//   left: ${props => props.left};
+//   right: ${props => props.right};
 
-  margin: ${props => props.margin};
-  margin-left: ${props => props.marginLeft};
-  margin-right: ${props => props.marginRight};
-  margin-top: ${props => props.marginTop};
-  margin-bottom: ${props => props.marginBottom};
+//   margin: ${props => props.margin};
+//   margin-left: ${props => props.marginLeft};
+//   margin-right: ${props => props.marginRight};
+//   margin-top: ${props => props.marginTop};
+//   margin-bottom: ${props => props.marginBottom};
 
-  padding: ${props => props.padding};
-  padding-left: ${props => props.paddingLeft};
-  padding-right: ${props => props.paddingRight};
-  padding-top: ${props => props.paddingTop};
-  padding-bottom: ${props => props.paddingBottom};
-`
+//   padding: ${props => props.padding};
+//   padding-left: ${props => props.paddingLeft};
+//   padding-right: ${props => props.paddingRight};
+//   padding-top: ${props => props.paddingTop};
+//   padding-bottom: ${props => props.paddingBottom};
+// `

@@ -50,6 +50,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 16px;
+    }
   }
 
   h5 {

@@ -77,7 +77,6 @@ const MobileImage = styled.div`
     }
 
     @media only screen and (max-width: ${theme.breakpoints.lg}) {
-
         margin-top: 60px;
         margin-right: 0;
 
@@ -90,6 +89,10 @@ const MobileImage = styled.div`
         margin: 0 auto;
         text-align: center;
         bottom: 20px;
+
+        .mobile {
+            max-width: 212px;
+        }
     }
 `
 
