@@ -52,6 +52,7 @@ const Support = styled.div`
     margin: 62px 0;
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
+        margin-top: 50px;
         margin-bottom: 0;
     }
 `
@@ -88,6 +89,7 @@ const MobileImage = styled.div`
     @media only screen and (max-width: ${theme.breakpoints.md}) {
         margin: 0 auto;
         text-align: center;
+        bottom: 20px;
     }
 `
 
