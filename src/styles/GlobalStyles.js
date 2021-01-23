@@ -16,12 +16,28 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
     font-weight: 700;
+
+    @media only screen and (max-width: ${theme.breakpoints.lg}) {
+      font-size: 36px;
+    }
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 28px;
+    }
   }
 
   h2 {
     font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     font-weight: 700;
+
+    @media only screen and (max-width: ${theme.breakpoints.lg}) {
+      font-size: 28px;
+    }
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 24px;
+    }
   }
 
   h3 {
@@ -34,6 +50,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 16px;
+    }
   }
 
   h5 {

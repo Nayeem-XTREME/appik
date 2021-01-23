@@ -120,7 +120,7 @@ const ButtonBox = styled.div`
     width: 360px;
     margin: -24px auto 46px;
     position: relative;
-    box-shadow: 0 0 20px 9px ${theme.colors.gray2};
+    border: 0.5px solid ${theme.colors.gray3};
     border-radius: 30px;
     transition: all 0.2s;
 

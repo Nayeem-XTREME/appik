@@ -1,4 +1,4 @@
-const breakpoints = ["576px", "768px", "992px", "1200px"]
+const breakpoints = ["0px", "600px", "960px", "1280px"]
 
 breakpoints.sm = breakpoints[0]
 breakpoints.md = breakpoints[1]

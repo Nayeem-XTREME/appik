@@ -9,6 +9,8 @@ import { navmenu } from '../data/navmenu'
 
 const MyWrapper = styled(Wrapper)`
   padding-bottom: 0;
+  overflow: hidden;
+  z-index: 1000;
 `
 
 const Nav = styled.nav`
