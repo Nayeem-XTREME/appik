@@ -19,10 +19,7 @@ const CoverContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-
-    margin-top: -60px;
     margin-bottom: 150px;
-
     padding-top: 60px;
 `
 
