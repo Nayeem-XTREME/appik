@@ -3,9 +3,24 @@ import styled from 'styled-components'
 
 import { Text } from "../../components"
 import { Button } from '../../styles/MyStyles'
+import theme from '../../styles/theme'
 
 const Form = styled.form`
   overflow: hidden;
+
+  background-color: white;
+  border-radius: 6px;
+  padding: 60px 91px;
+
+  @media only screen and (max-width: ${theme.breakpoints.lg}) {
+    padding: 60px 60px;
+    margin-bottom: 70px;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    padding: 30px 30px;
+    margin-bottom: 50px;
+  }
 `
 
 const Input = styled.input`

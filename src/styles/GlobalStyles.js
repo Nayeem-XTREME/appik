@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 
