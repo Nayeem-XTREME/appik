@@ -47,9 +47,9 @@ export default function Contact() {
           <MyButton highlight>VIEW US ON GOOGLE MAP</MyButton>
 
           <CustomFlex>
-            <Box width={[1, 1, 1/2, 1]} pr={[0, 0, 3, 0]}>
+            <Box width={[1, 1, 1/2, 1]} pr={[0, 0, 11, 0]}>
               <Text variant="h5" mb={2}>Address 1</Text>
-              <Text variant="p" mb={62}>
+              <Text variant="p" mb={[62, 62, 0, 62]}>
                 Silver Tower <br />
                 123/45. There are many variations of passages <br />
                 12, Jumpton Road, South Avenue. Germany. <br />
@@ -58,7 +58,7 @@ export default function Contact() {
               </Text>
             </Box>
 
-            <Box width={[1, 1, 1/2, 1]} pl={[0, 0, 3, 0]}>
+            <Box width={[1, 1, 1/2, 1]} pl={[0, 0, 11, 0]}>
               <Text variant="h5" mb={2}>Address 1</Text>
               <Text variant="p">
                 Silver Tower <br />
