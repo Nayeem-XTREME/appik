@@ -28,20 +28,23 @@ export const Title = styled.div`
 
 export const Button = styled.button`
   min-width: 200px;
-  height: 48px;
   background-color: ${({ highlight }) => ( highlight ? theme.colors.highlight : theme.colors.lightGray )};
   outline: none;
   cursor: pointer;
   border: none;
   border-radius: 32px;
   transition: all 0.2s;
-  padding: 0 36px;
+  padding: 16px 36px;
   font-size: 16px;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
 
   :hover {
     background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    font-size: 13px;
   }
 `
 
