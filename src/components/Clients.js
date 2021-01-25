@@ -20,7 +20,7 @@ export default function Clients() {
       <Flex flexWrap="wrap">
 
         { reviews.map((item, index) => (
-          <Box width={1/2} key={index} py={22} px={11}>
+          <Box width={[10/12, 10/12, 10/12, 1/2]} key={index} py={22} px={11} mx="auto">
             <Flex alignItems='center' mb={20}>
               <Box width={2/12}>
                 <Image maxWidth="85%" height="auto" src={item.avatar} alt="avater"/>
