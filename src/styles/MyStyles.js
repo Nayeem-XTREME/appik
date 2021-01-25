@@ -40,35 +40,10 @@ export const Button = styled.button`
   font-family: 'Montserrat', sans-serif;
 
   :hover {
-    background-color: ${({ highlight }) => ( highlight ? '#FFF' : theme.colors.highlight )};
+    background-color: ${({ highlight }) => ( highlight ? '#FFE500' : theme.colors.highlight )};
   }
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     font-size: 13px;
   }
 `
-
-// const Image = styled.img`
-//   width: ${props => props.width};
-//   height: ${props => props.height};
-//   max-width: ${props => props.maxWidth};
-//   max-height: ${props => props.maxHeight};
-
-//   position: ${props => props.position};
-//   top: ${props => props.top};
-//   bottom: ${props => props.bottom};
-//   left: ${props => props.left};
-//   right: ${props => props.right};
-
-//   margin: ${props => props.margin};
-//   margin-left: ${props => props.marginLeft};
-//   margin-right: ${props => props.marginRight};
-//   margin-top: ${props => props.marginTop};
-//   margin-bottom: ${props => props.marginBottom};
-
-//   padding: ${props => props.padding};
-//   padding-left: ${props => props.paddingLeft};
-//   padding-right: ${props => props.paddingRight};
-//   padding-top: ${props => props.paddingTop};
-//   padding-bottom: ${props => props.paddingBottom};
-// `
