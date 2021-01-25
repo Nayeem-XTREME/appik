@@ -46,14 +46,14 @@ export default function Accordion({ title, description, active, setActive, item 
   return (
     <Main item={item}>
       <Heading item={item}>
-        <Text variant="h5" fontWeight="300">{title}</Text>
+        <Text variant="h5" fontWeight="300" mr={4}>{title}</Text>
         <span onClick={() => setActive(title)}>
           <Img src={active === title ? minus : plus} alt="Button" />
         </span>
       </Heading>
 
       <Content className={(active === title ? "show" : "")}>
-        <Text variant="p">{description}</Text>
+        <Text variant="p" pr={4}>{description}</Text>
       </Content>
     </Main>
   )
