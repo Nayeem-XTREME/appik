@@ -9,7 +9,9 @@ import minus from '../../assets/logo/Minus.svg'
 const Main = styled.div`
   border-top: ${props => props.item === 'start' ? "none" : "1px solid #D1D1D1"};
   .show {
-    height: 80px;
+    min-height: 80px;
+    height: 100%;
+    padding-bottom: 20px;
     opacity: 1;
   }
 `
@@ -44,14 +46,14 @@ export default function Accordion({ title, description, active, setActive, item 
   return (
     <Main item={item}>
       <Heading item={item}>
-        <Text variant="h5" fontWeight="300">{title}</Text>
+        <Text variant="h5" fontWeight="300" mr={4}>{title}</Text>
         <span onClick={() => setActive(title)}>
           <Img src={active === title ? minus : plus} alt="Button" />
         </span>
       </Heading>
 
       <Content className={(active === title ? "show" : "")}>
-        <Text variant="p">{description}</Text>
+        <Text variant="p" pr={4}>{description}</Text>
       </Content>
     </Main>
   )

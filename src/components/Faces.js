@@ -7,6 +7,7 @@ import { Text } from "../components"
 import { faces } from '../data/appfaces'
 import leftArrow from '../assets/logo/LeftArrow.svg'
 import rightArrow from '../assets/logo/RightArrow.svg'
+import theme from '../styles/theme'
 
 const Div = styled.div`
 
@@ -39,19 +40,42 @@ const Div = styled.div`
   .prev {
     top: 100%;
     left: 40%;
+
+    @media only screen and (max-width: ${theme.breakpoints.lg}) {
+      left: 30%;
+    }
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      top: 40%;
+      left: 10%;
+    }
   }
 
   .next {
     top: 100%;
     right: 40%;
+
+    @media only screen and (max-width: ${theme.breakpoints.lg}) {
+      right: 30%;
+    }
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      top: 40%;
+      right: 10%;
+    }
   }
   
 `
 
 const Image = styled.img`
-  max-height: ${props => props.maxHeight};
-  width: ${props => props.width};
-  margin: ${props => props.margin};
+  height: 100%;
+  max-height: 400px;
+  width: auto;
+  margin: 0 auto;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    max-height: 500px;
+  }
 `
 
 const Counter = styled.div`
@@ -109,19 +133,19 @@ export default function Faces() {
 
     responsive: [
       {
-        breakpoint: 1200,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 5,
         }
       },
       {
-        breakpoint: 992,
+        breakpoint: 960,
         settings: {
           slidesToShow: 3,
         }
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1
         }
@@ -140,7 +164,7 @@ export default function Faces() {
         <Slider {...settings}>
           {faces.map((face, index) => (
             <div key={index}>
-              <Image maxHeight="460px" width="auto" margin="0 auto" src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
+              <Image src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
             </div>
           ))}
         </Slider>

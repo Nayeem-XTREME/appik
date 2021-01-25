@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 700;
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 
@@ -60,6 +60,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 700;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      font-size: 16px;
+    }
   }
 
   h6 {
