@@ -24,11 +24,11 @@ export default function Faq() {
       </Title>
 
       <Flex flexWrap="wrap">
-        <Box width={1/2} px={11}>
+        <Box width={[1, 1, 1, 1/2]} px={11}>
           <Image maxWidth="100%" height="auto" src={bitmap} alt="bitmap" />
         </Box>
-        <Box width={1/12} px={11}></Box>
-        <Box width={5/12} px={11}>
+        <Box width={[0, 0, 0, 1/12]} px={11}></Box>
+        <Box width={[1, 1, 1, 5/12]} px={11} mt={[40, 50, 50, 0]}>
           { accordions.map(( accordion, index ) => (
             <Accordion key={index} title={accordion.title} description={accordion.description} active={active} setActive={setActive} item={index === 0 ? "start" : index === accordions.length - 1 ? "end" : ""} />
           )) }

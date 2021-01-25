@@ -4,6 +4,7 @@ import { Wrapper, Button } from '../styles/MyStyles'
 import { Text } from "../components"
 import cover from '../assets/img/DownloadCover.png'
 import { platform } from '../data/platform'
+import theme from '../styles/theme'
 
 const Support = styled.div`
   display: flex;
@@ -20,12 +21,28 @@ const Bg = styled.div`
 const BtnGroup = styled.div`
   display: flex;
   justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 60px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const MyButton = styled(Button)`
   margin-left: ${props => props.marginLeft};
   margin-right: ${props => props.marginRight};
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    margin: 0;
+    max-width: 200px;
+
+    :not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
 `
 
 const Image = styled.img`
@@ -38,7 +55,7 @@ export default function Download() {
   return (
     <Bg>
       <Wrapper style={{ padding: "125px 0", overflow: "hidden" }}>
-          <Text variant="h1" textAlign="center" color="white" mb={38}>
+          <Text variant="h1" textAlign="center" color="white" mb={38} px={20}>
             Download the App <br />
             and Start Your Works for Business Now.
           </Text>
