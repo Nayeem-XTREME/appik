@@ -9,7 +9,9 @@ import minus from '../../assets/logo/Minus.svg'
 const Main = styled.div`
   border-top: ${props => props.item === 'start' ? "none" : "1px solid #D1D1D1"};
   .show {
-    height: 80px;
+    min-height: 80px;
+    height: 100%;
+    padding-bottom: 20px;
     opacity: 1;
   }
 `
