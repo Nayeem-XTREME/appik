@@ -1,5 +1,5 @@
 export const navmenu = [
-    {title: "Home", link: "/home"},
+    {title: "Home", link: "/index"},
     {title: "Features", link: "/features"},
     {title: "Pages", link: "/pages"},
     {title: "How it works", link: "/how-it-works"},

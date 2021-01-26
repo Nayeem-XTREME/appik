@@ -1,32 +1,39 @@
+import React, { Component } from "react"
 import { Link } from "gatsby"
-import React from "react"
 import styled from "styled-components"
+import { FaBars, FaMinus } from 'react-icons/fa'
+
+import MobileNav from './MobileNav'
 import theme from '../styles/theme'
 import { Wrapper } from '../styles/MyStyles'
 
 import logo from '../assets/logo/APPIK.svg'
-import menubar from '../assets/logo/MenuBar.svg'
-import menubarclose from '../assets/logo/MenuBarClose.svg'
 
 import { navmenu } from '../data/navmenu'
 
 const Background = styled.div`
   position: fixed;
   width: 100%;
-  background-color: black;
+  background: transparent;
   z-index: 900;
+  transition: all 0.2s;
+
+  &.active {
+    background: linear-gradient(rgba(35, 79, 167, .9), rgba(110, 79, 204, .9));
+    transition: all 0.2s ease-in-out;
+  }
 `
 
 const MyWrapper = styled(Wrapper)`
   padding-bottom: 0;
-  overflow: hidden;
-  z-index: 1000;
+  z-index: 100;
 `
 
 const Nav = styled.nav`
   height: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 10;
 `
 
@@ -44,53 +51,87 @@ const NavLink = styled(Link)`
 
   :hover {
     color: ${theme.colors.highlight};
-    text-decoration: none;
   }
 `
 
 const NavMenu = styled.div`
   display: flex;
+
+  @media only screen and (max-width: 1100px) {
+    display: none;
+  }
 `
 
-const Img = styled.img`
+const Bars = styled(FaBars)`
+  color: #FFF;
+  display: none;
+  transition: all 0.2s;
+
+  @media only screen and (max-width: 1100px) {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+`
+
+const Close = styled(FaMinus)`
+  color: #FFF;
+  display: none;
+  transition: all 0.2s;
+
+  @media only screen and (max-width: 1100px) {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+  }
+`
+
+const Image = styled.img`
   height: 24px;
 `
 
-const Checkbox = styled.input`
-  display: none;
-`
+class Header extends Component {
 
-const MobileMenu = styled.label`
-  cursor: pointer;
-  display: none;
-  
-  img {
-    margin-top: 22px;
+  state = {
+    clicked: false,
+    navbarActive: false
   }
 
-  @media only screen and (max-width: ${theme.breakpoints.lg}) {
-    display: block;
+  mobileMenuHandler = () => {
+    this.setState({ clicked: !this.state.clicked });
+    console.log(this.state.clicked);
   }
-`
 
-const Header = () => {
-  return (
-    <Background>
-      <MyWrapper>
-        <Nav>
-          <NavLink to="/"> <Img src={logo} alt="APPIK"/> </NavLink>
-          <NavMenu>
-            {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
-          </NavMenu>
+  changeNavBackground = () => {
+    if (window.scrollY > 60) {
+      this.setState({ navbarActive: true });
+    } else {
+      this.setState({ navbarActive: false });
+    }
+  }
 
-          <Checkbox type="checkbox" id="check" />
-          <MobileMenu for="check" className="mobile-menu">
-            <img for="check" className="mobile-menu" src={menubar} alt="Menubar" />
-          </MobileMenu>
-        </Nav>
-      </MyWrapper>
-    </Background>
-  )
+  render() {
+
+    window.addEventListener('scroll', this.changeNavBackground);
+
+    return (
+      <>
+        <Background className={this.state.navbarActive ? 'active' : ''}>
+          <MyWrapper>
+            <Nav>
+              <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
+              { this.state.clicked ? <Close onClick={this.mobileMenuHandler} /> : <Bars onClick={this.mobileMenuHandler} />}
+              <NavMenu className="active">
+                {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+              </NavMenu>
+            </Nav>
+          </MyWrapper>
+        </Background>
+
+        <MobileNav status={ this.state.clicked === true ? "active" : "closed" } />
+      </>
+    )
+  }
 }
 
 export default Header

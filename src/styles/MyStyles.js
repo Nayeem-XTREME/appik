@@ -21,7 +21,6 @@ export const Title = styled.div`
   }
 
   p {
-    width: 588px;
     text-align: center;
   }
 `

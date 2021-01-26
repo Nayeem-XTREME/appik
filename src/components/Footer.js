@@ -189,7 +189,7 @@ export default function Footer() {
             <Box width={[1, 1, 5/12, 1]}>
               <Social>
                 { social.map(( logo, index ) => (
-                  <SocialLink to={logo.to}><Image src={logo.src} alt={logo.alt} key={index} /></SocialLink>
+                  <SocialLink to={logo.to} key={index}><Image src={logo.src} alt={logo.alt} /></SocialLink>
                 )) }
               </Social>
             </Box>
