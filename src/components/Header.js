@@ -1,12 +1,11 @@
+import React, { Component } from "react"
 import { Link } from "gatsby"
-import React from "react"
 import styled from "styled-components"
+import { FaBars } from 'react-icons/fa'
 import theme from '../styles/theme'
 import { Wrapper } from '../styles/MyStyles'
 
 import logo from '../assets/logo/APPIK.svg'
-import menubar from '../assets/logo/MenuBar.svg'
-import menubarclose from '../assets/logo/MenuBarClose.svg'
 
 import { navmenu } from '../data/navmenu'
 
@@ -19,14 +18,14 @@ const Background = styled.div`
 
 const MyWrapper = styled(Wrapper)`
   padding-bottom: 0;
-  overflow: hidden;
-  z-index: 1000;
+  z-index: 100;
 `
 
 const Nav = styled.nav`
   height: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 10;
 `
 
@@ -37,6 +36,10 @@ const NavLink = styled(Link)`
   color: white;
   font-size: ${theme.fontSizes[2]}px;
   transition: all 0.2s;
+
+  &.active {
+    color: ${theme.colors.highlight};
+  }
 
   :not(:first-child) {
     margin-left: 30px;
@@ -50,47 +53,49 @@ const NavLink = styled(Link)`
 
 const NavMenu = styled.div`
   display: flex;
-`
 
-const Img = styled.img`
-  height: 24px;
-`
-
-const Checkbox = styled.input`
-  display: none;
-`
-
-const MobileMenu = styled.label`
-  cursor: pointer;
-  display: none;
-  
-  img {
-    margin-top: 22px;
+  @media only screen and (max-width: ${theme.breakpoints.lg}) {
+    display: none;
   }
+`
+
+const Bars = styled(FaBars)`
+  color: #FFF;
+  display: none;
 
   @media only screen and (max-width: ${theme.breakpoints.lg}) {
     display: block;
+    font-size: 30px;
+    cursor: pointer;
   }
 `
 
-const Header = () => {
-  return (
-    <Background>
-      <MyWrapper>
-        <Nav>
-          <NavLink to="/"> <Img src={logo} alt="APPIK"/> </NavLink>
-          <NavMenu>
-            {navmenu.map( (x, i) => <NavLink to={x.link} key={i}> {x.title} </NavLink> )}
-          </NavMenu>
+const Image = styled.img`
+  height: 24px;
+`
 
-          <Checkbox type="checkbox" id="check" />
-          <MobileMenu for="check" className="mobile-menu">
-            <img for="check" className="mobile-menu" src={menubar} alt="Menubar" />
-          </MobileMenu>
-        </Nav>
-      </MyWrapper>
-    </Background>
-  )
+class Header extends Component {
+
+  state = {
+    
+  }
+
+  render() {
+    return (
+      <Background>
+        <MyWrapper>
+          <Nav>
+            <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
+            <Bars />
+            <NavMenu className="active">
+              {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} activeStyle> {x.title} </NavLink> )}
+            </NavMenu>
+          </Nav>
+        </MyWrapper>
+      </Background>
+    )
+  }
+
 }
 
 export default Header
