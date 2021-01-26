@@ -198,7 +198,7 @@ export default class Pricing extends Component {
                         <Flex flexWrap="wrap" className={this.state.monthly}>
                             { prices.map( (item, index) => {
                                 return (
-                                    <Box width={1/3} key={index} px={10}>
+                                    <Box width={[1, 1, 1/3]} key={index} px={10}>
                                         <Card>
                                             <MainTitle className={item.highlight ? "underline highlight" : "underline"}>
                                                 <Text variant="h3">{item.title}</Text>
@@ -226,7 +226,7 @@ export default class Pricing extends Component {
                         <Flex flexWrap="wrap" className={this.state.yearly}>
                             { prices.map( (item, index) => {
                                 return (
-                                    <Box width={1/3} key={index} px={10}>
+                                    <Box width={[1, 1, 1/3]} key={index} px={10}>
                                         <Card>
                                             <MainTitle className={item.highlight ? "underline highlight" : "underline"}>
                                                 <Text variant="h3">{item.title}</Text>

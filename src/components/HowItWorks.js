@@ -10,7 +10,7 @@ import control from '../assets/logo/Control.svg'
 import bg from '../assets/img/bg.svg'
 
 
-const Bg = styled.div`
+const Background = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-position: 0 220px;
@@ -37,7 +37,7 @@ const Image = styled.img`
 
 export default function HowItWorks() {
     return (
-        <Bg>
+        <Background>
             <Wrapper>
                 <Title>
                     <Text variant="h2">How it Works</Text>
@@ -59,6 +59,6 @@ export default function HowItWorks() {
                     </Box>
                 </Flex>
             </Wrapper>
-        </Bg>
+        </Background>
     )
 }

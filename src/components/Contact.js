@@ -34,13 +34,13 @@ export default function Contact() {
     <Wrapper>
       <Flex flexWrap="wrap">
 
-        <Box width={[10/12, 10/12, 10/12, 1/2]} px={11} mx="auto">
+        <Box width={[1, 1, 1, 1/2]} px={11} mx="auto">
           <Form title="Drop Us A Line &amp; Start Your Business" buttonText="SUBMIT" />
         </Box>
 
         <Box width={[0, 0, 0, 1/12]} px={[0, 0, 0, 11]}></Box>
 
-        <Box width={[10/12, 10/12, 10/12, 5/12]} px={11} mx="auto">
+        <Box width={[1, 1, 1, 5/12]} px={11} mx="auto">
 
           <Text variant="h4" mb={3}>Location</Text>
           <Text variant="p" mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
