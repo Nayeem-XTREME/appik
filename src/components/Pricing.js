@@ -160,7 +160,7 @@ const BtnBackground = styled.div`
 `
 
 const ToggleButton = styled.button`
-  padding: 12px 0;
+  padding: ${({padding}) => padding};
   width: ${({ width }) => width};
   cursor: pointer;
   background: transparent;
@@ -185,7 +185,7 @@ export default class Pricing extends Component {
     yearly: "yearly-hidden",
     activeButton: "btn-monthly",
 
-    type: "advanced",
+    type: "Advanced",
   }
 
   monthlyHandler = () => {
@@ -219,7 +219,7 @@ export default class Pricing extends Component {
 
           <ButtonBox border>
             <BtnBackground width="50%" className={this.state.activeButton} />
-            <ToggleButton width="50%" onClick={this.monthlyHandler}>
+            <ToggleButton padding="12px 0" width="50%" onClick={this.monthlyHandler}>
               <Text
                 fontSize={16}
                 fontFamily='"Montserrat", sans-serif'
@@ -229,7 +229,7 @@ export default class Pricing extends Component {
                 MONTHLY
               </Text>
             </ToggleButton>
-            <ToggleButton width="50%" onClick={this.yearlyHandler}>
+            <ToggleButton padding="12px 0" width="50%" onClick={this.yearlyHandler}>
               <Text
                 fontSize={16}
                 fontFamily='"Montserrat", sans-serif'
@@ -243,9 +243,9 @@ export default class Pricing extends Component {
 
           <ButtonBox onlyMobile>
             <BtnBackground width="33.3333333%" />
-            <ToggleButton width="33.3333333%">
+            <ToggleButton padding="8px 0" width="33.3333333%">
               <Text
-                fontSize={16}
+                fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
                 fontWeight={700}
                 color="black"
@@ -253,9 +253,9 @@ export default class Pricing extends Component {
                 BASIC
               </Text>
             </ToggleButton>
-            <ToggleButton width="33.3333333%">
+            <ToggleButton padding="8px 0" width="33.3333333%">
               <Text
-                fontSize={16}
+                fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
                 fontWeight={700}
                 color="black"
@@ -263,9 +263,9 @@ export default class Pricing extends Component {
                 ADVANCED
               </Text>
             </ToggleButton>
-            <ToggleButton width="33.3333333%">
+            <ToggleButton padding="8px 0" width="33.3333333%">
               <Text
-                fontSize={16}
+                fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
                 fontWeight={700}
                 color="black"
