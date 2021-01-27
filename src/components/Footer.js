@@ -90,6 +90,12 @@ const Image = styled.img`
   width: 100%;
   max-width: 40px;
   height: auto;
+  transition: all 0.2s ease-in-out;
+
+  :hover {
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
 `
 
 const SocialLink = styled(Link)`
@@ -172,7 +178,6 @@ export default function Footer() {
         </LinkBox>
 
         <NewsletterBox width={[1, 1, 1, 1/3]}>
-
           <Flex flexWrap="wrap">
             <Box width={1}>
               <Text variant="h5" mb={28}>Newsletter</Text>

@@ -49,7 +49,7 @@ export default function Clients() {
               </Box>
               <Box width={10/12} ml={3}>
                 <Text variant="h5" mb={1}>{item.name}</Text>
-                <Text variant="p">{item.tag}</Text>
+                <Text variant="p" mb={2}>{item.tag}</Text>
 
                 {printStar(item.star)}
 

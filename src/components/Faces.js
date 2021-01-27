@@ -47,7 +47,7 @@ const Div = styled.div`
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
       top: 40%;
-      left: 10%;
+      left: 0;
     }
   }
 
@@ -61,7 +61,7 @@ const Div = styled.div`
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
       top: 40%;
-      right: 10%;
+      right: 0;
     }
   }
   
