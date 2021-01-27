@@ -14,7 +14,7 @@ const Image = styled.img`
 
 export default function Faq() {
 
-  const [active, setActive] = useState("There are many variations of passages of 1");
+  const [active, setActive] = useState(0);
 
   return (
     <Wrapper>

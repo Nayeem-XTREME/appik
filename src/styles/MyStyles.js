@@ -15,13 +15,10 @@ export const Title = styled.div`
   align-items: center;
   margin-bottom: 75px;
   position: relative;
+  text-align: center;
 
   h2 {
     margin-bottom: 20px;
-  }
-
-  p {
-    text-align: center;
   }
 `
 

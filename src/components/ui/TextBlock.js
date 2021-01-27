@@ -3,7 +3,7 @@ import { Text } from "../../components"
 
 export default function TextBlock({ title, details, mb }) {
     const main = <div>
-        <Text variant="h4" style={{ marginBottom: "15px" }}>{title}</Text>
+        <Text variant="h4" mb="15px">{title}</Text>
         <Text variant="p">{details}</Text>
     </div>
 

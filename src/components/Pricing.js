@@ -102,13 +102,17 @@ const Ul = styled.ul`
   margin: 24px 0 56px 0;
 `
 
-const Bg = styled.div`
+const Background = styled.div`
   background-color: ${theme.colors.lightGray};
   width: 100%;
   margin-top: -380px;
   margin-bottom: 75px;
   height: 340px;
   z-index: -100;
+
+  @media only screen and (max-width: 768px) {
+    margin-top: -320px;
+  }
 `
 
 const MyText = styled(Text)`
@@ -135,14 +139,35 @@ const ButtonBox = styled.div`
 
   .btn-monthly {
     top: 0;
-    left: 0;
+    left: 0%;
     transition: all 0.5s;
   }
 
   .btn-yearly {
     top: 0;
-    right: 0;
+    left: 100%;
+    transform: translateX(-100%);
     transition: all 0.5s;
+  }
+
+  .basic {
+      top: 0;
+      left: 0%;
+      transition: all 0.2s;
+  }
+
+  .advance {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: all 0.2s;
+  }
+
+  .premium {
+      top: 0;
+      left: 100%;
+      transform: translateX(-100%);
+      transition: all 0.2s;
   }
 
   @media only screen and (max-width: 768px) {
@@ -176,6 +201,7 @@ const PriceBox = styled(Box)`
   @media only screen and (max-width: 768px) {
     width: 100%;
     display: ${({ active }) => (active ? "block" : "none")};
+    transition: all 0.2s;
   }
 `
 
@@ -185,7 +211,8 @@ export default class Pricing extends Component {
     yearly: "yearly-hidden",
     activeButton: "btn-monthly",
 
-    type: "Advanced",
+    type: "Advance",
+    activeType: "advance"
   }
 
   monthlyHandler = () => {
@@ -201,6 +228,27 @@ export default class Pricing extends Component {
       monthly: "monthly-hidden",
       yearly: "yearly-active",
       activeButton: "btn-yearly",
+    })
+  }
+
+  basicHandler = () => {
+    this.setState({
+        type: "Basic",
+        activeType: "basic"
+    })
+  }
+
+  advancedHandler = () => {
+    this.setState({
+        type: "Advance",
+        activeType: "advance"
+    })
+  }
+
+  premiumHandler = () => {
+    this.setState({
+        type: "Premium",
+        activeType: "premium"
     })
   }
 
@@ -242,8 +290,8 @@ export default class Pricing extends Component {
           </ButtonBox>
 
           <ButtonBox onlyMobile>
-            <BtnBackground width="33.3333333%" />
-            <ToggleButton padding="8px 0" width="33.3333333%">
+            <BtnBackground width="33.3333333%" className={this.state.activeType} />
+            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.basicHandler}>
               <Text
                 fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
@@ -253,7 +301,7 @@ export default class Pricing extends Component {
                 BASIC
               </Text>
             </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%">
+            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.advancedHandler}>
               <Text
                 fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
@@ -263,7 +311,7 @@ export default class Pricing extends Component {
                 ADVANCED
               </Text>
             </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%">
+            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.premiumHandler}>
               <Text
                 fontSize={14}
                 fontFamily='"Montserrat", sans-serif'
@@ -280,7 +328,7 @@ export default class Pricing extends Component {
               {prices.map((item, index) => {
                 return (
                   <PriceBox
-                    active={item.highlight ? true : false}
+                    active={item.title === this.state.type ? true : false}
                     width={[1, 1, 1 / 3]}
                     key={index}
                     px={10}
@@ -317,7 +365,7 @@ export default class Pricing extends Component {
               {prices.map((item, index) => {
                 return (
                   <PriceBox
-                    active={item.highlight ? true : false}
+                    active={item.title === this.state.type ? true : false}
                     width={[1, 1, 1 / 3]}
                     key={index}
                     px={10}
@@ -351,7 +399,7 @@ export default class Pricing extends Component {
             </Flex>
           </Div>
         </Wrapper>
-        <Bg />
+        <Background />
       </>
     )
   }
