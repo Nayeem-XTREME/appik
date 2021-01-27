@@ -36,19 +36,13 @@ const Div = styled.div`
     left: 1500px;
     transition: all 0.5s;
   }
-
-  &.onlyMobile {
-    display: none;
-    @media only screen and (max-width: ${theme.breakpoints.md}) {
-      display: block;
-    }
-  }
 `
 
 const Card = styled.div`
   border: 1px solid ${theme.colors.lightGray};
   background-color: ${theme.colors.white};
-  border-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   padding: auto 10px;
   transition: all 0.2s;
 
@@ -78,6 +72,14 @@ const MainTitle = styled.div`
     margin: 33px auto 0 auto;
     transition: all 0.2s;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 20px;
+
+    :after {
+      margin: 20px auto 0 auto;
+    }
+  }
 `
 
 const SubTitle = styled.div`
@@ -93,6 +95,14 @@ const SubTitle = styled.div`
     border-radius: 10px;
     margin: 33px auto 0 auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+
+    :after {
+      margin: 20px auto 0 auto;
+    }
+  }
 `
 
 const Ul = styled.ul`
@@ -100,6 +110,10 @@ const Ul = styled.ul`
   text-align: center;
   padding: 0;
   margin: 24px 0 56px 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 24px 0 24px 0;
+  }
 `
 
 const Background = styled.div`
@@ -111,7 +125,8 @@ const Background = styled.div`
   z-index: -100;
 
   @media only screen and (max-width: 768px) {
-    margin-top: -320px;
+    height: 300px;
+    margin-top: -480px;
   }
 `
 
@@ -124,7 +139,13 @@ const MyText = styled(Text)`
 
 const MyButton = styled(Button)`
   display: inline-block;
+  padding: 12px 0;
   margin: 0 auto 62px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto 32px;
+    min-width: 160px;
+  }
 `
 
 const ButtonBox = styled.div`
@@ -134,8 +155,6 @@ const ButtonBox = styled.div`
   border: ${({ border }) => (border ? "0.5px solid #D1D1D1" : "none")};
   border-radius: 30px;
   transition: all 0.2s;
-
-  display: ${({ onlyMobile }) => (onlyMobile ? "none" : "block")};
 
   .btn-monthly {
     top: 0;
@@ -150,28 +169,9 @@ const ButtonBox = styled.div`
     transition: all 0.5s;
   }
 
-  .basic {
-      top: 0;
-      left: 0%;
-      transition: all 0.2s;
-  }
-
-  .advance {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      transition: all 0.2s;
-  }
-
-  .premium {
-      top: 0;
-      left: 100%;
-      transform: translateX(-100%);
-      transition: all 0.2s;
-  }
-
   @media only screen and (max-width: 768px) {
     display: block;
+    margin-bottom: 34px;
   }
 `
 
@@ -231,26 +231,26 @@ export default class Pricing extends Component {
     })
   }
 
-  basicHandler = () => {
-    this.setState({
-        type: "Basic",
-        activeType: "basic"
-    })
-  }
+  // basicHandler = () => {
+  //   this.setState({
+  //       type: "Basic",
+  //       activeType: "basic"
+  //   })
+  // }
 
-  advancedHandler = () => {
-    this.setState({
-        type: "Advance",
-        activeType: "advance"
-    })
-  }
+  // advancedHandler = () => {
+  //   this.setState({
+  //       type: "Advance",
+  //       activeType: "advance"
+  //   })
+  // }
 
-  premiumHandler = () => {
-    this.setState({
-        type: "Premium",
-        activeType: "premium"
-    })
-  }
+  // premiumHandler = () => {
+  //   this.setState({
+  //       type: "Premium",
+  //       activeType: "premium"
+  //   })
+  // }
 
   render() {
     return (
@@ -285,40 +285,6 @@ export default class Pricing extends Component {
                 color="black"
               >
                 YEARLY
-              </Text>
-            </ToggleButton>
-          </ButtonBox>
-
-          <ButtonBox onlyMobile>
-            <BtnBackground width="33.3333333%" className={this.state.activeType} />
-            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.basicHandler}>
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                BASIC
-              </Text>
-            </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.advancedHandler}>
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                ADVANCED
-              </Text>
-            </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%" onClick={this.premiumHandler}>
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                PREMIUM
               </Text>
             </ToggleButton>
           </ButtonBox>

@@ -10,7 +10,7 @@ import mobile from '../assets/logo/Mobile.svg'
 const FirstBox = styled(Box)`
     @media only screen and (max-width: ${theme.breakpoints.md}) {
         padding: 0;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
 
         text-align: center;
     }

@@ -1,15 +1,16 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
+import Scroll from 'react-scroll'
 import { FaBars, FaMinus } from 'react-icons/fa'
-
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
 import { Wrapper } from '../styles/MyStyles'
 
 import logo from '../assets/logo/APPIK.svg'
-
 import { navmenu } from '../data/navmenu'
+
+const ScrollLink = Scroll.ScrollLink
 
 const Background = styled.div`
   position: fixed;
@@ -19,7 +20,7 @@ const Background = styled.div`
   transition: all 0.2s;
 
   &.active {
-    background: linear-gradient(rgba(35, 79, 167, .9), rgba(110, 79, 204, .9));
+    background: linear-gradient(rgba(35, 79, 167, 1), rgba(110, 79, 204, 1));
     transition: all 0.2s ease-in-out;
   }
 `

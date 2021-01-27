@@ -7,6 +7,11 @@ export const Wrapper = styled.div`
   padding: 0 30px;
   max-width: ${theme.breakpoints.xl};
   padding-bottom: 75px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    padding: 0 15px;
+    padding-bottom: 70px;
+  }
 `
 
 export const Title = styled.div`
@@ -19,6 +24,10 @@ export const Title = styled.div`
 
   h2 {
     margin-bottom: 20px;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    margin-bottom: 50px;
   }
 `
 

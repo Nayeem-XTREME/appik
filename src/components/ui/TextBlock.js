@@ -1,5 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Text } from "../../components"
+import theme from '../../styles/theme'
+
+const Div = styled.div`
+    margin-bottom: ${({ marginBottom }) => ( marginBottom ? "50px" : "0" )};
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+        margin-bottom: ${({ marginBottom }) => ( marginBottom ? "30px" : "0" )};
+    }
+`
 
 export default function TextBlock({ title, details, mb }) {
     const main = <div>
@@ -7,13 +17,11 @@ export default function TextBlock({ title, details, mb }) {
         <Text variant="p">{details}</Text>
     </div>
 
-    const block = mb ? <div style={{ marginBottom: "50px" }}>
+    const block = mb ? <Div marginBottom>
         { main }
-    </div> : <div>
+    </Div> : <Div>
         { main }
-    </div>
+    </Div>
 
-    return (
-        <div>{ block }</div>
-    )
+    return (<div>{ block }</div>)
 }

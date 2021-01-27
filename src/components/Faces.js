@@ -12,6 +12,9 @@ import theme from '../styles/theme'
 const Div = styled.div`
 
   margin-bottom: 75px;
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    margin-bottom: 20px;
+  }
 
   .slide {
     transform: scale(0.7);
@@ -35,6 +38,12 @@ const Div = styled.div`
     position: absolute;
     cursor: pointer;
     z-index: 10;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      img {
+        width: 50px;
+      }
+    }
   }
 
   .prev {
@@ -83,6 +92,10 @@ const Counter = styled.div`
   left: 50%;
   transform: translateX(-50%);
   bottom: 10px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    bottom: 40px;
+  }
 `
 
 const getCurrentClass = (index, imgIndex) => {
