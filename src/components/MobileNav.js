@@ -57,6 +57,10 @@ const Support = styled.div`
   position: absolute;
   bottom: 80px;
   left: 60px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    display: none;
+  }
 `
 
 const Image = styled.img`
