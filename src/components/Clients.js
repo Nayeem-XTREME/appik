@@ -4,12 +4,34 @@ import { Box, Flex, Text } from "../components"
 import { Wrapper, Title } from '../styles/MyStyles'
 import { reviews } from '../data/client'
 
+import starfill from '../assets/logo/Star.svg'
+import starblank from '../assets/logo/StarBlank.svg'
+
 const Image = styled.img`
   max-width: ${props => props.maxWidth};
   height: ${props => props.height};
+
+  margin-right: ${({marginRight}) => marginRight};
 `
 
 export default function Clients() {
+
+  const printStar = (star) => {
+
+    const rating = [];
+
+    for (let i = 0; i < 5; i++) {
+      if (i < star) {
+        rating.push(<Image marginRight="5px" src={starfill} alt="starfill" />)
+      } else {
+        rating.push(<Image marginRight="5px" src={starblank} alt="starfill" />)
+      }
+    }
+
+    return rating;
+  }
+
+
   return (
     <Wrapper>
       <Title>
@@ -28,6 +50,9 @@ export default function Clients() {
               <Box width={10/12} ml={3}>
                 <Text variant="h5" mb={1}>{item.name}</Text>
                 <Text variant="p">{item.tag}</Text>
+
+                {printStar(item.star)}
+
               </Box>
             </Flex>
 
