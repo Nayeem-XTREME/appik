@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import Scroll from 'react-scroll'
 import { FaBars, FaMinus } from 'react-icons/fa'
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
@@ -9,8 +8,6 @@ import { Wrapper } from '../styles/MyStyles'
 
 import logo from '../assets/logo/APPIK.svg'
 import { navmenu } from '../data/navmenu'
-
-const ScrollLink = Scroll.ScrollLink
 
 const Background = styled.div`
   position: fixed;
@@ -100,7 +97,6 @@ class Header extends Component {
 
   mobileMenuHandler = () => {
     this.setState({ clicked: !this.state.clicked });
-    console.log(this.state.clicked);
   }
 
   changeNavBackground = () => {
@@ -129,7 +125,7 @@ class Header extends Component {
           </MyWrapper>
         </Background>
 
-        <MobileNav status={ this.state.clicked === true ? "active" : "closed" } />
+        <MobileNav status={ this.state.clicked === true ? true : false } />
       </>
     )
   }

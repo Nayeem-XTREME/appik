@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { Wrapper } from '../styles/MyStyles'
@@ -70,11 +70,18 @@ const Image = styled.img`
 `
 
 export default function MobileNav({ status }) {
+
+  // const [active, setActive] = useState(0);
+
+  // setActive(active + 1)
+  // console.log(status, active);
+  // setActive(active + 1)
+
   return (
-    <Nav className={status}>
+    <Nav className={status ? "active" : "closed"}>
       <MyWrapper>
-        <NavMenu className="active">
-          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+        <NavMenu>
+          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i}  > {x.title} </NavLink> )}
         </NavMenu>
         <Support>
           {platform.map((logo, i) => (
