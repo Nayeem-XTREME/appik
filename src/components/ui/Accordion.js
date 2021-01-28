@@ -25,9 +25,7 @@ const Heading = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  span {
-    cursor: pointer;
-  }
+  cursor: pointer;
 `
 
 const Content = styled.div`
@@ -39,17 +37,17 @@ const Content = styled.div`
 `
 
 const Img = styled.img`
-  width: 75%;
+  width: 100%;
+  max-width: 24px;
+  height: auto;
 `
 
 export default function Accordion({ title, description, active, setActive, item }) {
   return (
     <Main item={item}>
-      <Heading item={item}>
+      <Heading item={item} onClick={() => setActive(title)}>
         <Text variant="h5" fontWeight="300" mr={4}>{title}</Text>
-        <span onClick={() => setActive(title)}>
-          <Img src={active === title ? minus : plus} alt="Button" />
-        </span>
+        <Img src={active === title ? minus : plus} alt="Button" />
       </Heading>
 
       <Content className={(active === title ? "show" : "")}>
