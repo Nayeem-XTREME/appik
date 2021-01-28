@@ -33,7 +33,7 @@ export default function Clients() {
 
 
   return (
-    <Wrapper>
+    <Wrapper id="reviews">
       <Title>
         <Text variant="h2">What Says Our Clients</Text>
         <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>

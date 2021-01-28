@@ -53,7 +53,7 @@ const Image = styled.img`
 
 export default function Download() {
   return (
-    <Bg>
+    <Bg id="download">
       <Wrapper style={{ padding: "125px 0", overflow: "hidden" }}>
           <Text variant="h1" textAlign="center" color="white" mb={38} px={20}>
             Download the App <br />

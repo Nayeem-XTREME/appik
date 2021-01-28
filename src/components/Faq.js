@@ -17,7 +17,7 @@ export default function Faq() {
   const [active, setActive] = useState(0);
 
   return (
-    <Wrapper>
+    <Wrapper id="faq">
       <Title style={{ alignItems: "flex-start", padding: "0 11px" }}>
         <Text variant="h2">Frequently Ask Questions</Text>
         <Text variant="p" style={{ textAlign: "left" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>

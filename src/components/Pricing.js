@@ -255,7 +255,7 @@ export default class Pricing extends Component {
   render() {
     return (
       <>
-        <Wrapper style={{ height: "950px", overflow: "hidden" }}>
+        <Wrapper id="pricing" style={{ height: "950px", overflow: "hidden" }}>
           <Title>
             <Text variant="h2">Appik Prices</Text>
             <Text variant="p">

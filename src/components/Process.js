@@ -40,7 +40,7 @@ const ImageBox = styled(Box)`
 
 export default function Process() {
     return (
-        <Wrapper>
+        <Wrapper id="features">
             <Title>
                 <Text variant="h2">Easy Process With Best Features</Text>
                 <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>

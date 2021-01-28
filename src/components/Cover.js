@@ -104,7 +104,7 @@ const MobileImage = styled.div`
 export default function Cover() {
     return (
         <>
-            <CoverContainer>
+            <CoverContainer id="index">
                 <CoverWrapper>
                     <Flex flexWrap="wrap">
                         <Box width={[1, 1, 1/2]} pr={2} mt={[50, 70, 100]}>

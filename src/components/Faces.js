@@ -167,7 +167,7 @@ export default function Faces() {
   }
 
   return (
-    <Div>
+    <Div id="faces">
       <Wrapper>
         <Title>
           <Text variant="h2">Appik Faces</Text>
