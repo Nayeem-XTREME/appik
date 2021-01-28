@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
   padding: 0 30px;
+  min-height: ${({minHeight}) => minHeight};
   max-width: ${theme.breakpoints.xl};
   padding-bottom: 75px;
 

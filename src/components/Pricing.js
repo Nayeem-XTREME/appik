@@ -6,6 +6,9 @@ import { Wrapper, Title, Button } from "../styles/MyStyles"
 import theme from "../styles/theme"
 import { prices } from "../data/prices"
 
+import rightArrow from '../assets/logo/RightArrow.svg'
+import leftArrow from '../assets/logo/LeftArrowHighlight.svg'
+
 const Div = styled.div`
   position: relative;
 
@@ -130,13 +133,6 @@ const Background = styled.div`
   }
 `
 
-const MyText = styled(Text)`
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: ${theme.colors.defaultText};
-  line-height: 30px;
-`
-
 const MyButton = styled(Button)`
   display: inline-block;
   padding: 12px 0;
@@ -198,10 +194,32 @@ const ToggleButton = styled.button`
 `
 
 const PriceBox = styled(Box)`
+  position: relative;
+  transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 768px) {
     width: 100%;
     display: ${({ active }) => (active ? "block" : "none")};
     transition: all 0.2s;
+  }
+`
+
+const Arrow = styled.img`
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  display: none;
+
+  @media only screen and (max-width: 768px) {
+    top: 190px;
+    display: block;
+
+    &.left {
+      left: -20px;
+    }
+
+    &.right {
+      right: -20px;
+    }
   }
 `
 
@@ -212,7 +230,8 @@ export default class Pricing extends Component {
     activeButton: "btn-monthly",
 
     type: "Advance",
-    activeType: "advance"
+    leftarrow: true,
+    rightarrow: true
   }
 
   monthlyHandler = () => {
@@ -231,26 +250,37 @@ export default class Pricing extends Component {
     })
   }
 
-  // basicHandler = () => {
-  //   this.setState({
-  //       type: "Basic",
-  //       activeType: "basic"
-  //   })
-  // }
+  leftArrowHandler = () => {
+    if (this.state.type === "Advance") {
+      this.setState({
+        type: "Basic",
+        leftarrow: false,
+        rightarrow: true
+      });
+    } else if (this.state.type === "Premium") {
+      this.setState({
+        type: "Advance",
+        leftarrow: true,
+        rightarrow: true
+      });
+    }
+  }
 
-  // advancedHandler = () => {
-  //   this.setState({
-  //       type: "Advance",
-  //       activeType: "advance"
-  //   })
-  // }
-
-  // premiumHandler = () => {
-  //   this.setState({
-  //       type: "Premium",
-  //       activeType: "premium"
-  //   })
-  // }
+  rightArrowHandler = () => {
+    if (this.state.type === "Advance") {
+      this.setState({
+        type: "Premium",
+        leftarrow: true,
+        rightarrow: false
+      });
+    } else if (this.state.type === "Basic") {
+      this.setState({
+        type: "Advance",
+        leftarrow: true,
+        rightarrow: true
+      });
+    }
+  }
 
   render() {
     return (
@@ -315,7 +345,7 @@ export default class Pricing extends Component {
                       <Ul>
                         {item.features.map((feature, ind) => (
                           <li key={ind}>
-                            <MyText variant="p">{feature}</MyText>
+                            <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
                           </li>
                         ))}
                       </Ul>
@@ -352,7 +382,7 @@ export default class Pricing extends Component {
                       <Ul>
                         {item.features.map((feature, ind) => (
                           <li key={ind}>
-                            <MyText variant="p">{feature}</MyText>
+                            <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
                           </li>
                         ))}
                       </Ul>
@@ -363,6 +393,8 @@ export default class Pricing extends Component {
                 )
               })}
             </Flex>
+            <Arrow className="left" style={{ visibility: this.state.leftarrow ? "visible" : "hidden" }} src={leftArrow} alt="LeftArrow" onClick={this.leftArrowHandler} />
+            <Arrow className="right" style={{ visibility: this.state.rightarrow ? "visible" : "hidden" }} src={rightArrow} alt="RightArrow" onClick={this.rightArrowHandler} />
           </Div>
         </Wrapper>
         <Background />
