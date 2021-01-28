@@ -139,38 +139,38 @@ export default function Footer() {
             <Box width={[1, 1, 1/2, 1/2]}>
               <Ul>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Home</Text></MyLink>
+                  <MyLink to="#index"><Text variant="p">Home</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Pages</Text></MyLink>
+                  <MyLink to="#features"><Text variant="p">Pages</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Features</Text></MyLink>
+                  <MyLink to="#pages"><Text variant="p">Features</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">How it works</Text></MyLink>
+                  <MyLink to="#how-it-works"><Text variant="p">How it works</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">App faces</Text></MyLink>
+                  <MyLink to="#faces"><Text variant="p">App faces</Text></MyLink>
                 </Li>
               </Ul>
             </Box>
             <Box width={[1, 1, 1/2, 1/2]}>
               <Ul>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Download</Text></MyLink>
+                  <MyLink to="#download"><Text variant="p">Download</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">FAQ's</Text></MyLink>
+                  <MyLink to="#faq"><Text variant="p">FAQ's</Text></MyLink>
                 </Li>
                 <Li>
                   <MyLink to="/"><Text variant="p">Support</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Pricing</Text></MyLink>
+                  <MyLink to="#pricing"><Text variant="p">Pricing</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Contact us</Text></MyLink>
+                  <MyLink to="#contact"><Text variant="p">Contact us</Text></MyLink>
                 </Li>
               </Ul>
             </Box>
