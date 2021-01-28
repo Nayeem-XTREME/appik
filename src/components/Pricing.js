@@ -53,7 +53,9 @@ const Card = styled.div`
   flex-direction: column;
 
   .highlight:after {
-    background-color: ${theme.colors.fill};
+    @media only screen and (min-width: 768px) {
+      background-color: ${theme.colors.fill};
+    }
   }
 
   :hover .underline:after {
@@ -141,6 +143,12 @@ const MyButton = styled(Button)`
   @media only screen and (max-width: 768px) {
     margin: 0 auto 32px;
     min-width: 160px;
+
+    background-color: ${theme.colors.lightGray};
+
+    :hover {
+      background-color: ${theme.colors.highlight};
+    }
   }
 `
 
