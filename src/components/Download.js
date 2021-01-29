@@ -70,7 +70,7 @@ export default function Download() {
         </Text>
 
         <BtnGroup>
-          <MyButton marginRight="12px">DOWNLOAD APP</MyButton>
+          <MyButton highlight marginRight="12px">DOWNLOAD APP</MyButton>
           <MyButton marginLeft="12px">CONTACT US</MyButton>
         </BtnGroup>
 

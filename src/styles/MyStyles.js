@@ -10,8 +10,7 @@ export const Wrapper = styled.div`
   /* padding-bottom: 75px; */
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
-    padding: 0 15px;
-    padding-bottom: 70px;
+    padding: 35px 15px;
   }
 `
 

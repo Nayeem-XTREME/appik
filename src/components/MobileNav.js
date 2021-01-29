@@ -20,7 +20,7 @@ const Nav = styled.nav`
   }
 
   &.closed {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     transition: all 0.3s;
   }
 `

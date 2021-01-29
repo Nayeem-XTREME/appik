@@ -94,7 +94,7 @@ const Counter = styled.div`
   bottom: -25px;
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
-    bottom: 40px;
+    bottom: 0;
   }
 `
 
