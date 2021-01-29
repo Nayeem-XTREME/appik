@@ -7,6 +7,20 @@ import theme from '../../styles/theme'
 
 const Form = styled.form`
   overflow: hidden;
+
+  background-color: white;
+  border-radius: 6px;
+  padding: 60px 91px;
+
+  @media only screen and (max-width: ${theme.breakpoints.lg}) {
+    padding: 60px 60px;
+    margin-bottom: 70px;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    padding: 30px 30px;
+    margin-bottom: 50px;
+  }
 `
 
 const Input = styled.input`
@@ -20,6 +34,7 @@ const Input = styled.input`
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
   font-size: 14px;
+  color: ${theme.colors.defaultText};
 `
 
 const Textarea = styled.textarea`
@@ -35,6 +50,7 @@ const Textarea = styled.textarea`
 
   font-family: 'Roboto', 'Montserrat', sans-serif;
   font-size: 14px;
+  color: ${theme.colors.defaultText};
 `
 
 export default function MyForm({ title, buttonText }) {
