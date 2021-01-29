@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../styles/theme'
@@ -8,6 +8,8 @@ import { Box, Flex, Text } from "../components"
 
 import { social } from '../data/social'
 import logo from '../assets/logo/appikBlack.svg'
+
+import { FaPlus, FaMinus } from 'react-icons/fa'
 
 const LogoBox = styled(Box)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
@@ -19,14 +21,23 @@ const LogoBox = styled(Box)`
 const LinkBox = styled(Box)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+    height: 30px;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+
+    &.open {
+      height: 356px;
+      transition: all 0.2s ease-in-out;
+    }
   }
 `
 
 const NewsletterBox = styled(Box)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
   }
 `
 
@@ -124,17 +135,42 @@ const CopyText = styled(Text)`
   }
 `
 
+const Plus = styled(FaPlus)`
+  display: none;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    display: inline-block;
+  }
+`
+
+const Minus = styled(FaMinus)`
+  display: none;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    display: inline-block;
+  }
+`
+
 export default function Footer() {
+
+  const [linkbox, setLinkBox] = useState(false);
+
+  console.log(linkbox);
+
   return (
     <Wrapper>
       <Flex flexWrap="wrap" pt={75}>
         <LogoBox width={[1, 1, 1/2, 1/3]} pr={[0, 0, 5]}>
           <Link to="/"><Logo src={logo} alt="logo" /></Link>
-          <Text variant="p" mb={28}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
+          <Text variant="p" mb={[18, 18, 28]}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
         </LogoBox>
 
-        <LinkBox width={[1, 1, 1/2, 1/3]} pl={[0, 0, 0, 40]}>
-          <Text variant="h5" mb={28}>Useful Links</Text>
+        <LinkBox className={ linkbox ? "open" : "" } width={[1, 1, 1/2, 1/3]} pl={[0, 0, 0, 40]} >
+          <Flex mb={28} justifyContent="center" alignItems='center' onClick={() => setLinkBox(!linkbox)}>
+            <Text mr={3} variant="h5">Useful Links</Text>
+            { linkbox ? <Minus /> : <Plus /> }
+          </Flex>
+          
           <Flex flexWrap="wrap">
             <Box width={[1, 1, 1/2, 1/2]}>
               <Ul>
