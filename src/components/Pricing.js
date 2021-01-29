@@ -125,7 +125,7 @@ const Background = styled.div`
   background-color: ${theme.colors.lightGray};
   width: 100%;
   margin-top: -380px;
-  margin-bottom: 75px;
+  margin-bottom: 37.5px;
   height: 340px;
   z-index: -100;
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Element } from 'react-scroll'
 import { Button, Wrapper } from '../styles/MyStyles'
 import { platform } from '../data/platform'
 import { Text, Box, Flex } from "../components"
@@ -10,6 +9,7 @@ import cover from '../assets/img/cover.png'
 import mobile from '../assets/logo/TwoMobile.svg'
 
 const CoverWrapper = styled(Wrapper)`
+    padding-top: 0;
     padding-bottom: 0;
 `
 
@@ -19,7 +19,7 @@ const CoverContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    margin-bottom: 150px;
+    margin-bottom: 100px;
     padding-top: 60px;
 
     @media only screen and (max-width: ${theme.breakpoints.lg}) {

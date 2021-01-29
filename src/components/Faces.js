@@ -91,7 +91,7 @@ const Counter = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10px;
+  bottom: -25px;
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     bottom: 40px;

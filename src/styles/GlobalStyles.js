@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
-    scroll-padding-top: 85px;
+    scroll-padding-top: 60px;
   }
 
   h1 {

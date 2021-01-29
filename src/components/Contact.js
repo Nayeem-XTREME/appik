@@ -9,7 +9,7 @@ import Form from './ui/MyForm'
 
 const Bg = styled.div`
   background-color: ${theme.colors.lightGray};
-  padding-top: 75px;
+  padding: 37.5px 0;
 `
 
 const MyButton = styled(Button)`

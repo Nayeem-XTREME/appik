@@ -23,7 +23,7 @@ export default function Faq() {
         <Text variant="p" style={{ textAlign: "left" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
       </Title>
 
-      <Flex flexWrap="wrap">
+      <Flex flexWrap="wrap" pb={37.5}>
         <Box width={[1, 1, 1, 1/2]} px={11}>
           <Image maxWidth="100%" height="auto" src={bitmap} alt="bitmap" />
         </Box>

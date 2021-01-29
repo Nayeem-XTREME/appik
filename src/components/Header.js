@@ -23,6 +23,7 @@ const Background = styled.div`
 `
 
 const MyWrapper = styled(Wrapper)`
+  padding-top: 0;
   padding-bottom: 0;
   z-index: 100;
 `
