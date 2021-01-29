@@ -69,19 +69,13 @@ const Image = styled.img`
   margin-right: 40px;
 `
 
-export default function MobileNav({ status }) {
-
-  // const [active, setActive] = useState(0);
-
-  // setActive(active + 1)
-  // console.log(status, active);
-  // setActive(active + 1)
+export default function MobileNav({ status, mobileMenuHandler }) {
 
   return (
-    <Nav className={status ? "active" : "closed"}>
+    <Nav className={ status ? "active" : "closed" }>
       <MyWrapper>
         <NavMenu>
-          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i}  > {x.title} </NavLink> )}
+          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} onClick={mobileMenuHandler} > {x.title} </NavLink> )}
         </NavMenu>
         <Support>
           {platform.map((logo, i) => (

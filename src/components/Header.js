@@ -125,7 +125,7 @@ class Header extends Component {
           </MyWrapper>
         </Background>
 
-        <MobileNav status={ this.state.clicked === true ? true : false } />
+        <MobileNav mobileMenuHandler={this.mobileMenuHandler} status={ this.state.clicked === true ? true : false } />
       </>
     )
   }
