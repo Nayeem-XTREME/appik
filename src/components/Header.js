@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FaBars, FaMinus } from 'react-icons/fa'
@@ -98,15 +98,22 @@ const Header = () => {
     setClicked(!clicked);
   }
 
-  const changeNavBackground = () => {
-    if (window.scrollY > 60) {
-      setNavbarActive(true)
-    } else {
-      setNavbarActive(false);
+  useEffect(() => {
+    if (window) {
+      const changeNavBackground = () => {
+        if (window.scrollY > 60) {
+          setNavbarActive(true)
+        } else {
+          setNavbarActive(false);
+        }
+      }
+      window.addEventListener('scroll', changeNavBackground);
+    
+      return () => {
+        window.removeEventListener('scroll', changeNavBackground);
+      }
     }
-  }
-
-  window.addEventListener('scroll', changeNavBackground);
+  }, [navbarActive])
 
   return (
     <>
