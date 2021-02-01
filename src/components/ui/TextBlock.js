@@ -1,20 +1,27 @@
 import React from 'react'
-import { H4, P } from '../../styles/GlobalStyles'
+import styled from 'styled-components'
+import { Text } from "../../components"
+import theme from '../../styles/theme'
 
-export default function TextBlock({ h4, p, mb }) {
+const Div = styled.div`
+    margin-bottom: ${({ marginBottom }) => ( marginBottom ? "50px" : "0" )};
 
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+        margin-bottom: ${({ marginBottom }) => ( marginBottom ? "30px" : "0" )};
+    }
+`
+
+export default function TextBlock({ title, details, mb }) {
     const main = <div>
-        <H4 style={{ marginBottom: "20px" }}>{h4}</H4>
-        <P>{p}</P>
+        <Text variant="h4" mb="15px">{title}</Text>
+        <Text variant="p">{details}</Text>
     </div>
 
-    const block = mb ? <div style={{ marginBottom: "80px" }}>
+    const block = mb ? <Div marginBottom>
         { main }
-    </div> : <div>
+    </Div> : <Div>
         { main }
-    </div>
+    </Div>
 
-    return (
-        <div>{ block }</div>
-    )
+    return (<div>{ block }</div>)
 }

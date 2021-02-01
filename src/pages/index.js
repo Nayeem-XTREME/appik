@@ -1,18 +1,31 @@
 import React from "react"
-import Cover from '../components/custom/Cover'
-import Process from '../components/custom/Process'
-import HowItWorks from '../components/custom/HowItWorks'
-import Pricing from '../components/custom/Pricing'
+import { Helmet } from "react-helmet"
+import '../styles/index.css'
 
-import { Layout } from "../components"
+import { Layout, Cover, Process, HowItWorks, Faces, Pricing, Clients, Faq, Download, Contact, Footer } from "../components"
 
 const IndexPage = () => (
-  <Layout>
-    <Cover />
-    <Process />
-    <HowItWorks />
-    <Pricing />
-  </Layout>
+  <div>
+
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>Appik | Life Makes Easy</title>
+    </Helmet>
+
+    <Layout>
+      <Cover />
+      <Process />
+      <HowItWorks />
+      <Faces />
+      <Pricing />
+      <Clients />
+      <Faq />
+      <Download />
+      <Contact />
+      <Footer />
+    </Layout>
+
+  </div>
 )
 
 export default IndexPage
