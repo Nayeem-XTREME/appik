@@ -17,6 +17,7 @@ const Image = styled.img`
 
 const Block = styled.div`
   padding: 15px;
+  outline: none;
 
   :first-child {
     padding-left: 0;
@@ -82,7 +83,7 @@ export default function Clients() {
         <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
       </Title>
 
-      <Slider {...settings} style={{ overflow: "hidden" }}>
+      <Slider {...settings}>
 
         { reviews.map((item, index) => (
           <Block key={index}>

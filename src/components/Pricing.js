@@ -124,7 +124,7 @@ const Ul = styled.ul`
 const Background = styled.div`
   background-color: ${theme.colors.lightGray};
   width: 100%;
-  margin-top: -440px;
+  margin-top: -480px;
   margin-bottom: 37.5px;
   height: 280px;
   z-index: -100;
@@ -212,21 +212,24 @@ const PriceBox = styled(Box)`
 `
 
 const Arrow = styled.img`
+  width: 100%;
+  max-width: 40px;
+  height: auto;
   position: absolute;
   z-index: 10;
   cursor: pointer;
   display: none;
 
   @media only screen and (max-width: 768px) {
-    top: 190px;
+    top: 220px;
     display: block;
 
     &.left {
-      left: -20px;
+      left: -10px;
     }
 
     &.right {
-      right: -20px;
+      right: -10px;
     }
   }
 `
