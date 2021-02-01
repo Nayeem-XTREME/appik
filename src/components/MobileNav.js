@@ -70,7 +70,6 @@ const Image = styled.img`
 `
 
 export default function MobileNav({ status, mobileMenuHandler }) {
-
   return (
     <Nav className={ status ? "active" : "closed" }>
       <MyWrapper>

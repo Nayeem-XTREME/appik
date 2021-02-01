@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FaBars, FaMinus } from 'react-icons/fa'
@@ -89,47 +89,42 @@ const Image = styled.img`
   height: 24px;
 `
 
-class Header extends Component {
+const Header = () => {
 
-  state = {
-    clicked: false,
-    navbarActive: false
+  const [clicked, setClicked] = useState(false);
+  const [navbarActive, setNavbarActive] = useState(false);
+
+  const mobileMenuHandler = () => {
+    setClicked(!clicked);
   }
 
-  mobileMenuHandler = () => {
-    this.setState({ clicked: !this.state.clicked });
-  }
-
-  changeNavBackground = () => {
+  const changeNavBackground = () => {
     if (window.scrollY > 60) {
-      this.setState({ navbarActive: true });
+      setNavbarActive(true)
     } else {
-      this.setState({ navbarActive: false });
+      setNavbarActive(false);
     }
   }
 
-  render() {
+  window.addEventListener('scroll', changeNavBackground);
 
-    window.addEventListener('scroll', this.changeNavBackground);
+  return (
+    <>
+      <Background className={navbarActive ? 'active' : ''}>
+        <MyWrapper>
+          <Nav>
+            <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
+            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} />}
+            <NavMenu className="active">
+              {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+            </NavMenu>
+          </Nav>
+        </MyWrapper>
+      </Background>
 
-    return (
-      <>
-        <Background className={this.state.navbarActive ? 'active' : ''}>
-          <MyWrapper>
-            <Nav>
-              <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
-              { this.state.clicked ? <Close onClick={this.mobileMenuHandler} /> : <Bars onClick={this.mobileMenuHandler} />}
-              <NavMenu className="active">
-                {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
-              </NavMenu>
-            </Nav>
-          </MyWrapper>
-        </Background>
-
-        <MobileNav mobileMenuHandler={this.mobileMenuHandler} status={ this.state.clicked === true ? true : false } />
-      </>
-    )
-  }
+      <MobileNav mobileMenuHandler={mobileMenuHandler} status={ clicked === true ? true : false } />
+    </>
+  )
 }
 
 export default Header
