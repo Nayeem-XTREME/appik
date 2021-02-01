@@ -37,9 +37,9 @@ export default function Clients() {
     const rating = [];
     for (let i = 0; i < 5; i++) {
       if (i < star) {
-        rating.push(<Image marginRight="5px" src={starfill} alt="starfill" />)
+        rating.push(<Image key={i} marginRight="5px" src={starfill} alt="starfill" />)
       } else {
-        rating.push(<Image marginRight="5px" src={starblank} alt="starfill" />)
+        rating.push(<Image key={i} marginRight="5px" src={starblank} alt="starfill" />)
       }
     }
     return rating;

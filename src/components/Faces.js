@@ -81,6 +81,7 @@ const Image = styled.img`
   max-height: 400px;
   width: auto;
   margin: 0 auto;
+  text-align: center;
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     max-height: 500px;

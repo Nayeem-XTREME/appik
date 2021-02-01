@@ -65,7 +65,7 @@ const Card = styled.div`
 
 const MainTitle = styled.div`
   text-align: center;
-  padding-top: 33px;
+  padding-top: 20px;
 
   :after {
     content: "";
@@ -74,7 +74,7 @@ const MainTitle = styled.div`
     height: 3px;
     background-color: ${theme.colors.lightGray};
     border-radius: 10px;
-    margin: 33px auto 0 auto;
+    margin: 20px auto 0 auto;
     transition: all 0.2s;
   }
 
@@ -89,7 +89,7 @@ const MainTitle = styled.div`
 
 const SubTitle = styled.div`
   text-align: center;
-  margin-top: 33px;
+  margin-top: 20px;
 
   :after {
     content: "";
@@ -98,7 +98,7 @@ const SubTitle = styled.div`
     height: 0.75px;
     background-color: ${theme.colors.veryLightGray};
     border-radius: 10px;
-    margin: 33px auto 0 auto;
+    margin: 20px auto 0 auto;
   }
 
   @media only screen and (max-width: 768px) {
@@ -114,7 +114,7 @@ const Ul = styled.ul`
   list-style: none;
   text-align: center;
   padding: 0;
-  margin: 24px 0 56px 0;
+  margin: 24px 0 20px 0;
 
   @media only screen and (max-width: 768px) {
     margin: 24px 0 24px 0;
@@ -124,9 +124,9 @@ const Ul = styled.ul`
 const Background = styled.div`
   background-color: ${theme.colors.lightGray};
   width: 100%;
-  margin-top: -380px;
+  margin-top: -440px;
   margin-bottom: 37.5px;
-  height: 340px;
+  height: 280px;
   z-index: -100;
 
   @media only screen and (max-width: 768px) {
@@ -138,7 +138,7 @@ const Background = styled.div`
 const MyButton = styled(Button)`
   display: inline-block;
   padding: 12px 0;
-  margin: 0 auto 62px;
+  margin: 0 auto 28px;
 
   @media only screen and (max-width: 768px) {
     margin: 0 auto 32px;
@@ -154,7 +154,7 @@ const MyButton = styled(Button)`
 
 const ButtonBox = styled.div`
   max-width: 360px;
-  margin: -24px auto 46px;
+  margin: -54px auto 28px;
   position: relative;
   border: ${({ border }) => (border ? "0.5px solid #D1D1D1" : "none")};
   border-radius: 30px;

@@ -155,8 +155,6 @@ export default function Footer() {
 
   const [linkbox, setLinkBox] = useState(false);
 
-  console.log(linkbox);
-
   return (
     <Wrapper>
       <Flex flexWrap="wrap" pt={37.5}>
@@ -178,10 +176,10 @@ export default function Footer() {
                   <MyLink to="#index"><Text variant="p">Home</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#features"><Text variant="p">Pages</Text></MyLink>
+                  <MyLink to="#"><Text variant="p">Pages</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#pages"><Text variant="p">Features</Text></MyLink>
+                  <MyLink to="#features"><Text variant="p">Features</Text></MyLink>
                 </Li>
                 <Li>
                   <MyLink to="#how-it-works"><Text variant="p">How it works</Text></MyLink>
@@ -200,7 +198,7 @@ export default function Footer() {
                   <MyLink to="#faq"><Text variant="p">FAQ's</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="/"><Text variant="p">Support</Text></MyLink>
+                  <MyLink to="#download"><Text variant="p">Support</Text></MyLink>
                 </Li>
                 <Li>
                   <MyLink to="#pricing"><Text variant="p">Pricing</Text></MyLink>
