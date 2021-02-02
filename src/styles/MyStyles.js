@@ -4,9 +4,13 @@ import theme from '../styles/theme'
 export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 36px 30px;
+  min-height: ${({minHeight}) => minHeight};
   max-width: ${theme.breakpoints.xl};
-  padding-bottom: 75px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    padding: 35px 15px;
+  }
 `
 
 export const Title = styled.div`
@@ -15,13 +19,14 @@ export const Title = styled.div`
   align-items: center;
   margin-bottom: 75px;
   position: relative;
+  text-align: center;
 
   h2 {
     margin-bottom: 20px;
   }
 
-  p {
-    text-align: center;
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    margin-bottom: 50px;
   }
 `
 

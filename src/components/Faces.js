@@ -12,6 +12,9 @@ import theme from '../styles/theme'
 const Div = styled.div`
 
   margin-bottom: 75px;
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    margin-bottom: 20px;
+  }
 
   .slide {
     transform: scale(0.7);
@@ -35,6 +38,12 @@ const Div = styled.div`
     position: absolute;
     cursor: pointer;
     z-index: 10;
+
+    @media only screen and (max-width: ${theme.breakpoints.md}) {
+      img {
+        width: 50px;
+      }
+    }
   }
 
   .prev {
@@ -47,7 +56,7 @@ const Div = styled.div`
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
       top: 40%;
-      left: 10%;
+      left: 0;
     }
   }
 
@@ -61,7 +70,7 @@ const Div = styled.div`
 
     @media only screen and (max-width: ${theme.breakpoints.md}) {
       top: 40%;
-      right: 10%;
+      right: 0;
     }
   }
   
@@ -72,6 +81,7 @@ const Image = styled.img`
   max-height: 400px;
   width: auto;
   margin: 0 auto;
+  text-align: center;
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     max-height: 500px;
@@ -82,7 +92,11 @@ const Counter = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10px;
+  bottom: -25px;
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    bottom: 0;
+  }
 `
 
 const getCurrentClass = (index, imgIndex) => {
@@ -154,7 +168,7 @@ export default function Faces() {
   }
 
   return (
-    <Div>
+    <Div id="faces">
       <Wrapper>
         <Title>
           <Text variant="h2">Appik Faces</Text>

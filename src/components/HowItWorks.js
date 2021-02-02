@@ -40,7 +40,7 @@ const Image = styled.img`
 
 export default function HowItWorks() {
   return (
-    <Background>
+    <Background id="how-it-works">
       <Wrapper>
         <Title>
           <Text variant="h2">How it Works</Text>

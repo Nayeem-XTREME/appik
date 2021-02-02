@@ -28,6 +28,7 @@ const BtnGroup = styled.div`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
   }
 `
 
@@ -40,7 +41,7 @@ const MyButton = styled(Button)`
     max-width: 200px;
 
     :not(:last-child) {
-      margin-bottom: 60px;
+      margin-bottom: 20px;
     }
   }
 `
@@ -51,26 +52,35 @@ const Image = styled.img`
   margin: ${props => props.margin};
 `
 
+const MyWrapper = styled(Wrapper)`
+  padding: 125px 0;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 export default function Download() {
   return (
-    <Bg>
-      <Wrapper style={{ padding: "125px 0", overflow: "hidden" }}>
-          <Text variant="h1" textAlign="center" color="white" mb={38} px={20}>
-            Download the App <br />
-            and Start Your Works for Business Now.
-          </Text>
+    <Bg id="download">
+      <MyWrapper minHeight="100vh">
+        <Text variant="h1" textAlign="center" color="white" mb={38} px={20}>
+          Download the App <br />
+          and Start Your Works for Business Now.
+        </Text>
 
-          <BtnGroup>
-            <MyButton marginRight="12px">DOWNLOAD APP</MyButton>
-            <MyButton marginLeft="12px">CONTACT US</MyButton>
-          </BtnGroup>
+        <BtnGroup>
+          <MyButton highlight marginRight="12px">DOWNLOAD APP</MyButton>
+          <MyButton marginLeft="12px">CONTACT US</MyButton>
+        </BtnGroup>
 
-          <Support>
-            {platform.map((logo, i) => (
-              <Image margin="0 45px" maxWidth="52px" height="auto" key={i} src={logo.src} alt={logo.alt} />
-            ))}
-          </Support>
-      </Wrapper>
+        <Support>
+          {platform.map((logo, i) => (
+            <Image margin="0 45px" maxWidth="52px" height="auto" key={i} src={logo.src} alt={logo.alt} />
+          ))}
+        </Support>
+      </MyWrapper>
     </Bg>
   )
 }

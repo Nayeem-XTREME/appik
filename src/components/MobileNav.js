@@ -20,7 +20,7 @@ const Nav = styled.nav`
   }
 
   &.closed {
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     transition: all 0.3s;
   }
 `
@@ -69,12 +69,12 @@ const Image = styled.img`
   margin-right: 40px;
 `
 
-export default function MobileNav({ status }) {
+export default function MobileNav({ status, mobileMenuHandler }) {
   return (
-    <Nav className={status}>
+    <Nav className={ status ? "active" : "closed" }>
       <MyWrapper>
-        <NavMenu className="active">
-          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+        <NavMenu>
+          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} onClick={mobileMenuHandler} > {x.title} </NavLink> )}
         </NavMenu>
         <Support>
           {platform.map((logo, i) => (

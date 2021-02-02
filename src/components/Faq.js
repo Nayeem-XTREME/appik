@@ -14,16 +14,16 @@ const Image = styled.img`
 
 export default function Faq() {
 
-  const [active, setActive] = useState("There are many variations of passages of 1");
+  const [active, setActive] = useState(0);
 
   return (
-    <Wrapper>
+    <Wrapper id="faq">
       <Title style={{ alignItems: "flex-start", padding: "0 11px" }}>
         <Text variant="h2">Frequently Ask Questions</Text>
         <Text variant="p" style={{ textAlign: "left" }}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
       </Title>
 
-      <Flex flexWrap="wrap">
+      <Flex flexWrap="wrap" pb={37.5}>
         <Box width={[1, 1, 1, 1/2]} px={11}>
           <Image maxWidth="100%" height="auto" src={bitmap} alt="bitmap" />
         </Box>

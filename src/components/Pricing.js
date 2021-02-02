@@ -1,10 +1,13 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import { Box, Flex, Text } from "../components"
 import { Wrapper, Title, Button } from "../styles/MyStyles"
 import theme from "../styles/theme"
 import { prices } from "../data/prices"
+
+import rightArrow from '../assets/logo/RightArrow.svg'
+import leftArrow from '../assets/logo/LeftArrowHighlight.svg'
 
 const Div = styled.div`
   position: relative;
@@ -36,27 +39,27 @@ const Div = styled.div`
     left: 1500px;
     transition: all 0.5s;
   }
-
-  &.onlyMobile {
-    display: none;
-    @media only screen and (max-width: ${theme.breakpoints.md}) {
-      display: block;
-    }
-  }
 `
 
 const Card = styled.div`
   border: 1px solid ${theme.colors.lightGray};
   background-color: ${theme.colors.white};
-  border-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   padding: auto 10px;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
 
   display: flex;
   flex-direction: column;
 
+  :hover {
+    box-shadow: 0px 0px 10px rgba(205, 204, 204, 0.5);
+  }
+
   .highlight:after {
-    background-color: ${theme.colors.fill};
+    @media only screen and (min-width: 768px) {
+      background-color: ${theme.colors.fill};
+    }
   }
 
   :hover .underline:after {
@@ -66,7 +69,7 @@ const Card = styled.div`
 
 const MainTitle = styled.div`
   text-align: center;
-  padding-top: 33px;
+  padding-top: 20px;
 
   :after {
     content: "";
@@ -75,14 +78,22 @@ const MainTitle = styled.div`
     height: 3px;
     background-color: ${theme.colors.lightGray};
     border-radius: 10px;
-    margin: 33px auto 0 auto;
+    margin: 20px auto 0 auto;
     transition: all 0.2s;
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding-top: 20px;
+
+    :after {
+      margin: 20px auto 0 auto;
+    }
   }
 `
 
 const SubTitle = styled.div`
   text-align: center;
-  margin-top: 33px;
+  margin-top: 20px;
 
   :after {
     content: "";
@@ -91,7 +102,15 @@ const SubTitle = styled.div`
     height: 0.75px;
     background-color: ${theme.colors.veryLightGray};
     border-radius: 10px;
-    margin: 33px auto 0 auto;
+    margin: 20px auto 0 auto;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin-top: 20px;
+
+    :after {
+      margin: 20px auto 0 auto;
+    }
   }
 `
 
@@ -99,54 +118,71 @@ const Ul = styled.ul`
   list-style: none;
   text-align: center;
   padding: 0;
-  margin: 24px 0 56px 0;
+  margin: 24px 0 20px 0;
+
+  @media only screen and (max-width: 768px) {
+    margin: 24px 0 24px 0;
+  }
 `
 
-const Bg = styled.div`
+const Background = styled.div`
   background-color: ${theme.colors.lightGray};
   width: 100%;
-  margin-top: -380px;
-  margin-bottom: 75px;
-  height: 340px;
+  margin-top: -480px;
+  margin-bottom: 37.5px;
+  height: 280px;
   z-index: -100;
-`
 
-const MyText = styled(Text)`
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  color: ${theme.colors.defaultText};
-  line-height: 30px;
+  @media only screen and (max-width: 768px) {
+    height: 300px;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    height: 300px;
+  }
 `
 
 const MyButton = styled(Button)`
   display: inline-block;
-  margin: 0 auto 62px;
+  padding: 12px 0;
+  margin: 0 auto 28px;
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 auto 32px;
+    min-width: 160px;
+
+    background-color: ${theme.colors.lightGray};
+
+    :hover {
+      background-color: ${theme.colors.highlight};
+    }
+  }
 `
 
 const ButtonBox = styled.div`
   max-width: 360px;
-  margin: -24px auto 46px;
+  margin: -54px auto 28px;
   position: relative;
   border: ${({ border }) => (border ? "0.5px solid #D1D1D1" : "none")};
   border-radius: 30px;
   transition: all 0.2s;
 
-  display: ${({ onlyMobile }) => (onlyMobile ? "none" : "block")};
-
   .btn-monthly {
     top: 0;
-    left: 0;
+    left: 0%;
     transition: all 0.5s;
   }
 
   .btn-yearly {
     top: 0;
-    right: 0;
+    left: 100%;
+    transform: translateX(-100%);
     transition: all 0.5s;
   }
 
   @media only screen and (max-width: 768px) {
     display: block;
+    margin-bottom: 34px;
   }
 `
 
@@ -173,186 +209,199 @@ const ToggleButton = styled.button`
 `
 
 const PriceBox = styled(Box)`
+  position: relative;
+  transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 768px) {
     width: 100%;
     display: ${({ active }) => (active ? "block" : "none")};
+    transition: all 0.2s;
   }
 `
 
-export default class Pricing extends Component {
-  state = {
-    monthly: "monthly-active",
-    yearly: "yearly-hidden",
-    activeButton: "btn-monthly",
+const Arrow = styled.img`
+  width: 100%;
+  max-width: 40px;
+  height: auto;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  display: none;
 
-    type: "Advanced",
+  @media only screen and (max-width: 768px) {
+    top: 220px;
+    display: block;
+
+    &.left {
+      left: -10px;
+    }
+
+    &.right {
+      right: -10px;
+    }
+  }
+`
+
+export default function Pricing () {
+
+  const [monthly, setMonthly] = useState("monthly-active");
+  const [yearly, setYearly]  = useState("yearly-hidden");
+  const [activeButton, setActiveButton]  = useState("btn-monthly");
+
+  const [type, setType]  = useState("Advance");
+  const [leftarrow, setLeftarrow]  = useState(true);
+  const [rightarrow, setRightarrow]  = useState(true);
+
+  const monthlyHandler = () => {
+    setMonthly("monthly-active");
+    setYearly("yearly-hidden");
+    setActiveButton("btn-monthly");
   }
 
-  monthlyHandler = () => {
-    this.setState({
-      monthly: "monthly-active",
-      yearly: "yearly-hidden",
-      activeButton: "btn-monthly",
-    })
+  const yearlyHandler = () => {
+    setMonthly("monthly-hidden");
+    setYearly("yearly-active");
+    setActiveButton("btn-yearly");
   }
 
-  yearlyHandler = () => {
-    this.setState({
-      monthly: "monthly-hidden",
-      yearly: "yearly-active",
-      activeButton: "btn-yearly",
-    })
+  const leftArrowHandler = () => {
+    if (type === "Advance") {
+      setType("Basic");
+      setLeftarrow(false);
+      setRightarrow(true);
+    } else if (type === "Premium") {
+      setType("Advance");
+      setLeftarrow(true);
+      setRightarrow(true);
+    }
   }
 
-  render() {
-    return (
-      <>
-        <Wrapper style={{ height: "950px", overflow: "hidden" }}>
-          <Title>
-            <Text variant="h2">Appik Prices</Text>
-            <Text variant="p">
-              There are many variations of passages of Lorem Ipsum available,
-              but the majority have suffered alteration in some form, by
-              injected humour, or randomised.
+  const rightArrowHandler = () => {
+    if (type === "Advance") {
+      setType("Premium");
+      setLeftarrow(true);
+      setRightarrow(false);
+    } else if (type === "Basic") {
+      setType("Advance");
+      setLeftarrow(true);
+      setRightarrow(true);
+    }
+  }
+  
+  return (
+    <>
+      <Wrapper id="pricing" style={{ height: "950px", overflow: "hidden" }}>
+        <Title>
+          <Text variant="h2">Appik Prices</Text>
+          <Text variant="p" mb={[28, 28, 0]}>
+            There are many variations of passages of Lorem Ipsum available,
+            but the majority have suffered alteration in some form, by
+            injected humour, or randomised.
+          </Text>
+        </Title>
+
+        <ButtonBox border>
+          <BtnBackground width="50%" className={activeButton} />
+          <ToggleButton padding="12px 0" width="50%" onClick={monthlyHandler}>
+            <Text
+              fontSize={16}
+              fontFamily='"Montserrat", sans-serif'
+              fontWeight={700}
+              color="black"
+            >
+              MONTHLY
             </Text>
-          </Title>
+          </ToggleButton>
+          <ToggleButton padding="12px 0" width="50%" onClick={yearlyHandler}>
+            <Text
+              fontSize={16}
+              fontFamily='"Montserrat", sans-serif'
+              fontWeight={700}
+              color="black"
+            >
+              YEARLY
+            </Text>
+          </ToggleButton>
+        </ButtonBox>
 
-          <ButtonBox border>
-            <BtnBackground width="50%" className={this.state.activeButton} />
-            <ToggleButton padding="12px 0" width="50%" onClick={this.monthlyHandler}>
-              <Text
-                fontSize={16}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                MONTHLY
-              </Text>
-            </ToggleButton>
-            <ToggleButton padding="12px 0" width="50%" onClick={this.yearlyHandler}>
-              <Text
-                fontSize={16}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                YEARLY
-              </Text>
-            </ToggleButton>
-          </ButtonBox>
+        <Div>
+          <Flex flexWrap="wrap" className={monthly}>
+            {prices.map((item, index) => {
+              return (
+                <PriceBox
+                  active={item.title === type ? true : false}
+                  width={[1, 1, 1 / 3]}
+                  key={index}
+                  px={10}
+                >
+                  <Card>
+                    <MainTitle
+                      className={
+                        item.highlight ? "underline highlight" : "underline"
+                      }
+                    >
+                      <Text variant="h3">{item.title}</Text>
+                    </MainTitle>
 
-          <ButtonBox onlyMobile>
-            <BtnBackground width="33.3333333%" />
-            <ToggleButton padding="8px 0" width="33.3333333%">
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                BASIC
-              </Text>
-            </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%">
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                ADVANCED
-              </Text>
-            </ToggleButton>
-            <ToggleButton padding="8px 0" width="33.3333333%">
-              <Text
-                fontSize={14}
-                fontFamily='"Montserrat", sans-serif'
-                fontWeight={700}
-                color="black"
-              >
-                PREMIUM
-              </Text>
-            </ToggleButton>
-          </ButtonBox>
+                    <SubTitle>
+                      <Text variant="h4">{item.monthlyPrice}</Text>
+                    </SubTitle>
 
-          <Div>
-            <Flex flexWrap="wrap" className={this.state.monthly}>
-              {prices.map((item, index) => {
-                return (
-                  <PriceBox
-                    active={item.highlight ? true : false}
-                    width={[1, 1, 1 / 3]}
-                    key={index}
-                    px={10}
-                  >
-                    <Card>
-                      <MainTitle
-                        className={
-                          item.highlight ? "underline highlight" : "underline"
-                        }
-                      >
-                        <Text variant="h3">{item.title}</Text>
-                      </MainTitle>
+                    <Ul>
+                      {item.features.map((feature, ind) => (
+                        <li key={ind}>
+                          <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
+                        </li>
+                      ))}
+                    </Ul>
 
-                      <SubTitle>
-                        <Text variant="h4">{item.monthlyPrice}</Text>
-                      </SubTitle>
+                    <MyButton highlight={item.highlight}>BUY NOW</MyButton>
+                  </Card>
+                </PriceBox>
+              )
+            })}
+          </Flex>
 
-                      <Ul>
-                        {item.features.map((feature, ind) => (
-                          <li key={ind}>
-                            <MyText variant="p">{feature}</MyText>
-                          </li>
-                        ))}
-                      </Ul>
+          <Flex flexWrap="wrap" className={yearly}>
+            {prices.map((item, index) => {
+              return (
+                <PriceBox
+                  active={item.title === type ? true : false}
+                  width={[1, 1, 1 / 3]}
+                  key={index}
+                  px={10}
+                >
+                  <Card>
+                    <MainTitle
+                      className={
+                        item.highlight ? "underline highlight" : "underline"
+                      }
+                    >
+                      <Text variant="h3">{item.title}</Text>
+                    </MainTitle>
 
-                      <MyButton highlight={item.highlight}>BUY NOW</MyButton>
-                    </Card>
-                  </PriceBox>
-                )
-              })}
-            </Flex>
+                    <SubTitle>
+                      <Text variant="h4">{item.yearlyPrice}</Text>
+                    </SubTitle>
 
-            <Flex flexWrap="wrap" className={this.state.yearly}>
-              {prices.map((item, index) => {
-                return (
-                  <PriceBox
-                    active={item.highlight ? true : false}
-                    width={[1, 1, 1 / 3]}
-                    key={index}
-                    px={10}
-                  >
-                    <Card>
-                      <MainTitle
-                        className={
-                          item.highlight ? "underline highlight" : "underline"
-                        }
-                      >
-                        <Text variant="h3">{item.title}</Text>
-                      </MainTitle>
+                    <Ul>
+                      {item.features.map((feature, ind) => (
+                        <li key={ind}>
+                          <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
+                        </li>
+                      ))}
+                    </Ul>
 
-                      <SubTitle>
-                        <Text variant="h4">{item.yearlyPrice}</Text>
-                      </SubTitle>
-
-                      <Ul>
-                        {item.features.map((feature, ind) => (
-                          <li key={ind}>
-                            <MyText variant="p">{feature}</MyText>
-                          </li>
-                        ))}
-                      </Ul>
-
-                      <MyButton highlight={item.highlight}>BUY NOW</MyButton>
-                    </Card>
-                  </PriceBox>
-                )
-              })}
-            </Flex>
-          </Div>
-        </Wrapper>
-        <Bg />
-      </>
-    )
-  }
+                    <MyButton highlight={item.highlight}>BUY NOW</MyButton>
+                  </Card>
+                </PriceBox>
+              )
+            })}
+          </Flex>
+          <Arrow className="left" style={{ visibility: leftarrow ? "visible" : "hidden" }} src={leftArrow} alt="LeftArrow" onClick={leftArrowHandler} />
+          <Arrow className="right" style={{ visibility: rightarrow ? "visible" : "hidden" }} src={rightArrow} alt="RightArrow" onClick={rightArrowHandler} />
+        </Div>
+      </Wrapper>
+      <Background />
+    </>
+  )
 }

@@ -1,14 +1,12 @@
-import React, { Component } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { FaBars, FaMinus } from 'react-icons/fa'
-
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
 import { Wrapper } from '../styles/MyStyles'
 
 import logo from '../assets/logo/APPIK.svg'
-
 import { navmenu } from '../data/navmenu'
 
 const Background = styled.div`
@@ -19,12 +17,13 @@ const Background = styled.div`
   transition: all 0.2s;
 
   &.active {
-    background: linear-gradient(rgba(35, 79, 167, .9), rgba(110, 79, 204, .9));
+    background: linear-gradient(rgba(35, 79, 167, 1), rgba(110, 79, 204, 1));
     transition: all 0.2s ease-in-out;
   }
 `
 
 const MyWrapper = styled(Wrapper)`
+  padding-top: 0;
   padding-bottom: 0;
   z-index: 100;
 `
@@ -90,48 +89,49 @@ const Image = styled.img`
   height: 24px;
 `
 
-class Header extends Component {
+const Header = () => {
 
-  state = {
-    clicked: false,
-    navbarActive: false
+  const [clicked, setClicked] = useState(false);
+  const [navbarActive, setNavbarActive] = useState(false);
+
+  const mobileMenuHandler = () => {
+    setClicked(!clicked);
   }
 
-  mobileMenuHandler = () => {
-    this.setState({ clicked: !this.state.clicked });
-    console.log(this.state.clicked);
-  }
-
-  changeNavBackground = () => {
-    if (window.scrollY > 60) {
-      this.setState({ navbarActive: true });
-    } else {
-      this.setState({ navbarActive: false });
+  useEffect(() => {
+    if (window) {
+      const changeNavBackground = () => {
+        if (window.scrollY > 60) {
+          setNavbarActive(true)
+        } else {
+          setNavbarActive(false);
+        }
+      }
+      window.addEventListener('scroll', changeNavBackground);
+    
+      return () => {
+        window.removeEventListener('scroll', changeNavBackground);
+      }
     }
-  }
+  }, [navbarActive])
 
-  render() {
+  return (
+    <>
+      <Background className={navbarActive ? 'active' : ''}>
+        <MyWrapper>
+          <Nav>
+            <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
+            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} />}
+            <NavMenu className="active">
+              {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+            </NavMenu>
+          </Nav>
+        </MyWrapper>
+      </Background>
 
-    window.addEventListener('scroll', this.changeNavBackground);
-
-    return (
-      <>
-        <Background className={this.state.navbarActive ? 'active' : ''}>
-          <MyWrapper>
-            <Nav>
-              <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
-              { this.state.clicked ? <Close onClick={this.mobileMenuHandler} /> : <Bars onClick={this.mobileMenuHandler} />}
-              <NavMenu className="active">
-                {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
-              </NavMenu>
-            </Nav>
-          </MyWrapper>
-        </Background>
-
-        <MobileNav status={ this.state.clicked === true ? "active" : "closed" } />
-      </>
-    )
-  }
+      <MobileNav mobileMenuHandler={mobileMenuHandler} status={ clicked === true ? true : false } />
+    </>
+  )
 }
 
 export default Header
