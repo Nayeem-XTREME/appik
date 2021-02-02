@@ -131,7 +131,10 @@ const Background = styled.div`
 
   @media only screen and (max-width: 768px) {
     height: 300px;
-    margin-top: -480px;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.md}) {
+    height: 300px;
   }
 `
 
@@ -285,7 +288,7 @@ export default function Pricing () {
       <Wrapper id="pricing" style={{ height: "950px", overflow: "hidden" }}>
         <Title>
           <Text variant="h2">Appik Prices</Text>
-          <Text variant="p">
+          <Text variant="p" mb={[28, 28, 0]}>
             There are many variations of passages of Lorem Ipsum available,
             but the majority have suffered alteration in some form, by
             injected humour, or randomised.

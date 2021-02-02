@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import { Box, Flex, Text } from "../components"
 import { Wrapper, Title } from '../styles/MyStyles'
 import { reviews } from '../data/client'
+import theme from '../styles/theme'
 
 import starfill from '../assets/logo/Star.svg'
 import starblank from '../assets/logo/StarBlank.svg'
@@ -25,6 +26,16 @@ const Block = styled.div`
 
   :last-child {
     padding-right: 0;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.lg}) {
+    padding: 11px;
+    :first-child {
+      padding-left: 11px;
+    }
+    :last-child {
+      padding-right: 11px;
+    }
   }
 `
 
@@ -48,9 +59,9 @@ export default function Clients() {
 
   const settings = {
     className: "center",
+    arrows: false,
     dots: true,
     centerMode: true,
-    infinite: false,
     centerPadding: "11px",
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -84,7 +95,6 @@ export default function Clients() {
       </Title>
 
       <Slider {...settings}>
-
         { reviews.map((item, index) => (
           <Block key={index}>
             <Flex alignItems='center' mb={20}>

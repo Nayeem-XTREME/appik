@@ -28,6 +28,7 @@ const BtnGroup = styled.div`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
   }
 `
 
@@ -40,7 +41,7 @@ const MyButton = styled(Button)`
     max-width: 200px;
 
     :not(:last-child) {
-      margin-bottom: 60px;
+      margin-bottom: 20px;
     }
   }
 `
