@@ -47,10 +47,14 @@ const Card = styled.div`
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: auto 10px;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
 
   display: flex;
   flex-direction: column;
+
+  :hover {
+    box-shadow: 0px 0px 10px rgba(205, 204, 204, 0.5);
+  }
 
   .highlight:after {
     @media only screen and (min-width: 768px) {
