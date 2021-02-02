@@ -4,10 +4,9 @@ import theme from '../styles/theme'
 export const Wrapper = styled.div`
   position: relative;
   margin: 0 auto;
-  padding: 37.5px 30px;
+  padding: 36px 30px;
   min-height: ${({minHeight}) => minHeight};
   max-width: ${theme.breakpoints.xl};
-  /* padding-bottom: 75px; */
 
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     padding: 35px 15px;

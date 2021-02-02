@@ -1,7 +1,7 @@
 import mobile1 from '../assets/logo/Mobile1.svg'
 import mobile2 from '../assets/logo/Mobile2.svg'
 import mobile3 from '../assets/logo/Mobile3.svg'
-import mobile4 from '../assets/logo/Mobile4.svg'
+import mobile4 from '../assets/logo/Mobile1.svg'
 import mobile5 from '../assets/logo/Mobile5.svg'
 import mobile6 from '../assets/logo/Mobile6.svg'
 

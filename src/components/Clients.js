@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import { Box, Flex, Text } from "../components"
 import { Wrapper, Title } from '../styles/MyStyles'
 import { reviews } from '../data/client'
+import theme from '../styles/theme'
 
 import starfill from '../assets/logo/Star.svg'
 import starblank from '../assets/logo/StarBlank.svg'
@@ -17,6 +18,7 @@ const Image = styled.img`
 
 const Block = styled.div`
   padding: 15px;
+  outline: none;
 
   :first-child {
     padding-left: 0;
@@ -24,6 +26,16 @@ const Block = styled.div`
 
   :last-child {
     padding-right: 0;
+  }
+
+  @media only screen and (max-width: ${theme.breakpoints.lg}) {
+    padding: 11px;
+    :first-child {
+      padding-left: 11px;
+    }
+    :last-child {
+      padding-right: 11px;
+    }
   }
 `
 
@@ -37,9 +49,9 @@ export default function Clients() {
     const rating = [];
     for (let i = 0; i < 5; i++) {
       if (i < star) {
-        rating.push(<Image marginRight="5px" src={starfill} alt="starfill" />)
+        rating.push(<Image key={i} marginRight="5px" src={starfill} alt="starfill" />)
       } else {
-        rating.push(<Image marginRight="5px" src={starblank} alt="starfill" />)
+        rating.push(<Image key={i} marginRight="5px" src={starblank} alt="starfill" />)
       }
     }
     return rating;
@@ -47,9 +59,9 @@ export default function Clients() {
 
   const settings = {
     className: "center",
+    arrows: false,
     dots: true,
     centerMode: true,
-    infinite: false,
     centerPadding: "11px",
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -82,8 +94,7 @@ export default function Clients() {
         <Text variant="p">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised.</Text>
       </Title>
 
-      <Slider {...settings} style={{ overflow: "hidden" }}>
-
+      <Slider {...settings}>
         { reviews.map((item, index) => (
           <Block key={index}>
             <Flex alignItems='center' mb={20}>
