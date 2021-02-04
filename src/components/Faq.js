@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Wrapper, Title } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
-import Accordion from './ui/Accordion'
+import Accordion from './Accordion'
 import { accordions } from '../data/accordions'
 
 import bitmap from '../assets/img/Bitmap.svg'

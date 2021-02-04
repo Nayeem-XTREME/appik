@@ -1,4 +1,4 @@
-import avatar from '../assets/logo/Avatar.svg'
+import avatar from '../assets/img/Avatar.svg'
 
 export const reviews = [
   {

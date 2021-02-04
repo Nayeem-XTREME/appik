@@ -7,7 +7,7 @@ import { Wrapper, Button } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
 
 import { social } from '../data/social'
-import logo from '../assets/logo/appikBlack.svg'
+import logo from '../assets/img/appikBlack.svg'
 
 import { FaPlus, FaMinus } from 'react-icons/fa'
 

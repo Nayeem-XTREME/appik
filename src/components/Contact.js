@@ -5,7 +5,7 @@ import theme from '../styles/theme'
 import { Wrapper, Button } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
 
-import Form from './ui/MyForm'
+import Form from './MyForm'
 
 const Bg = styled.div`
   background-color: ${theme.colors.lightGray};
