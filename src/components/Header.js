@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { FaBars, FaMinus } from 'react-icons/fa'
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
-import { Wrapper } from '../styles/MyStyles'
+import { Wrapper, Image } from '../styles'
 
 import logo from '../assets/img/APPIK.svg'
 import { navmenu } from '../data/navmenu'
@@ -85,10 +85,6 @@ const Close = styled(FaMinus)`
   }
 `
 
-const Image = styled.img`
-  height: 24px;
-`
-
 const Header = () => {
 
   const [clicked, setClicked] = useState(false);
@@ -120,10 +116,10 @@ const Header = () => {
       <Background className={navbarActive ? 'active' : ''}>
         <MyWrapper>
           <Nav>
-            <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
-            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} />}
+            <NavLink to="/"> <Image height="24px" src={logo} alt="APPIK"/> </NavLink>
+            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} /> }
             <NavMenu className="active">
-              {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+              { navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> ) }
             </NavMenu>
           </Nav>
         </MyWrapper>

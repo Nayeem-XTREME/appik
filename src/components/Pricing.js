@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title, Button } from "../styles/MyStyles"
+import { Wrapper, Title, Button } from "../styles"
 import theme from "../styles/theme"
 import { prices } from "../data/prices"
 
@@ -144,8 +144,6 @@ const Background = styled.div`
 
 const MyButton = styled(Button)`
   display: inline-block;
-  padding: 12px 0;
-  margin: 0 auto 28px;
 
   @media only screen and (max-width: 768px) {
     margin: 0 auto 32px;
@@ -354,7 +352,7 @@ export default function Pricing () {
                       ))}
                     </Ul>
 
-                    <MyButton highlight={item.highlight}>BUY NOW</MyButton>
+                    <MyButton margin="0 auto 28px" padding="12px 0" highlight={item.highlight}>BUY NOW</MyButton>
                   </Card>
                 </PriceBox>
               )
@@ -391,7 +389,7 @@ export default function Pricing () {
                       ))}
                     </Ul>
 
-                    <MyButton highlight={item.highlight}>BUY NOW</MyButton>
+                    <MyButton margin="0 auto 28px" padding="12px 0" highlight={item.highlight}>BUY NOW</MyButton>
                   </Card>
                 </PriceBox>
               )

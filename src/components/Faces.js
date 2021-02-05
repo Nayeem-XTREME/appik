@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
-import { Wrapper, Title } from '../styles/MyStyles'
-import { Text } from "../components"
+import { Wrapper, Title, Image } from '../styles'
+import { Text, NextArrow, PrevArrow } from "../components"
 
 import { faces } from '../data/appfaces'
-import leftArrow from '../assets/img/LeftArrow.svg'
-import rightArrow from '../assets/img/RightArrow.svg'
 import theme from '../styles/theme'
 
 const Div = styled.div`
@@ -76,13 +74,7 @@ const Div = styled.div`
   
 `
 
-const Image = styled.img`
-  height: 100%;
-  max-height: 400px;
-  width: auto;
-  margin: 0 auto;
-  text-align: center;
-
+const FaceImage = styled(Image)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     max-height: 500px;
   }
@@ -117,22 +109,6 @@ const getCurrentClass = (index, imgIndex) => {
 export default function Faces() {
 
   const [ imgIndex, setImageIndex ] = useState(0)
-
-  const NextArrow = ({ onClick }) => {
-    return (
-      <div className="arrow next" onClick={onClick}>
-        <img src={rightArrow} alt="RightArrow" />
-      </div>
-    )
-  }
-
-  const PrevArrow = ({ onClick }) => {
-    return (
-      <div className="arrow prev" onClick={onClick}>
-        <img src={leftArrow} alt="LeftArrow" />
-      </div>
-    )
-  }
 
   const settings = {
     infinite: true,
@@ -178,7 +154,7 @@ export default function Faces() {
         <Slider {...settings}>
           {faces.map((face, index) => (
             <div key={index}>
-              <Image src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
+              <FaceImage maxHeight="400px" width="auto" margin="0 auto" textAlign="center" src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
             </div>
           ))}
         </Slider>

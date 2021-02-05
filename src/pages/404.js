@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Wrapper } from '../styles/MyStyles'
+import { Wrapper } from '../styles'
 import { Layout, Text } from "../components"
 
 const NotFoundPage = () => (

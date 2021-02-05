@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title } from "../styles/MyStyles"
+import { Wrapper, Title, Image } from "../styles"
 import ListItem from "./ListItem"
 import { how } from "../data/how"
 import theme from "../styles/theme"
@@ -20,12 +20,7 @@ const Background = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 100%;
-  max-width: ${props => props.maxWidth};
-  height: ${props => props.height};
-  margin-left: ${props => props.marginLeft};
-
+const MobileImage = styled(Image)`
   @media only screen and (max-width: ${theme.breakpoints.lg}) {
     margin: 0 auto;
     margin-bottom: 75px;
@@ -53,7 +48,8 @@ export default function HowItWorks() {
 
         <Flex flexWrap="wrap">
           <Box width={[1, 1, 1, 1 / 2]}>
-            <Image
+            <MobileImage
+              width="100%"
               maxWidth="240px"
               height="auto"
               marginLeft="130px"

@@ -1,16 +1,10 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
-import { Wrapper, Title } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles'
 import { Box, Flex, Text } from "../components"
 import Accordion from './Accordion'
 import { accordions } from '../data/accordions'
 
 import bitmap from '../assets/img/Bitmap.svg'
-
-const Image = styled.img`
-  max-width: ${props => props.maxWidth};
-  height: ${props => props.height};
-`
 
 export default function Faq() {
 

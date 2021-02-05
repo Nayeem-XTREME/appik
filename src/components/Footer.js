@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../styles/theme'
 
-import { Wrapper, Button } from '../styles/MyStyles'
+import { Wrapper, Button, Image } from '../styles'
 import { Box, Flex, Text } from "../components"
 
 import { social } from '../data/social'
@@ -39,11 +39,6 @@ const NewsletterBox = styled(Box)`
     text-align: center;
     margin-top: 30px;
   }
-`
-
-const Logo = styled.img`
-  width: 98px;
-  margin-bottom: 28px;
 `
 
 const Ul = styled.ul`
@@ -97,10 +92,7 @@ const Social = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 100%;
-  max-width: 40px;
-  height: auto;
+const SocialLogo = styled(Image)`
   transition: all 0.2s ease-in-out;
 
   :hover {
@@ -123,6 +115,13 @@ const SocialLink = styled(Link)`
 
 const MyLink = styled(Link)`
   text-decoration: none;
+
+  .footer-link {
+    transition: all 0.2s ease-in-out;
+    :hover {
+      color: ${theme.colors.highlight} !important;
+    }
+  }
 `
 
 const CopyText = styled(Text)`
@@ -159,7 +158,7 @@ export default function Footer() {
     <Wrapper>
       <Flex flexWrap="wrap" pt={37.5}>
         <LogoBox width={[1, 1, 1/2, 1/3]} pr={[0, 0, 5]}>
-          <Link to="/"><Logo src={logo} alt="logo" /></Link>
+          <Link to="/"><Image width="98px" marginBottom="28px" src={logo} alt="logo" /></Link>
           <Text variant="p" mb={[18, 18, 28]}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
         </LogoBox>
 
@@ -173,38 +172,38 @@ export default function Footer() {
             <Box width={[1, 1, 1/2, 1/2]}>
               <Ul>
                 <Li>
-                  <MyLink to="#index"><Text variant="p">Home</Text></MyLink>
+                  <MyLink to="#index"><Text className="footer-link" variant="p">Home</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#"><Text variant="p">Pages</Text></MyLink>
+                  <MyLink to="#"><Text className="footer-link" variant="p">Pages</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#features"><Text variant="p">Features</Text></MyLink>
+                  <MyLink to="#features"><Text className="footer-link" variant="p">Features</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#how-it-works"><Text variant="p">How it works</Text></MyLink>
+                  <MyLink to="#how-it-works"><Text className="footer-link" variant="p">How it works</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#faces"><Text variant="p">App faces</Text></MyLink>
+                  <MyLink to="#faces"><Text className="footer-link" variant="p">App faces</Text></MyLink>
                 </Li>
               </Ul>
             </Box>
             <Box width={[1, 1, 1/2, 1/2]}>
               <Ul>
                 <Li>
-                  <MyLink to="#download"><Text variant="p">Download</Text></MyLink>
+                  <MyLink to="#download"><Text className="footer-link" variant="p">Download</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#faq"><Text variant="p">FAQ's</Text></MyLink>
+                  <MyLink to="#faq"><Text className="footer-link" variant="p">FAQ's</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#download"><Text variant="p">Support</Text></MyLink>
+                  <MyLink to="#download"><Text className="footer-link" variant="p">Support</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#pricing"><Text variant="p">Pricing</Text></MyLink>
+                  <MyLink to="#pricing"><Text className="footer-link" variant="p">Pricing</Text></MyLink>
                 </Li>
                 <Li>
-                  <MyLink to="#contact"><Text variant="p">Contact us</Text></MyLink>
+                  <MyLink to="#contact"><Text className="footer-link" variant="p">Contact us</Text></MyLink>
                 </Li>
               </Ul>
             </Box>
@@ -228,7 +227,7 @@ export default function Footer() {
             <Box width={[1, 1, 5/12, 1]}>
               <Social>
                 { social.map(( logo, index ) => (
-                  <SocialLink to={logo.to} key={index}><Image src={logo.src} alt={logo.alt} /></SocialLink>
+                  <SocialLink to={logo.to} key={index}><SocialLogo width="100%" maxWidth="40px" height="auto" src={logo.src} alt={logo.alt} /></SocialLink>
                 )) }
               </Social>
             </Box>

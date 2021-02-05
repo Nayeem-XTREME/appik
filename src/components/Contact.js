@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import theme from '../styles/theme'
 
-import { Wrapper, Button } from '../styles/MyStyles'
+import { Wrapper, Button } from '../styles'
 import { Box, Flex, Text } from "../components"
 
 import Form from './MyForm'
@@ -10,22 +10,6 @@ import Form from './MyForm'
 const Bg = styled.div`
   background-color: ${theme.colors.lightGray};
   padding: 37.5px 0;
-`
-
-const MyButton = styled(Button)`
-  margin-bottom: 62px;
-`
-
-const CustomFlex = styled(Flex)`
-  flex-direction: column;
-
-  @media only screen and (max-width: ${theme.breakpoints.lg}) {
-    flex-direction: row;
-  }
-
-  @media only screen and (max-width: ${theme.breakpoints.md}) {
-    flex-direction: column;
-  }
 `
 
 export default function Contact() {
@@ -44,9 +28,9 @@ export default function Contact() {
 
             <Text variant="h4" mb={3}>Location</Text>
             <Text variant="p" mb={4}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</Text>
-            <MyButton highlight>VIEW US ON GOOGLE MAP</MyButton>
+            <Button marginBottom="62px" highlight>VIEW US ON GOOGLE MAP</Button>
 
-            <CustomFlex>
+            <Flex flexDirection={["column", "column", "row", "column"]}>
               <Box width={[1, 1, 1/2, 1]} pr={[0, 0, 11, 0]}>
                 <Text variant="h5" mb={2}>Address 1</Text>
                 <Text variant="p" mb={[62, 62, 0, 62]}>
@@ -68,7 +52,7 @@ export default function Contact() {
                   Email: help@dada’s.com
                 </Text>
               </Box>
-            </CustomFlex>
+            </Flex>
           </Box>
         </Flex>
       </Wrapper>
