@@ -1,33 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import TextBlock from "./TextBlock"
-import { Wrapper, Title } from "../styles/MyStyles"
+import { Wrapper, Title, Image } from "../styles/MyStyles"
 import { Box, Flex, Text } from "../components"
 import theme from "../styles/theme"
 
 import mobile from "../assets/img/Mobile.svg"
-
-const FirstBox = styled(Box)`
-  @media only screen and (max-width: ${theme.breakpoints.md}) {
-    padding: 0;
-    margin-bottom: 30px;
-
-    text-align: center;
-  }
-`
-
-const LastBox = styled(Box)`
-  @media only screen and (max-width: ${theme.breakpoints.md}) {
-    padding: 0;
-    text-align: center;
-  }
-`
-
-const Image = styled.img`
-  width: 100%;
-  max-width: ${props => props.maxWidth};
-  height: ${props => props.height};
-`
 
 const ImageBox = styled(Box)`
   display: flex;
@@ -51,7 +29,7 @@ export default function Process() {
       </Title>
 
       <Flex alignItems="center" flexWrap="wrap">
-        <FirstBox width={[1, 1, 1 / 3]} pr={3}>
+        <Box width={[1, 1, 1 / 3]} pr={[0, 0, 3]} mb={[30, 30, 0, 0]} textAlign={["center", "center", "left"]}>
           <TextBlock
             mb
             title="Loaded with features"
@@ -61,13 +39,13 @@ export default function Process() {
             title="Devices Friendly"
             details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use."
           />
-        </FirstBox>
+        </Box>
 
         <ImageBox width={[1, 1, 1 / 3]}>
-          <Image maxWidth="240px" width="auto" src={mobile} alt="Features" />
+          <Image width="100%" maxWidth="240px" height="auto" src={mobile} alt="Features" />
         </ImageBox>
 
-        <LastBox className="last" width={[1, 1, 1 / 3]} pl={3}>
+        <Box className="last" width={[1, 1, 1 / 3]} pl={[0, 0, 3]} textAlign={["center", "center", "left"]}>
           <TextBlock
             mb
             title="Update Forever"
@@ -77,7 +55,7 @@ export default function Process() {
             title="Superb UX/UI"
             details="There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use."
           />
-        </LastBox>
+        </Box>
       </Flex>
     </Wrapper>
   )

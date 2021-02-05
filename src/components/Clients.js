@@ -2,19 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles/MyStyles'
 import { reviews } from '../data/client'
 import theme from '../styles/theme'
 
 import starfill from '../assets/img/Star.svg'
 import starblank from '../assets/img/StarBlank.svg'
-
-const Image = styled.img`
-  max-width: ${props => props.maxWidth};
-  height: ${props => props.height};
-
-  margin-right: ${({marginRight}) => marginRight};
-`
 
 const Block = styled.div`
   padding: 15px;

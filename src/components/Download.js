@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Wrapper, Button } from '../styles/MyStyles'
+import { Wrapper, Button, Image } from '../styles/MyStyles'
 import { Text } from "../components"
 import cover from '../assets/img/DownloadCover.png'
 import { platform } from '../data/platform'
@@ -44,12 +44,6 @@ const MyButton = styled(Button)`
       margin-bottom: 20px;
     }
   }
-`
-
-const Image = styled.img`
-  max-width: ${props => props.maxWidth};
-  height: ${props => props.height};
-  margin: ${props => props.margin};
 `
 
 const MyWrapper = styled(Wrapper)`

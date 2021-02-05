@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Wrapper } from '../styles/MyStyles'
+import { Wrapper, Image } from '../styles/MyStyles'
 import theme from '../styles/theme'
 
 import { navmenu } from '../data/navmenu'
@@ -63,12 +63,6 @@ const Support = styled.div`
   }
 `
 
-const Image = styled.img`
-  max-width: 46px;
-  height: auto;
-  margin-right: 40px;
-`
-
 export default function MobileNav({ status, mobileMenuHandler }) {
   return (
     <Nav className={ status ? "active" : "closed" }>
@@ -78,7 +72,7 @@ export default function MobileNav({ status, mobileMenuHandler }) {
         </NavMenu>
         <Support>
           {platform.map((logo, i) => (
-            <Image key={i} src={logo.src} alt={logo.alt} />
+            <Image key={i} maxWidth="46px" height="auto" marginRight="40px" src={logo.src} alt={logo.alt} />
           ))}
         </Support>
       </MyWrapper>

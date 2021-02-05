@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
-import { Wrapper, Title } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles/MyStyles'
 import { Text } from "../components"
 
 import { faces } from '../data/appfaces'
@@ -76,13 +76,7 @@ const Div = styled.div`
   
 `
 
-const Image = styled.img`
-  height: 100%;
-  max-height: 400px;
-  width: auto;
-  margin: 0 auto;
-  text-align: center;
-
+const FaceImage = styled(Image)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     max-height: 500px;
   }
@@ -178,7 +172,7 @@ export default function Faces() {
         <Slider {...settings}>
           {faces.map((face, index) => (
             <div key={index}>
-              <Image src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
+              <FaceImage maxHeight="400px" width="auto" margin="0 auto" textAlign="center" src={face.img} alt={face.alt} className={getCurrentClass(index, imgIndex)} />
             </div>
           ))}
         </Slider>

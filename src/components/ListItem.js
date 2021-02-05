@@ -3,7 +3,9 @@ import styled from 'styled-components'
 import theme from '../styles/theme'
 import TextBlock from './TextBlock'
 
-import { Box, Flex } from "."
+import { Box, Flex } from "../components"
+
+import { Image } from '../styles/MyStyles'
 
 const ItemBox = styled(Flex)`
     @media only screen and (max-width: ${theme.breakpoints.md}) {
@@ -13,11 +15,7 @@ const ItemBox = styled(Flex)`
     }
 `
 
-const Image = styled.img`
-    width: 100%;
-    max-width: 80px;
-    height: auto;
-
+const ItemImage = styled(Image)`
     @media only screen and (max-width: ${theme.breakpoints.md}) {
         margin-bottom: 20px;
         max-width: 75px;
@@ -28,7 +26,7 @@ export default function ListItem({ img, alt, title, details, mb }) {
     return (
         <ItemBox flexWrap="wrap">
             <Box className="imageBox" width={[1, 1, 2/12]} px='8px' pt='1px'>
-                <Image src={img} atl={alt} />
+                <ItemImage width="100%" maxWidth="80px" height="auto" src={img} atl={alt} />
             </Box>
 
             <Box width={[1, 1, 10/12]} pl={[0, 0, 3]}>

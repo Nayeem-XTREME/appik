@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Button, Wrapper } from "../styles/MyStyles"
+import { Button, Wrapper, Image } from "../styles/MyStyles"
 import { platform } from "../data/platform"
 import { Text, Box, Flex } from "../components"
 import theme from "../styles/theme"
@@ -66,14 +66,12 @@ const Support = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 100%;
-  max-width: ${props => props.maxWidth};
-  height: auto;
+const SupportImage = styled(Image)`
   :not(:last-child) {
     margin-right: 54px;
   }
 `
+
 const MobileImage = styled.div`
   text-align: right;
   margin-right: 50px;
@@ -127,8 +125,10 @@ export default function Cover() {
 
                 <Support>
                   {platform.map((logo, i) => (
-                    <Image
+                    <SupportImage
+                      width="100%"
                       maxWidth="46px"
+                      height="auto"
                       key={i}
                       src={logo.src}
                       alt={logo.alt}
@@ -142,7 +142,9 @@ export default function Cover() {
               <MobileImage>
                 <Image
                   className="mobile"
+                  width="100%"
                   maxWidth="412px"
+                  height="auto"
                   src={mobile}
                   alt="Two Mobile"
                 />

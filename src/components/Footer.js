@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../styles/theme'
 
-import { Wrapper, Button } from '../styles/MyStyles'
+import { Wrapper, Button, Image } from '../styles/MyStyles'
 import { Box, Flex, Text } from "../components"
 
 import { social } from '../data/social'
@@ -39,11 +39,6 @@ const NewsletterBox = styled(Box)`
     text-align: center;
     margin-top: 30px;
   }
-`
-
-const Logo = styled.img`
-  width: 98px;
-  margin-bottom: 28px;
 `
 
 const Ul = styled.ul`
@@ -97,10 +92,7 @@ const Social = styled.div`
   }
 `
 
-const Image = styled.img`
-  width: 100%;
-  max-width: 40px;
-  height: auto;
+const SocialLogo = styled(Image)`
   transition: all 0.2s ease-in-out;
 
   :hover {
@@ -159,7 +151,7 @@ export default function Footer() {
     <Wrapper>
       <Flex flexWrap="wrap" pt={37.5}>
         <LogoBox width={[1, 1, 1/2, 1/3]} pr={[0, 0, 5]}>
-          <Link to="/"><Logo src={logo} alt="logo" /></Link>
+          <Link to="/"><Image width="98px" marginBottom="28px" src={logo} alt="logo" /></Link>
           <Text variant="p" mb={[18, 18, 28]}>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</Text>
         </LogoBox>
 
@@ -228,7 +220,7 @@ export default function Footer() {
             <Box width={[1, 1, 5/12, 1]}>
               <Social>
                 { social.map(( logo, index ) => (
-                  <SocialLink to={logo.to} key={index}><Image src={logo.src} alt={logo.alt} /></SocialLink>
+                  <SocialLink to={logo.to} key={index}><SocialLogo width="100%" maxWidth="40px" height="auto" src={logo.src} alt={logo.alt} /></SocialLink>
                 )) }
               </Social>
             </Box>
