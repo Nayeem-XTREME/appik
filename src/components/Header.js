@@ -121,9 +121,9 @@ const Header = () => {
         <MyWrapper>
           <Nav>
             <NavLink to="/"> <Image src={logo} alt="APPIK"/> </NavLink>
-            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} />}
+            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} /> }
             <NavMenu className="active">
-              {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> )}
+              { navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> ) }
             </NavMenu>
           </Nav>
         </MyWrapper>
