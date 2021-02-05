@@ -1,11 +1,11 @@
 import React from "react"
 import styled from "styled-components"
-import TextBlock from "./ui/TextBlock"
+import TextBlock from "./TextBlock"
 import { Wrapper, Title } from "../styles/MyStyles"
 import { Box, Flex, Text } from "../components"
 import theme from "../styles/theme"
 
-import mobile from "../assets/logo/Mobile.svg"
+import mobile from "../assets/img/Mobile.svg"
 
 const FirstBox = styled(Box)`
   @media only screen and (max-width: ${theme.breakpoints.md}) {

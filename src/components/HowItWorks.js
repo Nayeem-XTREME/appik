@@ -2,11 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import { Box, Flex, Text } from "../components"
 import { Wrapper, Title } from "../styles/MyStyles"
-import ListItem from "./ui/ListItem"
+import ListItem from "./ListItem"
 import { how } from "../data/how"
 import theme from "../styles/theme"
 
-import control from "../assets/logo/Control.svg"
+import control from "../assets/img/Control.svg"
 import bg from "../assets/img/bg.svg"
 
 const Background = styled.div`

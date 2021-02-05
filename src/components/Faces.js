@@ -5,8 +5,8 @@ import { Wrapper, Title } from '../styles/MyStyles'
 import { Text } from "../components"
 
 import { faces } from '../data/appfaces'
-import leftArrow from '../assets/logo/LeftArrow.svg'
-import rightArrow from '../assets/logo/RightArrow.svg'
+import leftArrow from '../assets/img/LeftArrow.svg'
+import rightArrow from '../assets/img/RightArrow.svg'
 import theme from '../styles/theme'
 
 const Div = styled.div`

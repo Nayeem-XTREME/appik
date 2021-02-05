@@ -1,7 +1,7 @@
-import facebook from '../assets/logo/Facebook.svg'
-import twitter from '../assets/logo/Twitter.svg'
-import youtube from '../assets/logo/YouTube.svg'
-import linkedin from '../assets/logo/LinkedIn.svg'
+import facebook from '../assets/img/Facebook.svg'
+import twitter from '../assets/img/Twitter.svg'
+import youtube from '../assets/img/YouTube.svg'
+import linkedin from '../assets/img/LinkedIn.svg'
 
 export const social = [
   { src: facebook, alt: "Facebook", to: "www.facebook.com" },

@@ -6,7 +6,7 @@ import MobileNav from './MobileNav'
 import theme from '../styles/theme'
 import { Wrapper } from '../styles/MyStyles'
 
-import logo from '../assets/logo/APPIK.svg'
+import logo from '../assets/img/APPIK.svg'
 import { navmenu } from '../data/navmenu'
 
 const Background = styled.div`
