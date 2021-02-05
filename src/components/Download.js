@@ -33,9 +33,6 @@ const BtnGroup = styled.div`
 `
 
 const MyButton = styled(Button)`
-  margin-left: ${props => props.marginLeft};
-  margin-right: ${props => props.marginRight};
-
   @media only screen and (max-width: ${theme.breakpoints.md}) {
     margin: 0;
     max-width: 200px;
