@@ -1,13 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
-import { Box, Flex, Text } from "../components"
+import { Box, Flex, Text, PrintStar } from "../components"
 import { Wrapper, Title, Image } from '../styles'
 import { reviews } from '../data/client'
 import theme from '../styles/theme'
-
-import starfill from '../assets/img/Star.svg'
-import starblank from '../assets/img/StarBlank.svg'
 
 const Block = styled.div`
   padding: 15px;
@@ -32,23 +29,7 @@ const Block = styled.div`
   }
 `
 
-const Stars = styled.div`
-  display: flex;
-`
-
 export default function Clients() {
-
-  const printStar = (star) => {
-    const rating = [];
-    for (let i = 0; i < 5; i++) {
-      if (i < star) {
-        rating.push(<Image key={i} marginRight="5px" src={starfill} alt="starfill" />)
-      } else {
-        rating.push(<Image key={i} marginRight="5px" src={starblank} alt="starfill" />)
-      }
-    }
-    return rating;
-  }
 
   const settings = {
     className: "center",
@@ -97,9 +78,7 @@ export default function Clients() {
               <Box width={10/12} ml={3}>
                 <Text variant="h5" mb={1}>{item.name}</Text>
                 <Text variant="p" mb={2}>{item.tag}</Text>
-
-                <Stars>{printStar(item.star)}</Stars>
-
+                <PrintStar star={item.star} />
               </Box>
             </Flex>
 
