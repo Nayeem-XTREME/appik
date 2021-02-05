@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Wrapper, Button, Image } from '../styles/MyStyles'
+import { Wrapper, Button, Image } from '../styles'
 import { Text } from "../components"
 import cover from '../assets/img/DownloadCover.png'
 import { platform } from '../data/platform'

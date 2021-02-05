@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title, Button } from "../styles/MyStyles"
+import { Wrapper, Title, Button } from "../styles"
 import theme from "../styles/theme"
 import { prices } from "../data/prices"
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title, Image } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles'
 import { reviews } from '../data/client'
 import theme from '../styles/theme'
 

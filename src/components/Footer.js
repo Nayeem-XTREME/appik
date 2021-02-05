@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import theme from '../styles/theme'
 
-import { Wrapper, Button, Image } from '../styles/MyStyles'
+import { Wrapper, Button, Image } from '../styles'
 import { Box, Flex, Text } from "../components"
 
 import { social } from '../data/social'

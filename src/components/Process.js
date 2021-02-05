@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import TextBlock from "./TextBlock"
-import { Wrapper, Title, Image } from "../styles/MyStyles"
+import { Wrapper, Title, Image } from "../styles"
 import { Box, Flex, Text } from "../components"
 import theme from "../styles/theme"
 

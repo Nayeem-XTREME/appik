@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
-import { Wrapper, Title, Image } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles'
 import { Text } from "../components"
 
 import { faces } from '../data/appfaces'

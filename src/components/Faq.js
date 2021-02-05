@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Wrapper, Title, Image } from '../styles/MyStyles'
+import { Wrapper, Title, Image } from '../styles'
 import { Box, Flex, Text } from "../components"
 import Accordion from './Accordion'
 import { accordions } from '../data/accordions'

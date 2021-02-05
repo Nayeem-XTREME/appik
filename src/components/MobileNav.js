@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { Wrapper, Image } from '../styles/MyStyles'
+import { Wrapper, Image } from '../styles'
 import theme from '../styles/theme'
 
 import { navmenu } from '../data/navmenu'

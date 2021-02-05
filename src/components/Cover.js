@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Button, Wrapper, Image } from "../styles/MyStyles"
+import { Button, Wrapper, Image } from "../styles"
 import { platform } from "../data/platform"
 import { Text, Box, Flex } from "../components"
 import theme from "../styles/theme"

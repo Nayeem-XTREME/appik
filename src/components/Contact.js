@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import theme from '../styles/theme'
 
-import { Wrapper, Button } from '../styles/MyStyles'
+import { Wrapper, Button } from '../styles'
 import { Box, Flex, Text } from "../components"
 
 import Form from './MyForm'

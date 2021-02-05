@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { FaBars, FaMinus } from 'react-icons/fa'
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
-import { Wrapper, Image } from '../styles/MyStyles'
+import { Wrapper, Image } from '../styles'
 
 import logo from '../assets/img/APPIK.svg'
 import { navmenu } from '../data/navmenu'

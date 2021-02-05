@@ -5,7 +5,7 @@ import TextBlock from './TextBlock'
 
 import { Box, Flex } from "../components"
 
-import { Image } from '../styles/MyStyles'
+import { Image } from '../styles'
 
 const ItemBox = styled(Flex)`
     @media only screen and (max-width: ${theme.breakpoints.md}) {

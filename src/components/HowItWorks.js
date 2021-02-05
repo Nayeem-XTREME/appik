@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Box, Flex, Text } from "../components"
-import { Wrapper, Title, Image } from "../styles/MyStyles"
+import { Wrapper, Title, Image } from "../styles"
 import ListItem from "./ListItem"
 import { how } from "../data/how"
 import theme from "../styles/theme"
