@@ -1,7 +1,7 @@
-import download from '../assets/logo/DownloadIcon.svg'
-import registration from '../assets/logo/RegistrationIcon.svg'
-import browse from '../assets/logo/BrowseIcon.svg'
-import order from '../assets/logo/Order.svg'
+import download from '../assets/img/DownloadIcon.svg'
+import registration from '../assets/img/RegistrationIcon.svg'
+import browse from '../assets/img/BrowseIcon.svg'
+import order from '../assets/img/Order.svg'
 
 export const how = [ 
     { src: download, alt: "Download", title: "Download App", details: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour" },

@@ -6,8 +6,8 @@ import { Wrapper, Title } from '../styles/MyStyles'
 import { reviews } from '../data/client'
 import theme from '../styles/theme'
 
-import starfill from '../assets/logo/Star.svg'
-import starblank from '../assets/logo/StarBlank.svg'
+import starfill from '../assets/img/Star.svg'
+import starblank from '../assets/img/StarBlank.svg'
 
 const Image = styled.img`
   max-width: ${props => props.maxWidth};

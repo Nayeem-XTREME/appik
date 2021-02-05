@@ -6,7 +6,7 @@ import { Text, Box, Flex } from "../components"
 import theme from "../styles/theme"
 
 import cover from "../assets/img/cover.png"
-import mobile from "../assets/logo/TwoMobile.svg"
+import mobile from "../assets/img/TwoMobile.svg"
 
 const CoverWrapper = styled(Wrapper)`
   padding-top: 0;

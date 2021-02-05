@@ -6,8 +6,8 @@ import { Wrapper, Title, Button } from "../styles/MyStyles"
 import theme from "../styles/theme"
 import { prices } from "../data/prices"
 
-import rightArrow from '../assets/logo/RightArrow.svg'
-import leftArrow from '../assets/logo/LeftArrowHighlight.svg'
+import rightArrow from '../assets/img/RightArrow.svg'
+import leftArrow from '../assets/img/LeftArrowHighlight.svg'
 
 const Div = styled.div`
   position: relative;

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Text } from "../../components"
-import { Button } from '../../styles/MyStyles'
-import theme from '../../styles/theme'
+import { Text } from "."
+import { Button } from '../styles/MyStyles'
+import theme from '../styles/theme'
 
 const Form = styled.form`
   overflow: hidden;

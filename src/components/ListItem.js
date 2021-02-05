@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import theme from '../../styles/theme'
+import theme from '../styles/theme'
 import TextBlock from './TextBlock'
 
-import { Box, Flex } from "../../components"
+import { Box, Flex } from "."
 
 const ItemBox = styled(Flex)`
     @media only screen and (max-width: ${theme.breakpoints.md}) {
