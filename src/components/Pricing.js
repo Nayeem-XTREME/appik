@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import styled from "styled-components"
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import { Box, Flex, Text } from "../components"
-import { Wrapper, Title, Button } from "../styles"
-import theme from "../styles/theme"
-import { prices } from "../data/prices"
+import { Box, Flex, Text } from '../components'
+import { Wrapper, Title, Button } from '../styles'
+import theme from '../styles/theme'
+import { prices } from '../data/prices'
 
 import rightArrow from '../assets/img/RightArrow.svg'
 import leftArrow from '../assets/img/LeftArrowHighlight.svg'
@@ -72,7 +72,7 @@ const MainTitle = styled.div`
   padding-top: 20px;
 
   :after {
-    content: "";
+    content: '';
     display: block;
     width: 80%;
     height: 3px;
@@ -96,7 +96,7 @@ const SubTitle = styled.div`
   margin-top: 20px;
 
   :after {
-    content: "";
+    content: '';
     display: block;
     width: 50%;
     height: 0.75px;
@@ -161,7 +161,7 @@ const ButtonBox = styled.div`
   max-width: 360px;
   margin: -54px auto 28px;
   position: relative;
-  border: ${({ border }) => (border ? "0.5px solid #D1D1D1" : "none")};
+  border: ${({ border }) => (border ? '0.5px solid #D1D1D1' : 'none')};
   border-radius: 30px;
   transition: all 0.2s;
 
@@ -194,7 +194,7 @@ const BtnBackground = styled.div`
 `
 
 const ToggleButton = styled.button`
-  padding: ${({padding}) => padding};
+  padding: ${({ padding }) => padding};
   width: ${({ width }) => width};
   cursor: pointer;
   background: transparent;
@@ -211,7 +211,7 @@ const PriceBox = styled(Box)`
   transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    display: ${({ active }) => (active ? "block" : "none")};
+    display: ${({ active }) => (active ? 'block' : 'none')};
     transition: all 0.2s;
   }
 `
@@ -239,61 +239,60 @@ const Arrow = styled.img`
   }
 `
 
-export default function Pricing () {
+export default function Pricing() {
+  const [monthly, setMonthly] = useState('monthly-active')
+  const [yearly, setYearly] = useState('yearly-hidden')
+  const [activeButton, setActiveButton] = useState('btn-monthly')
 
-  const [monthly, setMonthly] = useState("monthly-active");
-  const [yearly, setYearly]  = useState("yearly-hidden");
-  const [activeButton, setActiveButton]  = useState("btn-monthly");
-
-  const [type, setType]  = useState("Advance");
-  const [leftarrow, setLeftarrow]  = useState(true);
-  const [rightarrow, setRightarrow]  = useState(true);
+  const [type, setType] = useState('Advance')
+  const [leftarrow, setLeftarrow] = useState(true)
+  const [rightarrow, setRightarrow] = useState(true)
 
   const monthlyHandler = () => {
-    setMonthly("monthly-active");
-    setYearly("yearly-hidden");
-    setActiveButton("btn-monthly");
+    setMonthly('monthly-active')
+    setYearly('yearly-hidden')
+    setActiveButton('btn-monthly')
   }
 
   const yearlyHandler = () => {
-    setMonthly("monthly-hidden");
-    setYearly("yearly-active");
-    setActiveButton("btn-yearly");
+    setMonthly('monthly-hidden')
+    setYearly('yearly-active')
+    setActiveButton('btn-yearly')
   }
 
   const leftArrowHandler = () => {
-    if (type === "Advance") {
-      setType("Basic");
-      setLeftarrow(false);
-      setRightarrow(true);
-    } else if (type === "Premium") {
-      setType("Advance");
-      setLeftarrow(true);
-      setRightarrow(true);
+    if (type === 'Advance') {
+      setType('Basic')
+      setLeftarrow(false)
+      setRightarrow(true)
+    } else if (type === 'Premium') {
+      setType('Advance')
+      setLeftarrow(true)
+      setRightarrow(true)
     }
   }
 
   const rightArrowHandler = () => {
-    if (type === "Advance") {
-      setType("Premium");
-      setLeftarrow(true);
-      setRightarrow(false);
-    } else if (type === "Basic") {
-      setType("Advance");
-      setLeftarrow(true);
-      setRightarrow(true);
+    if (type === 'Advance') {
+      setType('Premium')
+      setLeftarrow(true)
+      setRightarrow(false)
+    } else if (type === 'Basic') {
+      setType('Advance')
+      setLeftarrow(true)
+      setRightarrow(true)
     }
   }
-  
+
   return (
     <>
-      <Wrapper id="pricing" style={{ height: "950px", overflow: "hidden" }}>
+      <Wrapper id="pricing" style={{ height: '950px', overflow: 'hidden' }}>
         <Title>
           <Text variant="h2">Appik Prices</Text>
           <Text variant="p" mb={[28, 28, 0]}>
-            There are many variations of passages of Lorem Ipsum available,
-            but the majority have suffered alteration in some form, by
-            injected humour, or randomised.
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humour, or randomised.
           </Text>
         </Title>
 
@@ -334,7 +333,7 @@ export default function Pricing () {
                   <Card>
                     <MainTitle
                       className={
-                        item.highlight ? "underline highlight" : "underline"
+                        item.highlight ? 'underline highlight' : 'underline'
                       }
                     >
                       <Text variant="h3">{item.title}</Text>
@@ -347,12 +346,25 @@ export default function Pricing () {
                     <Ul>
                       {item.features.map((feature, ind) => (
                         <li key={ind}>
-                          <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
+                          <Text
+                            fontFamily="Roboto"
+                            fontWeight={400}
+                            lineHeight="30px"
+                            variant="p"
+                          >
+                            {feature}
+                          </Text>
                         </li>
                       ))}
                     </Ul>
 
-                    <MyButton margin="0 auto 28px" padding="12px 0" highlight={item.highlight}>BUY NOW</MyButton>
+                    <MyButton
+                      margin="0 auto 28px"
+                      padding="12px 0"
+                      highlight={item.highlight}
+                    >
+                      BUY NOW
+                    </MyButton>
                   </Card>
                 </PriceBox>
               )
@@ -371,7 +383,7 @@ export default function Pricing () {
                   <Card>
                     <MainTitle
                       className={
-                        item.highlight ? "underline highlight" : "underline"
+                        item.highlight ? 'underline highlight' : 'underline'
                       }
                     >
                       <Text variant="h3">{item.title}</Text>
@@ -384,19 +396,44 @@ export default function Pricing () {
                     <Ul>
                       {item.features.map((feature, ind) => (
                         <li key={ind}>
-                          <Text fontFamily="Roboto" fontWeight={400} lineHeight="30px" variant="p">{feature}</Text>
+                          <Text
+                            fontFamily="Roboto"
+                            fontWeight={400}
+                            lineHeight="30px"
+                            variant="p"
+                          >
+                            {feature}
+                          </Text>
                         </li>
                       ))}
                     </Ul>
 
-                    <MyButton margin="0 auto 28px" padding="12px 0" highlight={item.highlight}>BUY NOW</MyButton>
+                    <MyButton
+                      margin="0 auto 28px"
+                      padding="12px 0"
+                      highlight={item.highlight}
+                    >
+                      BUY NOW
+                    </MyButton>
                   </Card>
                 </PriceBox>
               )
             })}
           </Flex>
-          <Arrow className="left" style={{ visibility: leftarrow ? "visible" : "hidden" }} src={leftArrow} alt="LeftArrow" onClick={leftArrowHandler} />
-          <Arrow className="right" style={{ visibility: rightarrow ? "visible" : "hidden" }} src={rightArrow} alt="RightArrow" onClick={rightArrowHandler} />
+          <Arrow
+            className="left"
+            style={{ visibility: leftarrow ? 'visible' : 'hidden' }}
+            src={leftArrow}
+            alt="LeftArrow"
+            onClick={leftArrowHandler}
+          />
+          <Arrow
+            className="right"
+            style={{ visibility: rightarrow ? 'visible' : 'hidden' }}
+            src={rightArrow}
+            alt="RightArrow"
+            onClick={rightArrowHandler}
+          />
         </Div>
       </Wrapper>
       <Background />

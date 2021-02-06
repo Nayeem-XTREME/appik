@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Wrapper, Button, Image } from '../styles'
-import { Text } from "../components"
+import { Text } from '../components'
 import cover from '../assets/img/DownloadCover.png'
 import { platform } from '../data/platform'
 import theme from '../styles/theme'
@@ -12,7 +12,11 @@ const Support = styled.div`
 `
 
 const Bg = styled.div`
-  background-image: linear-gradient(rgba(110, 79, 204, 0.9), rgba(35, 79, 167, 0.9)), url(${cover});
+  background-image: linear-gradient(
+      rgba(110, 79, 204, 0.9),
+      rgba(35, 79, 167, 0.9)
+    ),
+    url(${cover});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -62,13 +66,22 @@ export default function Download() {
         </Text>
 
         <BtnGroup>
-          <MyButton highlight marginRight="12px">DOWNLOAD APP</MyButton>
+          <MyButton highlight marginRight="12px">
+            DOWNLOAD APP
+          </MyButton>
           <MyButton marginLeft="12px">CONTACT US</MyButton>
         </BtnGroup>
 
         <Support>
           {platform.map((logo, i) => (
-            <Image margin="0 45px" maxWidth="52px" height="auto" key={i} src={logo.src} alt={logo.alt} />
+            <Image
+              margin="0 45px"
+              maxWidth="52px"
+              height="auto"
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+            />
           ))}
         </Support>
       </MyWrapper>

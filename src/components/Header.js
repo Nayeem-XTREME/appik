@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+import React, { useState, useEffect } from 'react'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 import { FaBars, FaMinus } from 'react-icons/fa'
 import MobileNav from './MobileNav'
 import theme from '../styles/theme'
@@ -62,7 +62,7 @@ const NavMenu = styled.div`
 `
 
 const Bars = styled(FaBars)`
-  color: #FFF;
+  color: #fff;
   display: none;
   transition: all 0.2s;
 
@@ -74,7 +74,7 @@ const Bars = styled(FaBars)`
 `
 
 const Close = styled(FaMinus)`
-  color: #FFF;
+  color: #fff;
   display: none;
   transition: all 0.2s;
 
@@ -86,12 +86,11 @@ const Close = styled(FaMinus)`
 `
 
 const Header = () => {
-
-  const [clicked, setClicked] = useState(false);
-  const [navbarActive, setNavbarActive] = useState(false);
+  const [clicked, setClicked] = useState(false)
+  const [navbarActive, setNavbarActive] = useState(false)
 
   const mobileMenuHandler = () => {
-    setClicked(!clicked);
+    setClicked(!clicked)
   }
 
   useEffect(() => {
@@ -100,13 +99,13 @@ const Header = () => {
         if (window.scrollY > 60) {
           setNavbarActive(true)
         } else {
-          setNavbarActive(false);
+          setNavbarActive(false)
         }
       }
-      window.addEventListener('scroll', changeNavBackground);
-    
+      window.addEventListener('scroll', changeNavBackground)
+
       return () => {
-        window.removeEventListener('scroll', changeNavBackground);
+        window.removeEventListener('scroll', changeNavBackground)
       }
     }
   }, [navbarActive])
@@ -116,16 +115,31 @@ const Header = () => {
       <Background className={navbarActive ? 'active' : ''}>
         <MyWrapper>
           <Nav>
-            <NavLink to="/"> <Image height="24px" src={logo} alt="APPIK"/> </NavLink>
-            { clicked ? <Close onClick={mobileMenuHandler} /> : <Bars onClick={mobileMenuHandler} /> }
+            <NavLink to="/">
+              {' '}
+              <Image height="24px" src={logo} alt="APPIK" />{' '}
+            </NavLink>
+            {clicked ? (
+              <Close onClick={mobileMenuHandler} />
+            ) : (
+              <Bars onClick={mobileMenuHandler} />
+            )}
             <NavMenu className="active">
-              { navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} > {x.title} </NavLink> ) }
+              {navmenu.map((x, i) => (
+                <NavLink className="navlink" to={x.link} key={i}>
+                  {' '}
+                  {x.title}{' '}
+                </NavLink>
+              ))}
             </NavMenu>
           </Nav>
         </MyWrapper>
       </Background>
 
-      <MobileNav mobileMenuHandler={mobileMenuHandler} status={ clicked === true ? true : false } />
+      <MobileNav
+        mobileMenuHandler={mobileMenuHandler}
+        status={clicked === true ? true : false}
+      />
     </>
   )
 }
