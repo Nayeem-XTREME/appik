@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Text } from "."
+import { Text } from '.'
 import { Button } from '../styles'
 import theme from '../styles/theme'
 
@@ -28,7 +28,7 @@ const Input = styled.input`
   margin-bottom: 22px;
   padding: 12px 0;
   border: none;
-  border-bottom: 1px solid #D2D4D2;
+  border-bottom: 1px solid #d2d4d2;
   outline: none;
   background-color: transparent;
 
@@ -44,7 +44,7 @@ const Textarea = styled.textarea`
   margin-bottom: 38px;
   padding: 12px 0;
   border: none;
-  border-bottom: 1px solid #D2D4D2;
+  border-bottom: 1px solid #d2d4d2;
   outline: none;
   background-color: transparent;
 
@@ -56,7 +56,9 @@ const Textarea = styled.textarea`
 export default function MyForm({ title, buttonText }) {
   return (
     <Form>
-      <Text variant="h2" mb={43}>{title}</Text>
+      <Text variant="h2" mb={43}>
+        {title}
+      </Text>
 
       <label htmlFor="name">
         <Text variant="p">Name</Text>
@@ -78,7 +80,9 @@ export default function MyForm({ title, buttonText }) {
       </label>
       <Textarea type="text" id="message" name="message" required />
 
-      <Button highlight type="submit">{buttonText}</Button>
+      <Button highlight type="submit">
+        {buttonText}
+      </Button>
     </Form>
   )
 }

@@ -11,5 +11,5 @@ export const faces = [
   { img: mobile5, alt: 'Mobile 5' },
   { img: mobile6, alt: 'Mobile 6' },
   { img: mobile1, alt: 'Mobile 1' },
-  { img: mobile2, alt: 'Mobile 2' }
+  { img: mobile2, alt: 'Mobile 2' },
 ]

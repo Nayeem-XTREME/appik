@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
-import TextBlock from "./TextBlock"
-import { Wrapper, Title, Image } from "../styles"
-import { Box, Flex, Text } from "../components"
-import theme from "../styles/theme"
+import React from 'react'
+import styled from 'styled-components'
+import TextBlock from './TextBlock'
+import { Wrapper, Title, Image } from '../styles'
+import { Box, Flex, Text } from '../components'
+import theme from '../styles/theme'
 
-import mobile from "../assets/img/Mobile.svg"
+import mobile from '../assets/img/Mobile.svg'
 
 const ImageBox = styled(Box)`
   display: flex;
@@ -29,7 +29,12 @@ export default function Process() {
       </Title>
 
       <Flex alignItems="center" flexWrap="wrap">
-        <Box width={[1, 1, 1 / 3]} pr={[0, 0, 3]} mb={[30, 30, 0, 0]} textAlign={["center", "center", "left"]}>
+        <Box
+          width={[1, 1, 1 / 3]}
+          pr={[0, 0, 3]}
+          mb={[30, 30, 0, 0]}
+          textAlign={['center', 'center', 'left']}
+        >
           <TextBlock
             mb
             title="Loaded with features"
@@ -42,10 +47,21 @@ export default function Process() {
         </Box>
 
         <ImageBox width={[1, 1, 1 / 3]}>
-          <Image width="100%" maxWidth="240px" height="auto" src={mobile} alt="Features" />
+          <Image
+            width="100%"
+            maxWidth="240px"
+            height="auto"
+            src={mobile}
+            alt="Features"
+          />
         </ImageBox>
 
-        <Box className="last" width={[1, 1, 1 / 3]} pl={[0, 0, 3]} textAlign={["center", "center", "left"]}>
+        <Box
+          className="last"
+          width={[1, 1, 1 / 3]}
+          pl={[0, 0, 3]}
+          textAlign={['center', 'center', 'left']}
+        >
           <TextBlock
             mb
             title="Update Forever"

@@ -1,12 +1,12 @@
-import React from "react"
-import styled from "styled-components"
-import { Button, Wrapper, Image } from "../styles"
-import { platform } from "../data/platform"
-import { Text, Box, Flex } from "../components"
-import theme from "../styles/theme"
+import React from 'react'
+import styled from 'styled-components'
+import { Button, Wrapper, Image } from '../styles'
+import { platform } from '../data/platform'
+import { Text, Box, Flex } from '../components'
+import theme from '../styles/theme'
 
-import cover from "../assets/img/cover.png"
-import mobile from "../assets/img/TwoMobile.svg"
+import cover from '../assets/img/cover.png'
+import mobile from '../assets/img/TwoMobile.svg'
 
 const CoverWrapper = styled(Wrapper)`
   padding-top: 0;

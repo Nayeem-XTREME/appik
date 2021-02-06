@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from "gatsby"
-import styled from "styled-components"
+import { Link } from 'gatsby'
+import styled from 'styled-components'
 import { Wrapper, Image } from '../styles'
 import theme from '../styles/theme'
 
@@ -28,7 +28,7 @@ const Nav = styled.nav`
 const MyWrapper = styled(Wrapper)`
   position: relative;
   padding: 0;
-  height: 100vh; 
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +45,7 @@ const NavLink = styled(Link)`
   margin: 15px 0;
   list-style: none;
   text-decoration: none;
-  color: #FFF;
+  color: #fff;
   transition: all 0.2s;
 
   :hover {
@@ -65,14 +65,30 @@ const Support = styled.div`
 
 export default function MobileNav({ status, mobileMenuHandler }) {
   return (
-    <Nav className={ status ? "active" : "closed" }>
+    <Nav className={status ? 'active' : 'closed'}>
       <MyWrapper>
         <NavMenu>
-          {navmenu.map( (x, i) => <NavLink className="navlink" to={x.link} key={i} onClick={mobileMenuHandler} > {x.title} </NavLink> )}
+          {navmenu.map((x, i) => (
+            <NavLink
+              className="navlink"
+              to={x.link}
+              key={i}
+              onClick={mobileMenuHandler}
+            >
+              {x.title}
+            </NavLink>
+          ))}
         </NavMenu>
         <Support>
           {platform.map((logo, i) => (
-            <Image key={i} maxWidth="46px" height="auto" marginRight="40px" src={logo.src} alt={logo.alt} />
+            <Image
+              key={i}
+              maxWidth="46px"
+              height="auto"
+              marginRight="40px"
+              src={logo.src}
+              alt={logo.alt}
+            />
           ))}
         </Support>
       </MyWrapper>

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import {
   space,
   layout,
@@ -6,7 +6,7 @@ import {
   color,
   flexbox,
   typography,
-} from 'styled-system';
+} from 'styled-system'
 
 const Flex = styled.div`
   display: flex;
@@ -16,6 +16,6 @@ const Flex = styled.div`
   ${color};
   ${flexbox};
   ${typography};
-`;
+`
 
-export default Flex;
+export default Flex
