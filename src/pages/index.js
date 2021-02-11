@@ -1,21 +1,38 @@
-import React from "react"
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import '../styles/index.css'
 
-import { Layout, Cover, Process, HowItWorks, Faces, Pricing, Clients, Faq, Download, Contact, Footer } from "../components"
+import {
+  SEO,
+  Layout,
+  Cover,
+  Process,
+  HowItWorks,
+  Faces,
+  Pricing,
+  Clients,
+  Faq,
+  Download,
+  Contact,
+  Footer,
+} from '../components'
 
 const IndexPage = () => (
-  <Layout>
-    <Cover />
-    <Process />
-    <HowItWorks />
-    <Faces />
-    <Pricing />
-    <Clients />
-    <Faq />
-    <Download />
-    <Contact />
-    <Footer />
-  </Layout>
+  <div>
+    <Layout>
+      <SEO title />
+      <Cover />
+      <Process />
+      <HowItWorks />
+      <Faces />
+      <Pricing />
+      <Clients />
+      <Faq />
+      <Download />
+      <Contact />
+      <Footer />
+    </Layout>
+  </div>
 )
 
 export default IndexPage

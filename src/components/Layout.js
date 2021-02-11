@@ -1,19 +1,17 @@
-import React from "react"
-import { ThemeProvider } from "styled-components"
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
 
-import Header from "./Header"
-import GlobalStyle from "../styles/GlobalStyles"
-import theme from "../styles/theme"
+import Header from './Header'
+import GlobalStyle from '../styles/GlobalStyles'
+import theme from '../styles/theme'
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
         <main>{children}</main>
-        
       </ThemeProvider>
     </>
   )
