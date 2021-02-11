@@ -45,7 +45,10 @@ export default function Accordion({
 }) {
   return (
     <Main item={item}>
-      <Heading item={item} onClick={() => setActive(title)}>
+      <Heading
+        item={item}
+        onClick={active === title ? () => setActive(0) : () => setActive(title)}
+      >
         <Text variant="h5" fontWeight="300" mr={4}>
           {title}
         </Text>

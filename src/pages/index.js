@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import '../styles/index.css'
 
 import {
+  SEO,
   Layout,
   Cover,
   Process,
@@ -18,12 +19,8 @@ import {
 
 const IndexPage = () => (
   <div>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Appik | Life Makes Easy</title>
-    </Helmet>
-
     <Layout>
+      <SEO title />
       <Cover />
       <Process />
       <HowItWorks />
