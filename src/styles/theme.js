@@ -5,7 +5,7 @@ breakpoints.md = breakpoints[1]
 breakpoints.lg = breakpoints[2]
 breakpoints.xl = breakpoints[3]
 
-export default {
+const theme = {
   colors: {
     white: '#FFF',
     black: '#000',
@@ -23,3 +23,5 @@ export default {
   fontSizes: [10.5, 12, 14, 15, 18, 20, 22.5, 27, 37.5],
   breakpoints,
 }
+
+export default theme
